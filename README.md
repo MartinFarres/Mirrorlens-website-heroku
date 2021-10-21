@@ -23,14 +23,17 @@ La audiencia es muy amplia, quien quiera comprarse unos anteojos esta invitado a
 </ul>
 Tengo 33 años, estudié arquitectura y trabajo en el rubro, siempre me gustó la informática por eso me decidí a estudiar programación.
 <ul>
+</br>
   <li>Iair Baron</li>
 </ul>
 Soy iair, tengo 20 años, vivo en BS AS, y este año deje la carrera de derecho, para apuntar a lo que es la programación, y el mundo tecnológico! 
 <ul>
+</br>
   <li>Facundo Sardón</li>
 </ul>
 Soy Facundo, tengo 18 años, vivo en BS AS, este año estoy terminando el secundario y despues me gustaria seguir con programación e ingenieria informática.
 <ul>
+</br>
   <li>Participante 4</li>
 </ul>
 <!--- Participante 4 descripcion -->
