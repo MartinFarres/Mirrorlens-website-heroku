@@ -1,8 +1,8 @@
 # Grupo-11
 
-La idea del sitio de nuestro proyecto es crear un e-commerce de una optica donde el usuario pueda probarse de manera virtual los lentes en stock desde su casa, ahoorrandose el trabajo de ir a la tienda y con envios a todo el pais.
-Nuestro objetivo es poder adaptar a un e comerce de un negocio conservador como el de los anteojos, inovando con teconologias que permitan al usuario probarse los productos de la pagina en su casa. para eso Desarrollammos  un clasico metodo inovador.Un espejo virtual que te permite tener un reflejo de como te querdarian los lentes realmente.
-La audiencia es muy amplia, quien quiera comprasrse unos anteojos esta invitado a visitar nuestra pagina, ademas  tendremos muchos modelos, para todos los gusto. Pero principalmente sera para gente mayor a 17 años, es decir quien sepa comprar de forma digital.
+La idea del sitio de nuestro proyecto es crear un e-commerce de una óptica donde el usuario pueda probarse de manera virtual los lentes desde su casa, ahoorrandose el trabajo de ir a la tienda y a la vez contar con envíos a todo el pais.
+Nuestro objetivo es poder adaptar a un e-comerce un negocio conservador como el de los anteojos, innovando con tecnologías que permitan al usuario probarse los productos de la página en su casa, para eso desarrollamos un clásico método, un espejo virtual, este te permite tener un reflejo de como te querdarían como si estuvieras frente a un espejo real.
+La audiencia es muy amplia, quien quiera comprarse unos anteojos esta invitado a visitar nuestra página, además tendremos muchos modelos, para todos los gustos.
 
 # Referentes
 
@@ -19,17 +19,17 @@ La audiencia es muy amplia, quien quiera comprasrse unos anteojos esta invitado 
 
 <h3>Participantes</h3>
 <ul>
-  <li>Participante 1</li>
+  <li>Damián Rodríguez</li>
 </ul>
-
+Tengo 33 años, estudié arquitectura y trabajo en el rubro, siempre me gustó la informática por eso me decidí a estudiar programación.
 <ul>
   <li>Iair Baron</li>
 </ul>
-Soy iair, tengo 20 años, vivo en BS AS, y este año deje la carrera de derecho, para apuntar a lo que es la programacion, y el mundo tecnologico! 
+Soy iair, tengo 20 años, vivo en BS AS, y este año deje la carrera de derecho, para apuntar a lo que es la programación, y el mundo tecnológico! 
 <ul>
-  <li>Participante 3</li>
+  <li>Facundo Sardón</li>
 </ul>
-<!--- Participante 3 descripcion -->
+Soy Facundo, tengo 18 años, vivo en BS AS, este año estoy terminando el secundario y despues me gustaria seguir con programación e ingenieria informática.
 <ul>
   <li>Participante 4</li>
 </ul>
