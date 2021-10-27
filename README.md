@@ -37,3 +37,6 @@ Soy Facundo, tengo 18 años, vivo en BS AS, este año estoy terminando el secund
   <li>Martín Farres</li>
 </ul>
 Soy martin farres, tengo 20 años. Soy estudiante de lic. En ciencias de la computación en la universidad Nacional de Cuyo. Espero poder poner en practica todo lo del curso en mi carrera.
+
+
+<h4>Trello: https://trello.com/b/O2vlc2YK/optica<h4>
