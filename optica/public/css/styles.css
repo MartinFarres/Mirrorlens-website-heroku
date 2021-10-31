@@ -1,0 +1,140 @@
+/* ESTILOS COMUNES */
+.w-100 {
+  width: 100%;
+}
+.w-50 {
+  width: 50%;
+}
+
+.p {
+  padding: 16px;
+}
+
+.pt {
+  padding-top: 16px;
+}
+
+.pv {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.b {
+  border-width: 1px;
+  border-style: solid;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.bbw{
+    border-bottom: solid white 1px;
+}
+
+/* HEADER */
+
+.header{
+    padding: 15px;
+    width: 100%;
+    background: rgb(31, 31, 31);
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.container{
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.logo{
+    float: left;
+    
+    width: 84%;
+}
+
+.logo h1{
+    color: white;
+    font-weight: 400;
+    font-size: 400;
+    cursor: default;
+}
+
+.nav-bar{
+    float: right;
+    
+    display: none;
+}
+
+.nav-bar a{
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px 15px;
+    line-height: normal;
+    font-size: 14px;
+    transition: all 500ms ease;
+    border-bottom: 4px solid transparent;
+}
+
+.nav-bar a:hover{
+    color: #40de32;
+    border-bottom: 4px solid #40de32;
+
+}
+
+.icon-menu{
+    color: white;
+    margin: auto;
+    padding: 5px 15px;
+    /* background-color: #258d1c; */
+    
+    display: inline-block;
+    border-radius: 25px;
+    
+}
+
+.icon-points{
+    font-size: 26px;
+}
+
+.div-searchbar{
+    padding-top: 10px;
+    
+}
+
+.searchbar{
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    width: 100%;
+}
+
+.div-icon-search{
+    
+    margin: auto;
+    padding-top: 10px;
+    display: inline-block;
+    justify-self: center;
+    text-align: center;
+}
+
+.icon-search{
+    background-color: white;
+    padding: 10px;
+}
+

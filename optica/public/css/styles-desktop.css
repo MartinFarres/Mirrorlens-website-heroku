@@ -1,0 +1,8 @@
+@media(min-width: 1200px){
+    .nav-bar{
+        display: block;
+    }
+    .icon-menu{
+        display: none;
+    }
+}

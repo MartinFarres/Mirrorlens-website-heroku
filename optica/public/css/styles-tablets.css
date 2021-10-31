@@ -1,0 +1,13 @@
+@media(min-width: 768px){
+    .nav-bar{
+        display: block;
+    }
+
+    .icon-menu{
+        display: none;
+    }
+
+    .logo{
+        width: auto;
+    }
+}
