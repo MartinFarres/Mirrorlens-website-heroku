@@ -1,11 +1,143 @@
-.home-container{
-    width: 90%;
-    margin: 0 auto;
+.home-container {
+    margin: 0px auto;
+    background-color: #e7e7e7;
 }
 
-.article-container{
+.article-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
 
+.div-slider {
+    width: 100%;
+    height: 250px;
+    background-color: violet;
+    margin-top: 72px;
+}
+
+.product {
+    margin: 15px 10px;
+    background-color: white;
+    border: solid black 1px;
+}
+
+.product .product-content {
+    padding: 15px;
+    border-top: 1px solid #ebebeb;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.product .product-content .price {
+    width: 30%;
+    padding-bottom: 8px;
+}
+
+.product .product-content .discount {
+    width: 70%;
+}
+
+.product .truck-icon {
+    border-radius: 50%;
+    padding: 5px;
+    position: absolute;
+    right: 20px;
+    top: -15px;
+    background-color: white;
+    color: green;
+}
+
+.circle {
+    background-color: #fff;
+    border: 1px solid red;
+    height: 100px;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    width: 100px;
+}
+
+/* 3 BLOCK SECTION */
+.three-block-section {
+    width: 100%;
+}
+.blocks-shops {
+    margin-top: 0.5px;
+}
+.block-shop-for-women {
+    width: inherit;
+    height: 400px;
+    background-image: url(/images/bc-women-block.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 400px;
+    position: relative;
+}
+.block-shop-for-men {
+    width: inherit;
+    height: 400px;
+    background-image: url(/images/bc-men-block.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 400px;
+    position: relative;
+}
+.block-shop-do-it {
+    width: inherit;
+    height: 400px;
+    background-image: url(/images/do-it-your-own-block.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 400px;
+    position: relative;
+}
+
+.content-block {
+    position: absolute;
+    top: 73px;
+    left: 14px;
+    width: 213px;
+}
+
+.block-tittle {
+    color: black;
+    font-size: 36px;
+    font-weight: bolder;
+}
+
+.block-p {
+    color: black;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/* DISCOUNTS AND PROMOS */
+
+.discount-blocks {
+    padding-top: 25px;
+    margin: 0 auto;
+    background-color: #e7e7e7;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.discount-top {
+    width: 45%;
+    box-shadow: 0 30px 40px rgba(0, 0, 0, 0.25);
+    margin: 5px auto;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.discount-product {
+    padding: 10px;
+}
+
+.discount-content {
+    text-align: center;
+}
+
+.display-by-category-marca {
+    padding-top: 25px;
+    margin: 0 auto;
+}

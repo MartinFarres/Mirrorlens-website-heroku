@@ -1,4 +1,9 @@
 /* ESTILOS COMUNES */
+body{
+  background-color: #e7e7e7;
+}
+
+
 .w-100 {
   width: 100%;
 }
@@ -19,6 +24,10 @@
   padding-bottom: 16px;
 }
 
+.pvs{
+  padding: 4px 0px;
+}
+
 .b {
   border-width: 1px;
   border-style: solid;
@@ -34,6 +43,22 @@
 
 .bbw {
   border-bottom: solid white 1px;
+}
+
+.bbb {
+  border-bottom: solid black 1px;
+}
+
+.font-small{
+  font-size: 14px;
+}
+
+.font-medium{
+  font-size: 18px;
+}
+
+.font-large{
+  font-size: 1.5em;
 }
 
 /* HEADER */
@@ -127,8 +152,8 @@
 }
 
 .nav-bar a:hover {
-  color: #40de32;
-  border-bottom: 4px solid #40de32;
+  color: violet;
+  border-bottom: 4px solid violet;
 }
 
 .div-searchbar {
