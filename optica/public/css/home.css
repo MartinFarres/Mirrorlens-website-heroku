@@ -1,0 +1,11 @@
+.home-container{
+    width: 90%;
+    margin: 0 auto;
+}
+
+.article-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
