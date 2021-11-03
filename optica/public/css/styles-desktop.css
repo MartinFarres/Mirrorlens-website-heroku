@@ -5,4 +5,20 @@
     .icon-menu{
         display: none;
     }
+
+    .logo{
+        order:-1
+    }
+
+    .right-icon-menu{
+        display: none;
+    }
+
+    .left-icon-menu{
+        display: none;
+    }
+
+    .right-icon-menu-desktop{
+        display: inline-block;
+    }
 }

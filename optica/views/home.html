@@ -10,8 +10,9 @@
     />
     <link rel="stylesheet" href="/css/themes.css" type="text/css" />
     <link rel="stylesheet" href="/css/styles.css" type="text/css" />
-    <link rel="stylesheet" href="/css/styles-desktop.css" type="text/css" />
+    <link rel="stylesheet" href="/css/home.css" type="text/css" />
     <link rel="stylesheet" href="/css/styles-tablets.css" type="text/css" />
+    <link rel="stylesheet" href="/css/styles-desktop.css" type="text/css" />
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
       rel="stylesheet"
@@ -20,7 +21,7 @@
   </head>
   <body>
     <header class="header">
-      <div class="container bbw">
+      <div class="header-container bbw">
         <div class="logo">
           <h1>Mirrorlens</h1>
         </div>
@@ -32,18 +33,38 @@
           <a href="#">Contacto</a>
         </nav>
 
-        <div class="icon-menu">
-          <i class="fas fa-ellipsis-v icon-points"></i>
-        </div>
-      </div>
-      <div class="container">
-        <div class="div-searchbar">
-          <input type="text" placeholder="Search..." class="searchbar" />
-        </div>
-        <!-- <div class="div-icon-search">
+        <div class="left-icon-menu">
           <i class="fas fa-search icon-search"></i>
-        </div> -->
+        </div>
+
+        <div class="right-icon-menu">
+          <i class="fas fa-bars icon-bars"></i>
+          <i class="fas fa-shopping-cart icon-shop"></i>
+        </div>
+
+        <div class="right-icon-menu-desktop">
+          <i class="fas fa-search icon-search"></i>
+          <i class="far fa-heart icon-search"></i>
+          <i class="far fa-user icon-search"></i>
+          <i class="fas fa-shopping-cart icon-search"></i>
+        </div>
+
       </div>
     </header>
+    <main class="home-container">
+      <section class="pv">
+          <h2 class="font-heading">Basado en tu última visita</h2>
+          <section class="article-container"> 
+              <div class="wrapper">
+                  <article class="product">
+                      <img src="/images/lentes-lacoste-originales" class="w-100" alt="">
+                      <div class="product-content">
+                          <i class="fas fa-truck truck-icon text-green b border-green font-medium p"></i>
+                          <p class="price font-medium">$ 6.770</p>
+                          <p class="discount text-green font-medium">40% OFF</p>
+                          <h3 class="description font-large">Cafetera Moulinex</h3>
+                      </div>
+                  </article>
+              </div>
   </body>
 </html>
