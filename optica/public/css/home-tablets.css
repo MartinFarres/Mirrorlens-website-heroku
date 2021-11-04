@@ -1,0 +1,21 @@
+@media(min-width: 480px){
+    .three-block-section{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .block-shop-for-men{
+        width: 50%;
+    }
+
+    .block-shop-for-women{
+        width: 50%;
+    }
+
+    .block-shop-do-it{
+        background-image: url(/images/do-it-your-own-block-tablet.jpg);
+        min-height: 330px;
+        
+    }
+}   

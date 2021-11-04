@@ -91,6 +91,10 @@
     position: relative;
 }
 
+.block-shop-do-it-tablet{
+    display: none;
+}
+
 .content-block {
     position: absolute;
     top: 73px;
@@ -113,7 +117,7 @@
 /* DISCOUNTS AND PROMOS */
 
 .discount-blocks {
-    padding-top: 25px;
+    padding: 40px 0px;
     margin: 0 auto;
     background-color: #e7e7e7;
     display: flex;
@@ -140,4 +144,35 @@
 .display-by-category-marca {
     padding-top: 25px;
     margin: 0 auto;
+}
+
+
+/* CATEGORIAS */
+
+.display-by-category{
+    padding: 25px 0px;
+    
+}
+
+.display-categories{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.contenedor-category{
+    width: 24%;
+    margin: 0px 2px;
+    padding: 7px;
+    background-color: #fff;
+    position: relative;
+}
+
+.contenedor-category img{
+    height: 100px;
+}
+
+.content-category{
+    position: absolute;
+    bottom: 0px;
 }
