@@ -16,6 +16,13 @@
     margin-top: 150px;
 }
 
+.div-slider-2 {
+    width: 100%;
+    height: 250px;
+    background-color: violet;
+    margin-top: 10px;
+}
+
 .product {
     margin: 15px 10px;
     background-color: white;
