@@ -83,7 +83,7 @@ body {
     max-width: 1200px;
     margin: auto;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     flex-wrap: wrap;
     align-items: center;
 }
@@ -115,6 +115,8 @@ body {
 
 .icon-bars {
     font-size: 22px;
+    width: 42px;
+    padding: 0px 10px;
     color: white;
 }
 
