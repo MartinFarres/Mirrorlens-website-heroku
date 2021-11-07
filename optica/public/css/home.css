@@ -13,7 +13,7 @@
     width: 100%;
     height: 250px;
     background-color: violet;
-    margin-top: 150px;
+    margin-top: 120px;
 }
 
 .div-slider-2 {
@@ -71,7 +71,6 @@
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    
 }
 .blocks-shops {
     margin-top: 0.5px;
@@ -124,8 +123,6 @@
     font-size: 20px;
     font-weight: 600;
 }
-
-
 
 /* DISCOUNTS AND PROMOS */
 
@@ -188,5 +185,3 @@
     position: absolute;
     bottom: 0px;
 }
-
-
