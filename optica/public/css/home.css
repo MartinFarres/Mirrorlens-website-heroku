@@ -115,6 +115,8 @@
     font-weight: 600;
 }
 
+
+
 /* DISCOUNTS AND PROMOS */
 
 .discount-blocks {
@@ -175,4 +177,8 @@
 .content-category {
     position: absolute;
     bottom: 0px;
+}
+
+.three-block-section a:hover{
+    background-size: 102% 410px;
 }
