@@ -25,7 +25,8 @@
         flex-wrap: nowrap;
     }
     .nav-bar a {
-        font-size: 10px;
+        font-size: 12px;
+        padding: 8px;
     }
     .icon-search {
         padding: 5px;
