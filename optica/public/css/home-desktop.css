@@ -3,4 +3,7 @@
         display: flex;
         flex-wrap: nowrap;
     }
+    .logo img {
+        width: 150px;
+    }
 }
