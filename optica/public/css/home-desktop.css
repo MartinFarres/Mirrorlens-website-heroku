@@ -6,4 +6,8 @@
     .logo img {
         width: 150px;
     }
+
+    .three-block-section a:hover{
+        background-size: 102% 410px;
+    }
 }
