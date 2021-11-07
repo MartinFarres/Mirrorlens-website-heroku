@@ -1,24 +1,12 @@
-@media(min-width: 1200px){
-    .nav-bar{
-        display: block;
+@media (min-width: 1200px) {
+    .header-container {
+        flex-wrap: wrap;
     }
-    .icon-menu{
-        display: none;
+    .nav-bar a {
+        font-size: 14px;
     }
-
-    .logo{
-        order:-1
-    }
-
-    .right-icon-menu{
-        display: none;
-    }
-
-    .left-icon-menu{
-        display: none;
-    }
-
-    .right-icon-menu-desktop{
-        display: inline-block;
+    .icon-search {
+        padding: 15px;
+        font-size: 20px;
     }
 }

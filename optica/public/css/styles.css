@@ -125,6 +125,7 @@ body {
     color: white;
     padding: 20px;
     font-size: 20px;
+    transition: all 500ms ease;
 }
 
 .nav-bar {
