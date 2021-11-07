@@ -1,21 +1,23 @@
-@media(min-width: 480px){
-    .three-block-section{
+@media (min-width: 480px) {
+    .three-block-section {
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
+        justify-content: space-evenly;
     }
 
-    .block-shop-for-men{
-        width: 50%;
+    .block-shop-for-men {
+        max-width: 500px;
+        margin: 20px;
     }
 
-    .block-shop-for-women{
-        width: 50%;
+    .block-shop-for-women {
+        max-width: 500px;
+        margin: 20px;
     }
 
-    .block-shop-do-it{
+    .block-shop-do-it {
         background-image: url(/images/do-it-your-own-block-tablet.jpg);
         min-height: 330px;
-        
+        max-width: 500px;
     }
-}   
+}
