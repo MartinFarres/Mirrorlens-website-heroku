@@ -229,6 +229,7 @@ body {
     margin-top: 3.125rem;
     color: #686868;
     background: #fff;
+    /* text-align: center; */
 }
 .footer-items {
     max-width: 1400px;
