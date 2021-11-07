@@ -16,8 +16,8 @@
     }
 
     .block-shop-do-it {
-        background-image: url(/images/do-it-your-own-block-tablet.jpg);
         min-height: 330px;
         max-width: 500px;
+        margin: 20px;
     }
 }
