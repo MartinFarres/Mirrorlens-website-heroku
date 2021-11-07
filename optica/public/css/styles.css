@@ -168,7 +168,8 @@ body {
 }
 
 .container-content {
-    margin-top: 150px;
+    margin: auto;
+    margin-top: 200px;
     width: 300px;
 }
 .create-form {
