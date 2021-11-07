@@ -192,23 +192,6 @@ body {
     display: block;
 }
 
-.control-form-content {
-    display: flex;
-    justify-content: space-between;
-    width: 60%;
-    margin: 20px;
-}
-
-.control-form-content-int {
-    display: flex;
-    width: 40%;
-    margin: 20px;
-    margin-top: 20px;
-}
-.control-form-content-int label {
-    padding-left: 10px;
-}
-
 .button-form {
     background-color: green;
     border: none;
