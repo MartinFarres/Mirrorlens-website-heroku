@@ -179,6 +179,9 @@ body {
 }
 .create-form {
     padding: 20px 15px;
+    border: 1px solid lightgray;
+    background-color: whitesmoke;
+    border-radius: 10px;
 }
 
 .control {
@@ -199,7 +202,7 @@ body {
 }
 
 .button-form {
-    background-color: green;
+    background-color: rgb(31, 31, 31);
     border: none;
     font-size: 15px;
     color: white;
@@ -208,7 +211,7 @@ body {
 }
 
 .button-form-content {
-    background-color: #03264c;
+    background-color: rgb(31, 31, 31);
     border: none;
     font-size: 15px;
     color: white;
@@ -217,7 +220,7 @@ body {
     width: 100%;
 }
 .button-form-content:hover {
-    background-color: #0022aa;
+    background-color: #3d4660;
 }
 
 /* FOOTER */
