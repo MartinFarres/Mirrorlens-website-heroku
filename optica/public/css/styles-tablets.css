@@ -35,4 +35,10 @@
     .div-slider {
         margin-top: 180px;
     }
+    .footer-wrapper {
+        display: flex;
+    }
+    .footer-items {
+        max-width: 400px;
+    }
 }

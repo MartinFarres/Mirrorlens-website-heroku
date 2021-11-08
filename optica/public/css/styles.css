@@ -257,17 +257,17 @@ body {
     padding-left: 0px;
 }
 
-.footer-menu-li{
+.footer-menu-li {
     margin-top: 0.5rem;
 }
 
-.footer-menu-icons{
+.footer-menu-icons {
     display: flex;
     flex-wrap: wrap;
     list-style: none;
 }
 
-.footer-menu-icons li{
+.footer-menu-icons li {
     margin: 0px 4px;
     font-size: 25px;
 }
