@@ -14,7 +14,14 @@
     width: 100%;
     height: 250px;
     background-color: violet;
-    margin-top: 72px;
+    margin-top: 120px;
+}
+
+.div-slider-2 {
+    width: 100%;
+    height: 250px;
+    background-color: violet;
+    margin-top: 10px;
 }
 
 .product {
@@ -63,6 +70,8 @@
 /* 3 BLOCK SECTION */
 .three-block-section {
     width: 100%;
+    display: flex;
+    flex-wrap: wrap;
 }
 .blocks-shops {
     margin-top: 0.5px;
@@ -90,9 +99,10 @@
     background-repeat: no-repeat;
     background-size: 100% 400px;
     position: relative;
+    max-width: 500px;
 }
 
-.block-shop-do-it-tablet{
+.block-shop-do-it-tablet {
     display: none;
 }
 
@@ -127,7 +137,6 @@
 }
 
 .discount-top {
-    width: 45%;
     box-shadow: 0 30px 40px rgba(0, 0, 0, 0.25);
     margin: 5px auto;
     background-color: #fff;
@@ -136,6 +145,7 @@
 
 .discount-product {
     padding: 10px;
+    max-width: 400px;
 }
 
 .discount-content {
@@ -147,33 +157,32 @@
     margin: 0 auto;
 }
 
-
 /* CATEGORIAS */
 
-.display-by-category{
+.display-by-category {
     padding: 25px 0px;
-    
 }
 
-.display-categories{
+.display-categories {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
-.contenedor-category{
-    width: 24%;
-    margin: 0px 2px;
+.contenedor-category {
+    width: 40%;
+    margin: 7px;
     padding: 7px;
     background-color: #fff;
     position: relative;
+    max-width: 150px;
 }
 
-.contenedor-category img{
+.contenedor-category img {
     height: 100px;
 }
 
-.content-category{
+.content-category {
     position: absolute;
     bottom: 0px;
 }

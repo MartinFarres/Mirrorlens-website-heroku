@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Roboto&display=swap"
+            rel="stylesheet" />
+
+        <link rel="stylesheet" href="/css/themes.css" type="text/css" />
+        <link rel="stylesheet" href="/css/styles.css" type="text/css" />
+        <link rel="stylesheet" href="/css/home.css" type="text/css" />
+
+        <link rel="stylesheet" href="/css/styles-tablets.css" type="text/css" />
+        <link rel="stylesheet" href="/css/styles-desktop.css" type="text/css" />
+        <link rel="stylesheet" href="/css/home-tablets.css" type="text/css" />
+        <link rel="stylesheet" href="/css/home-desktop.css" type="text/css" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+        <title>Mirrorlens</title>
+
+    </head>
+
+<body>
+    <header class="header">
+        <div class="header-container bbw">
+            <div class="header-container bbw">
+                <h1 class="logo"><a href="/views/home.html"><img src="/images/logo2.png" alt="" /></a></h1>
+                <nav class="nav-bar">
+                    <a href="/views/register.html">Creá tu cuenta</a>
+                    <a href="/views/login.html">Ingresá</a>
+                    <a href="#">Mis Compras</a>
+                    <a href="#">Contacto</a>
+                </nav>
+
+                <div class="left-icon-menu">
+                    <i class="fas fa-search icon-search"></i>
+                </div>
+
+                <div class="right-icon-menu">
+                    <i class="fas fa-bars icon-bars"></i>
+                    <i class="fas fa-shopping-cart icon-shop"></i>
+                </div>
+
+                <div class="right-icon-menu-desktop">
+                    <i class="fas fa-search icon-search"></i>
+                    <i class="far fa-heart icon-search"></i>
+                    <i class="far fa-user icon-search"></i>
+                    <i class="fas fa-shopping-cart icon-search"></i>
+                </div>
+
+            </div>
+    </header>
+    <section>
+        <main class="container-content">
+            <form action="crear-producto" method="post" class="create-form">
+                <div class="control-form">
+                    <input type="text" name="nombre" placeholder="Nombre y apellido" class="control">
+                </div>
+                <div class="control-form">
+                    <input type="text" name="user" placeholder="Nombre de usuario" class="control">
+                </div>
+                <div class="control-form">
+                    <input type="email" name="mail" placeholder="E-mail" class="control">
+                </div>
+                <div class="control-form">
+                    <label>Fecha de nacimiento</label>
+                    <input type="date" name="birdate" class="control">
+                </div>
+                <div class="control-form">
+                    <input type="text" name="direction" placeholder="Domicilio" class="control">
+                </div>
+
+                <div class="control-form">
+                    <label>Seleccioná una foto de perfil:</label>
+                    <input type="file" name="avatar" accept="image/*" class="control">
+                </div>
+                <div class="control-form">
+                    <input type="password" name="pass" placeholder="Contraseña" class="control">
+                </div>
+                <div class="control-form">
+                    <input type="password" name="pass" placeholder="Confirmar Contraseña" class="control">
+                </div>
+                <button type="reset" class="button-form">Borrar</button>
+                <button type="submit" class="button-form">Enviar</button>
+            </form>
+        </main>
+        <footer>
+            <section class="footer-wrapper">
+              <div class="footer-items">
+                <div class="footer-block">
+                  <h2 class="footer-block-tittle">More Information</h2>
+                  <div class="footer-block-content">
+                    <ul class="footer-menu">
+                      <li>Mirrorlens</li>
+                      <li class="footer-menu-li">Our Brands</li>
+                      <li class="footer-menu-li">Work With Us</li>
+                      <li class="footer-menu-li">Payment Methods</li>
+                      <li class="footer-menu-li">Contact Us</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+    
+              <div class="footer-items">
+                <div class="footer-block">
+                  <h2 class="footer-block-tittle">How Can We Help?</h2>
+                  <div class="footer-block-content">
+                    <ul class="footer-menu">
+                      <li>Get Support</li>
+                      <li class="footer-menu-li">Track Orders</li>
+                      <li class="footer-menu-li">Track Return</li>
+                      <li class="footer-menu-li">Accepted Payment Methods</li>
+                      <li class="footer-menu-li">FAQ</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+    
+              <div class="footer-items">
+                <div class="footer-block">
+                  <h2 class="footer-block-tittle">About Us</h2>
+                  <div class="footer-block-content">
+                    <ul class="footer-menu">
+                      <li>Legal Direction:</li>
+                      <li>Calle Falsa 123, CABA</li>
+                      <li class="footer-menu-li">Contact Mails:</li>
+                      <li>Ecommerce@mirrorlens.com.ar</li>
+                      <li>Branch@mirrorlens.com.ar</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+    
+              <div class="footer-items">
+                <div class="footer-block">
+                  <h2 class="footer-block-tittle">Follow Us</h2>
+                  <div class="footer-block-content">
+                    <ul class="footer-menu-icons">
+                      <li><i class="fab fa-facebook-square"></i></li>
+                      <li><i class="fab fa-instagram-square"></i></li>
+                      <li><i class="fab fa-twitter-square"></i></li>
+                      <li><i class="fab fa-linkedin"></i></li>
+                      <li><i class="fas fa-envelope-square"></i></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </footer>
+</body>
+
+</html>

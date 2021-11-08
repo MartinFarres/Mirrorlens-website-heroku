@@ -1,0 +1,16 @@
+@media (min-width: 1200px) {
+    .three-block-section {
+        display: flex;
+        flex-wrap: nowrap;
+    }
+    .logo img {
+        width: 150px;
+    }
+
+    .three-block-section a:hover {
+        background-size: 102% 410px;
+    }
+    .footer-wrapper {
+        display: flex;
+    }
+}
