@@ -80,22 +80,34 @@ font-size: 20px ;
 font-weight: bold;
 }
 
+
+
+.button-position{
+    text-align:center ;
+
+}
 .button {
-    margin-top: 30px;
+    margin:30px auto ;
+    background-color: white; 
+    border: none;
+    color: black;
+    padding: 15px 32px;
     text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border:2px solid #3483FA  ;
+    border-radius: 15px;
 }
-
-.button button{
-    border-radius: 5px;
-    background-color: #3483FA ;
-    width: 200px;
-    height: 30px;
+.button {
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
 }
-
-button p{
+.button:hover {
+    background-color: #3483FA; /* Green */
     color: white;
-    
 }
+    
 
 .related-products{
       margin: 40px;
@@ -118,7 +130,6 @@ button p{
 }
 .prod2 {
 margin: auto 10px;
-
 }
 
 
