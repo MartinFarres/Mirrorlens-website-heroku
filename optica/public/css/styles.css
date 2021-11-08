@@ -271,3 +271,48 @@ body {
     margin: 0px 4px;
     font-size: 25px;
 }
+
+.cartitems {
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    height: 358px;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    box-shadow: 0 1px 4px 0 rgb(0 0 0 / 50%);
+    flex-direction: column;
+    margin-top: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.cartitems p {
+    font-weight: bold;
+}
+.cartitems a {
+    background-color: gray;
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    margin: 20px auto;
+    border-radius: 5px;
+}
+.cart-content {
+    margin: auto;
+    margin-top: 170px;
+    width: 90%;
+}
+
+.cart-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.cart-header a {
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
