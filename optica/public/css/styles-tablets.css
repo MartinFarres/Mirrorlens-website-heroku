@@ -35,11 +35,4 @@
     .div-slider {
         margin-top: 180px;
     }
-
-    /* FOOTER */
-
-    .footer-wrapper{
-        display: flex;
-        flex-wrap: wrap;
-    }
 }

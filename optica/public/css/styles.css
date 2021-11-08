@@ -1,6 +1,6 @@
 /* ESTILOS COMUNES */
 
-body{
+body {
     background-color: #e7e7e7;
 }
 
@@ -83,7 +83,7 @@ body{
     max-width: 1200px;
     margin: auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
     align-items: center;
 }
@@ -115,8 +115,6 @@ body{
 
 .icon-bars {
     font-size: 22px;
-    width: 42px;
-    padding: 0px 10px;
     color: white;
 }
 
@@ -231,7 +229,6 @@ body{
     margin-top: 3.125rem;
     color: #686868;
     background: #fff;
-    /* text-align: center; */
 }
 .footer-items {
     max-width: 1400px;
