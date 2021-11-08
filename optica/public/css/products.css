@@ -1,94 +1,81 @@
-.header{
-    position: relative;
-}
-
 .prod-container {
     margin: 0px auto;
-    background-color: #e7e7e7; 
+    background-color: #e7e7e7;
 }
 
-.main-product{
+.main-product {
     margin-bottom: 30px;
-    margin-top: 20px;
+    margin-top: 200px;
     height: auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-
-
 }
-.modelos{
+.modelos {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-top: 30px ;
+    margin-top: 30px;
 }
-.modelos img{
+.modelos img {
     width: 80px;
     height: 80px;
-
 }
 
-.image-product{
+.image-product {
     margin-right: 5px;
     display: flex;
     justify-content: center;
     width: auto;
     height: 450px;
-    
 }
 
-.image-product img{
+.image-product img {
     border-radius: 30px;
-    }
+}
 
-.image-product  :hover {
+.image-product :hover {
     box-shadow: 1px -2px 9px 5px rgba(168, 168, 168, 1);
     transition: box-shadow 0.1s;
-   }
-
-    
-.product-description {
-    height:  auto;
-    width: 20%;
-    border : 2px solid rgba;
-    border-radius: 20px;
-    background-color: white;
-    
 }
 
-.product-description h1{
+.product-description {
+    height: auto;
+    width: 20%;
+    border: 2px solid rgba;
+    border-radius: 20px;
+    background-color: white;
+}
+
+.product-description h1 {
     margin-top: 5px;
     font-size: 30px;
     margin-bottom: 30px;
-    font-weight: bold ;
+    font-weight: bold;
     text-align: center;
 }
-.star{
-text-align: center;
-margin-bottom: 25px;
-color:hsl(225, 83%, 50%) ;
+.star {
+    text-align: center;
+    margin-bottom: 25px;
+    color: hsl(225, 83%, 50%);
 }
-.description{
+.description {
     line-height: 2;
 }
 
 .price {
     margin-left: 5px;
-margin-bottom: 25px;
-font-size: 20px ;
-font-weight: bold;
+    margin-bottom: 25px;
+    font-size: 20px;
+    font-weight: bold;
 }
 
-
-
-.button-position{
-    text-align:center ;
-
+.button-position {
+    text-align: center;
 }
 .button {
-    margin:30px auto ;
-    background-color: white; 
+    margin: 30px auto;
+    background-color: white;
     border: none;
     color: black;
     padding: 15px 32px;
@@ -96,7 +83,7 @@ font-weight: bold;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    border:2px solid #3483FA  ;
+    border: 2px solid #3483fa;
     border-radius: 15px;
 }
 .button {
@@ -104,32 +91,26 @@ font-weight: bold;
     transition-duration: 0.4s;
 }
 .button:hover {
-    background-color: #3483FA; /* Green */
+    background-color: #3483fa; /* Green */
     color: white;
 }
-    
 
-.related-products{
-      margin: 40px;
+.related-products {
+    margin: 40px;
     width: auto;
     height: auto;
-
 }
-.related-products h2{
+.related-products h2 {
     font-size: 30px;
     margin-bottom: 30px;
     font-weight: bold;
     text-align: center;
-
-
 }
-.productos2{
+.productos2 {
     justify-content: center;
     display: flex;
     flex-wrap: wrap;
 }
 .prod2 {
-margin: auto 10px;
+    margin: auto 10px;
 }
-
-
