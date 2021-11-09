@@ -1,8 +1,9 @@
-@media (min-width: 480px) and (max-width: 769px) {
+@media (min-width: 480px) and (max-width: 768px) {
     .three-block-section {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-evenly;
+        margin-top: 140px;
     }
 
     .block-shop-for-men {

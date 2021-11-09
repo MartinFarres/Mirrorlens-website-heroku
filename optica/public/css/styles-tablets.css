@@ -42,4 +42,35 @@
     .footer-items {
         max-width: 400px;
     }
+    .three-block-section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+
+    .block-shop-for-men {
+        max-width: 500px;
+        margin: 20px;
+    }
+
+    .block-shop-for-women {
+        max-width: 500px;
+        margin: 20px;
+    }
+
+    .block-shop-do-it {
+        min-height: 330px;
+        max-width: 500px;
+        margin: 20px;
+    }
+
+    .logo img {
+        width: 140px;
+    }
+    .div-slider {
+        margin-top: 140px;
+    }
+    .cart-content {
+        margin-top: 180px;
+    }
 }

@@ -13,6 +13,7 @@ body {
 
 .p {
     padding: 16px;
+    margin-bottom: 0 !important;
 }
 
 .pt {
@@ -67,7 +68,6 @@ body {
 .header {
     padding: 15px;
     width: 100%;
-    background: rgb(31, 31, 31);
     position: fixed;
     z-index: 10;
     top: 0;
@@ -321,4 +321,19 @@ body {
     font-weight: bold;
     margin: 20px auto;
     border-radius: 5px;
+}
+.pt-5 {
+    padding-top: 145px !important;
+}
+.navbar-toggler-icon {
+    width: 20px !important;
+}
+.offcanvas {
+    bottom: auto !important;
+}
+.container-fluid {
+    padding: 0 !important;
+}
+.navbar-toggler {
+    padding: 0.15rem 0.45rem !important;
 }
