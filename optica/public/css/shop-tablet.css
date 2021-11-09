@@ -1,0 +1,9 @@
+@media (min-width: 480px) {
+    .product .product-content .description {
+        display: none;
+    }
+
+    .wrapper {
+        width: 50%;
+    }
+}

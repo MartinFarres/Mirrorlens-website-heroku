@@ -1,0 +1,64 @@
+.container-shop {
+    width: 90%;
+    margin: 122px auto 0px;
+}
+
+.wrapper {
+    width: 100%;
+    padding: 10px;
+}
+
+.article-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+.product {
+    margin: 15px 0;
+    background-color: white;
+}
+
+.product .product-content {
+    padding: 15px;
+    border-top: 1px solid #ebebeb;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.product .product-content .price {
+    width: 30%;
+    padding-bottom: 8px;
+}
+
+.product .product-content .discount {
+    width: 70%;
+}
+
+.product .truck-icon {
+    border-radius: 50%;
+    padding: 5px;
+    position: absolute;
+    right: 20px;
+    top: -15px;
+    background-color: white;
+    color: green;
+}
+
+.circle {
+    background-color: #fff;
+    border: 1px solid red;
+    height: 100px;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    width: 100px;
+}
+
+.wrapper a{
+    text-decoration: none;
+}
+
+.shop-heading{
+    border-bottom: solid black 2px;
+    font-size: 28px;
+}
