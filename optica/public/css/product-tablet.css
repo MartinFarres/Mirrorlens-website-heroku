@@ -1,0 +1,45 @@
+@media(max-width: 769px) {
+    .modelos {
+        max-height: 160px;
+        margin: auto 0;
+    }
+    .image-product {
+        height: auto;
+    }
+    .rusty-bruk {
+        max-width: 350px;
+    }
+    .product-description {
+        text-align: center;
+        padding: 20px 5px;
+    }
+    .product-description h1 {
+        font-size: 15px;
+    }
+    .description {
+        display: none;
+    }
+    .button {
+        display: none;
+    }
+    .button-tablet {
+        max-width: 100px;
+        display: inline;
+    }
+
+    /* TODO: CENTRAR EL PRODUCTOS2*/
+    .productos2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .prod2 {
+        margin-bottom: 15px;
+    }
+    .prod2 img {
+        max-height: 150px;
+        max-width: 150px;
+    }
+}

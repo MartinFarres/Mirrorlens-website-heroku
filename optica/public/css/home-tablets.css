@@ -1,4 +1,4 @@
-@media (min-width: 480px) {
+@media (min-width: 480px) and (max-width: 769px) {
     .three-block-section {
         display: flex;
         flex-wrap: wrap;

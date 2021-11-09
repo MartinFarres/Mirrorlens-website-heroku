@@ -1,0 +1,21 @@
+@media (max-width: 480px) {
+    .modelos {
+        display: none;
+    }
+
+    .rusty-bruk {
+        max-width: 400px;
+    }
+
+    .product-description {
+        max-width: 400px;
+        width: 100%;
+        margin-top: 15px;
+    }
+    .star-description {
+        display: none;
+    }
+    .price {
+        margin-bottom: 5px;
+    }
+}
