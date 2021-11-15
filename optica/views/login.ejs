@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("./partials/head") %>
+        <title>Ingresa</title>
+</head>
+
+<body>
+    <%- include("./partials/header") %>
+        <section>
+            <main class="container-content">
+                <form action="crear-producto" method="post" class="create-form">
+
+                    <div class="control-form">
+                        <input type="text" name="user" placeholder="Nombre de usuario" class="control">
+                    </div>
+
+                    <div class="control-form">
+                        <input type="password" name="pass" placeholder="Contraseña" class="control">
+                    </div>
+
+                    <button type="submit" class="button-form-content">Enviar</button>
+                </form>
+            </main>
+            <%- include("./partials/footer") %>
+</body>
+
+</html>

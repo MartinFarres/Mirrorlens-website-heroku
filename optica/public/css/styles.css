@@ -66,10 +66,10 @@ body {
 /* HEADER */
 
 .header {
-    padding: 15px;
+    padding-bottom: 15px;
     width: 100%;
     position: fixed;
-    z-index: 10;
+    z-index: 100000;
     top: 0;
     left: 0;
     box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.4);
@@ -335,5 +335,13 @@ body {
     padding: 0 !important;
 }
 .navbar-toggler {
-    padding: 0.15rem 0.45rem !important;
+    padding: 0.45rem 0.55rem !important;
+}
+.navbar {
+    margin-bottom: 0 !important;
+}
+
+.navbar-nav {
+    margin: auto !important;
+    padding: 10px !important;
 }

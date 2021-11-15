@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("./partials/head") %>
+        <title>Carrito</title>
+</head>
+
+<body>
+    <%- include("./partials/header") %>
+        <section>
+            <main class="cart-content">
+                <div class="cart-header">
+                    <h1>Tu carrito</h1>
+                    <a href="/views/home.html">Seguir comprando ></a>
+                </div>
+
+                <div class="cartitems">
+                    <p>Tu carrito está vacío</p>
+                    <a href="/home">
+                        <i class="fas fa-shopping-cart icon-shop"></i>Seguir comprando
+                    </a>
+                </div>
+
+            </main>
+            <%- include("./partials/footer") %>
+
+</body>
+
+</html>
