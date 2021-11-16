@@ -1,6 +1,8 @@
 @media (min-width: 768px) {
     .nav-bar {
         display: block;
+        margin-top: 7px;
+        margin-left: 33px;
     }
     .icon-menu {
         display: none;
@@ -65,12 +67,15 @@
     }
 
     .logo img {
-        width: 140px;
+        width: 65px;
     }
     .div-slider {
         margin-top: 140px;
     }
     .cart-content {
         margin-top: 180px;
+    }
+    .pt-5 {
+        padding-top: 69px !important;
     }
 }
