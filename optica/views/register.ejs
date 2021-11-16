@@ -10,6 +10,14 @@
     <%- include("./partials/header") %>
         <section>
             <main class="container-content">
+                <div class="button-gf">
+                    <button type="submit" class="button-g"><i class="fab fa-google"
+                            style="margin-right: 20px;"></i>Continuar con
+                        Google</button>
+                    <button type="submit" class="button-g"><i class="fab fa-facebook-square"
+                            style="margin-right: 20px;"></i>Continuar con
+                        Facebook</button>
+                </div>
                 <form action="crear-producto" method="post" class="create-form">
                     <div class="control-form">
                         <input type="text" name="nombre" placeholder="Nombre y apellido" class="control">
@@ -28,19 +36,16 @@
                         <input type="text" name="direction" placeholder="Domicilio" class="control">
                     </div>
 
-                    <div class="control-form">
-                        <label>Seleccioná una foto de perfil:</label>
-                        <input type="file" name="avatar" accept="image/*" class="control">
-                    </div>
+
                     <div class="control-form">
                         <input type="password" name="pass" placeholder="Contraseña" class="control">
                     </div>
                     <div class="control-form">
                         <input type="password" name="pass" placeholder="Confirmar Contraseña" class="control">
                     </div>
-                    <button type="submit" class="button-form">Enviar</button>
-                    <button type="reset" class="button-form">Borrar</button>
+                    <button type="submit" class="button-form">Crear cuenta</button>
                 </form>
+
             </main>
             <%- include("./partials/footer") %>
 </body>
