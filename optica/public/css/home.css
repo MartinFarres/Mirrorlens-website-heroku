@@ -48,7 +48,6 @@
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    margin-top: 65px;
 }
 .blocks-shops {
     margin-top: 0.5px;
@@ -68,7 +67,6 @@
     background-repeat: no-repeat;
     background-size: 100% 400px;
     position: relative;
-    
 }
 .block-shop-do-it {
     width: inherit;
