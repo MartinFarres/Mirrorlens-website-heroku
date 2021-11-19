@@ -25,4 +25,15 @@
     .div-slider {
         margin-top: 140px;
     }
+    .top-part-articulo img {
+        width: -webkit-fill-available;
+        max-width: 285px;
+    }
+
+    .container-mv .subcontainer-mv {
+        min-height: 107vh;
+    }
+    .container-mv .ul {
+        justify-content: space-evenly;
+    }
 }

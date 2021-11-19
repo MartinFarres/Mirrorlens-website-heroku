@@ -11,3 +11,15 @@
         display: flex;
     }
 }
+@media (min-width: 1024px){
+    .articulo-mv{
+        width: 25%;
+    }
+    .container-mv .subcontainer-mv{
+        min-height: 60vh;
+    }
+    .container-mv .ul {
+        justify-content: space-evenly;
+    }
+    
+}
