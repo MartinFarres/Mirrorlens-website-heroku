@@ -1,8 +1,6 @@
 @media (min-width: 768px) {
     .nav-bar {
         display: block;
-        margin-top: 7px;
-        margin-left: 33px;
     }
     .icon-menu {
         display: none;
@@ -27,8 +25,8 @@
         flex-wrap: nowrap;
     }
     .nav-bar a {
-        font-size: 12px;
-        padding: 8px;
+        font-size: 10px;
+        padding: 7px;
     }
     .right-icon-menu-desktop i {
         padding: 5px;
@@ -73,9 +71,7 @@
     .div-slider {
         margin-top: 140px;
     }
-    .cart-content {
-        margin-top: 180px;
-    }
+
     .pt-5 {
         padding-top: 60px !important;
     }

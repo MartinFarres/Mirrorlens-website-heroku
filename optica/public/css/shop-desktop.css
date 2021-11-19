@@ -1,4 +1,4 @@
-@media (min-width: 1200px) {
+@media (min-width: 1000px) {
     .wrapper {
         width: 25%;
     }
@@ -7,47 +7,7 @@
         margin: 15px 12px;
     }
 
-    .product .product-content .description {
-        display: inline-block;
-        font-size: 22px;
-        font-weight: 400;
-        color: #666;
-        text-align: center;
-        padding: 10px 0;
-    }
-
-    .product .product-content .price {
-        width: 32%;
-        padding-bottom: 8px;
-        font-size: 22px;
-        font-weight: 500;
-        text-align: center;
-    }
-
-    .product .product-content .discount {
-        width: 68%;
-        text-align: center;
-        padding-bottom: 8px;
-        font-size: 20px;
-    }
-
-    .product .product-content .description {
-        display: none;
-    }
-
     .product:hover {
         box-shadow: 0 30px 40px rgba(0, 0, 0, 0.125);
-    }
-
-    .product:hover .description {
-        display: block;
-    }
-
-    .product .truck-icon {
-        transition: transform 0.5s;
-    }
-
-    .product:hover .truck-icon {
-        transform: rotate(-0.25turn);
     }
 }

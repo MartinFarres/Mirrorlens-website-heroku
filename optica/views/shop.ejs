@@ -2,8 +2,11 @@
 <html lang="en">
 
 <head>
+    <link rel="stylesheet" href="/css/shop.css" type="text/css" />
+    <link rel="stylesheet" href="/css/shop-tablet.css" type="text/css" />
+    <link rel="stylesheet" href="/css/shop-desktop.css" type="text/css" />
     <%- include("./partials/head") %>
-        <title>Productos</title>
+
 </head>
 
 <body>
@@ -12,451 +15,61 @@
             <section class="pv">
                 <h2 class="shop-heading">For You</h2>
                 <section class="article-container">
-                    <div class="wrapper">
-                        <article class="product">
-                            <a href="/products">
-                                <img src="\images\lentes-de-sol-rusty-bruk1.jpg" class="w-100" alt="" margin-bot />
-                            </a>
-                            <div class="product-content">
-                                <i class="
-                                            fas
-                                            fa-truck
-                                            truck-icon
-                                            text-green
-                                            b
-                                            border-green
-                                            font-medium
-                                            p
-                                        "></i>
-                                <p class="price font-medium">$500</p>
-                                <p class="discount text-green font-medium">
-                                    10% OFF
-                                </p>
-                                <h3 class="description font-large">
-                                    Rusty Sunglasses
-                                </h3>
-                            </div>
-                        </article>
-                    </div>
+                    <% for(let product of products){ %>
+                        <div class="wrapper">
+                            <article class="product">
 
-                    <div class="wrapper">
-                        <article class="product">
-                            <a href="/products">
-                                <img src="\images\lentes-de-sol-rusty-bruk1.jpg" class="w-100" alt="" margin-bot />
-                            </a>
-                            <div class="product-content">
-                                <i class="
-                                            fas
-                                            fa-truck
-                                            truck-icon
-                                            text-green
-                                            b
-                                            border-green
-                                            font-medium
-                                            p
-                                        "></i>
-                                <p class="price font-medium">$500</p>
-                                <p class="discount text-green font-medium">
-                                    10% OFF
-                                </p>
-                                <h3 class="description font-large">
-                                    Rusty Sunglasses
-                                </h3>
-                            </div>
-                        </article>
-                    </div>
+                                <a href="<%=`/collections/${product.id}` %>">
+                                    <img src="<%= product.img %> " class="w-100" alt="" margin-bot />
+                                </a>
+                                <div class="product-content">
 
-                    <div class="wrapper">
-                        <article class="product">
-                            <a href="/products">
-                                <img src="\images\lentes-de-sol-rusty-bruk1.jpg" class="w-100" alt="" margin-bot />
-                            </a>
-                            <div class="product-content">
-                                <i class="
-                                            fas
-                                            fa-truck
-                                            truck-icon
-                                            text-green
-                                            b
-                                            border-green
-                                            font-medium
-                                            p
-                                        "></i>
-                                <p class="price font-medium">$500</p>
-                                <p class="discount text-green font-medium">
-                                    10% OFF
-                                </p>
-                                <h3 class="description font-large">
-                                    Rusty Sunglasses
-                                </h3>
-                            </div>
-                        </article>
-                    </div>
+                                    <h3 class="description font-large">
+                                        <%= product.name %>
+                                    </h3>
+                                    <p class="price font-medium">
+                                        <%= product.price %>
+                                    </p>
+                                    <p class="discount text-green font-medium">
+                                        <%= product.desc %>
+                                    </p>
+                                </div>
+                            </article>
+                        </div>
+                        <% } %>
+                </section>
+            </section>
 
-                    <div class="wrapper">
-                        <article class="product">
-                            <a href="/products">
-                                <img src="\images\lentes-de-sol-rusty-bruk1.jpg" class="w-100" alt="" margin-bot />
-                            </a>
-                            <div class="product-content">
-                                <i class="
-                                            fas
-                                            fa-truck
-                                            truck-icon
-                                            text-green
-                                            b
-                                            border-green
-                                            font-medium
-                                            p
-                                        "></i>
-                                <p class="price font-medium">$500</p>
-                                <p class="discount text-green font-medium">
-                                    10% OFF
-                                </p>
-                                <h3 class="description font-large">
-                                    Rusty Sunglasses
-                                </h3>
-                            </div>
-                        </article>
-                    </div>
-
-                    <div class="wrapper">
-                        <article class="product">
-                            <a href="/products">
-                                <img src="\images\lentes-de-sol-rusty-bruk1.jpg" class="w-100" alt="" margin-bot />
-                            </a>
-                            <div class="product-content">
-                                <i class="
-                                            fas
-                                            fa-truck
-                                            truck-icon
-                                            text-green
-                                            b
-                                            border-green
-                                            font-medium
-                                            p
-                                        "></i>
-                                <p class="price font-medium">$500</p>
-                                <p class="discount text-green font-medium">
-                                    10% OFF
-                                </p>
-                                <h3 class="description font-large">
-                                    Rusty Sunglasses
-                                </h3>
-                            </div>
-                        </article>
-                    </div>
-
-                    <div class="wrapper">
-                        <article class="product">
-                            <a href="/products">
-                                <img src="\images\lentes-de-sol-rusty-bruk1.jpg" class="w-100" alt="" margin-bot />
-                            </a>
-                            <div class="product-content">
-                                <i class="
-                                            fas
-                                            fa-truck
-                                            truck-icon
-                                            text-green
-                                            b
-                                            border-green
-                                            font-medium
-                                            p
-                                        "></i>
-                                <p class="price font-medium">$500</p>
-                                <p class="discount text-green font-medium">
-                                    10% OFF
-                                </p>
-                                <h3 class="description font-large">
-                                    Rusty Sunglasses
-                                </h3>
-                            </div>
-                        </article>
-                    </div>
-
-                    <div class="wrapper">
-                        <article class="product">
-                            <a href="/products">
-                                <img src="\images\lentes-de-sol-rusty-bruk1.jpg" class="w-100" alt="" margin-bot />
-                            </a>
-                            <div class="product-content">
-                                <i class="
-                                            fas
-                                            fa-truck
-                                            truck-icon
-                                            text-green
-                                            b
-                                            border-green
-                                            font-medium
-                                            p
-                                        "></i>
-                                <p class="price font-medium">$500</p>
-                                <p class="discount text-green font-medium">
-                                    10% OFF
-                                </p>
-                                <h3 class="description font-large">
-                                    Rusty Sunglasses
-                                </h3>
-                            </div>
-                        </article>
-                    </div>
-
-                    <div class="wrapper">
-                        <article class="product">
-                            <a href="/products">
-                                <img src="\images\lentes-de-sol-rusty-bruk1.jpg" class="w-100" alt="" margin-bot />
-                            </a>
-                            <div class="product-content">
-                                <i class="
-                                            fas
-                                            fa-truck
-                                            truck-icon
-                                            text-green
-                                            b
-                                            border-green
-                                            font-medium
-                                            p
-                                        "></i>
-                                <p class="price font-medium">$500</p>
-                                <p class="discount text-green font-medium">
-                                    10% OFF
-                                </p>
-                                <h3 class="description font-large">
-                                    Rusty Sunglasses
-                                </h3>
-                            </div>
-                        </article>
-                    </div>
-                    <!-- ----------------------------------------------------------------------------------
+            <!-- ----------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------- -->
-                    <section class="pv">
-                        <h2 class="shop-heading">Shop</h2>
-                        <section class="article-container">
-                            <div class="wrapper">
-                                <article class="product">
-                                    <a href="/products">
-                                        <img src="\images\lentes-de-sol-rusty-bruk1.jpg" class="w-100" alt=""
-                                            margin-bot />
-                                    </a>
-                                    <div class="product-content">
-                                        <i class="
-                                            fas
-                                            fa-truck
-                                            truck-icon
-                                            text-green
-                                            b
-                                            border-green
-                                            font-medium
-                                            p
-                                        "></i>
-                                        <p class="price font-medium">$500</p>
-                                        <p class="discount text-green font-medium">
-                                            10% OFF
-                                        </p>
-                                        <h3 class="description font-large">
-                                            Rusty Sunglasses
-                                        </h3>
-                                    </div>
-                                </article>
-                            </div>
+            <section class="pv">
+                <h2 class="shop-heading">Shop</h2>
+                <section class="article-container">
+                    <% for(let product of products){ %>
+                        <div class="wrapper">
+                            <article class="product">
 
-                            <div class="wrapper">
-                                <article class="product">
-                                    <a href="/products">
-                                        <img src="\images\lentes-de-sol-rusty-bruk1.jpg" class="w-100" alt=""
-                                            margin-bot />
-                                    </a>
-                                    <div class="product-content">
-                                        <i class="
-                                            fas
-                                            fa-truck
-                                            truck-icon
-                                            text-green
-                                            b
-                                            border-green
-                                            font-medium
-                                            p
-                                        "></i>
-                                        <p class="price font-medium">$500</p>
-                                        <p class="discount text-green font-medium">
-                                            10% OFF
-                                        </p>
-                                        <h3 class="description font-large">
-                                            Rusty Sunglasses
-                                        </h3>
-                                    </div>
-                                </article>
-                            </div>
+                                <a href="<%=`/collections/${product.id}` %>">
+                                    <img src="<%= product.img %> " class="w-100" alt="" margin-bot />
+                                </a>
+                                <div class="product-content">
 
-                            <div class="wrapper">
-                                <article class="product">
-                                    <a href="/products">
-                                        <img src="\images\lentes-de-sol-rusty-bruk1.jpg" class="w-100" alt=""
-                                            margin-bot />
-                                    </a>
-                                    <div class="product-content">
-                                        <i class="
-                                            fas
-                                            fa-truck
-                                            truck-icon
-                                            text-green
-                                            b
-                                            border-green
-                                            font-medium
-                                            p
-                                        "></i>
-                                        <p class="price font-medium">$500</p>
-                                        <p class="discount text-green font-medium">
-                                            10% OFF
-                                        </p>
-                                        <h3 class="description font-large">
-                                            Rusty Sunglasses
-                                        </h3>
-                                    </div>
-                                </article>
-                            </div>
-
-                            <div class="wrapper">
-                                <article class="product">
-                                    <a href="/products">
-                                        <img src="\images\lentes-de-sol-rusty-bruk1.jpg" class="w-100" alt=""
-                                            margin-bot />
-                                    </a>
-                                    <div class="product-content">
-                                        <i class="
-                                            fas
-                                            fa-truck
-                                            truck-icon
-                                            text-green
-                                            b
-                                            border-green
-                                            font-medium
-                                            p
-                                        "></i>
-                                        <p class="price font-medium">$500</p>
-                                        <p class="discount text-green font-medium">
-                                            10% OFF
-                                        </p>
-                                        <h3 class="description font-large">
-                                            Rusty Sunglasses
-                                        </h3>
-                                    </div>
-                                </article>
-                            </div>
-
-                            <div class="wrapper">
-                                <article class="product">
-                                    <a href="/products">
-                                        <img src="\images\lentes-de-sol-rusty-bruk1.jpg" class="w-100" alt=""
-                                            margin-bot />
-                                    </a>
-                                    <div class="product-content">
-                                        <i class="
-                                            fas
-                                            fa-truck
-                                            truck-icon
-                                            text-green
-                                            b
-                                            border-green
-                                            font-medium
-                                            p
-                                        "></i>
-                                        <p class="price font-medium">$500</p>
-                                        <p class="discount text-green font-medium">
-                                            10% OFF
-                                        </p>
-                                        <h3 class="description font-large">
-                                            Rusty Sunglasses
-                                        </h3>
-                                    </div>
-                                </article>
-                            </div>
-
-                            <div class="wrapper">
-                                <article class="product">
-                                    <a href="/products">
-                                        <img src="\images\lentes-de-sol-rusty-bruk1.jpg" class="w-100" alt=""
-                                            margin-bot />
-                                    </a>
-                                    <div class="product-content">
-                                        <i class="
-                                            fas
-                                            fa-truck
-                                            truck-icon
-                                            text-green
-                                            b
-                                            border-green
-                                            font-medium
-                                            p
-                                        "></i>
-                                        <p class="price font-medium">$500</p>
-                                        <p class="discount text-green font-medium">
-                                            10% OFF
-                                        </p>
-                                        <h3 class="description font-large">
-                                            Rusty Sunglasses
-                                        </h3>
-                                    </div>
-                                </article>
-                            </div>
-
-                            <div class="wrapper">
-                                <article class="product">
-                                    <a href="/products">
-                                        <img src="\images\lentes-de-sol-rusty-bruk1.jpg" class="w-100" alt=""
-                                            margin-bot />
-                                    </a>
-                                    <div class="product-content">
-                                        <i class="
-                                            fas
-                                            fa-truck
-                                            truck-icon
-                                            text-green
-                                            b
-                                            border-green
-                                            font-medium
-                                            p
-                                        "></i>
-                                        <p class="price font-medium">$500</p>
-                                        <p class="discount text-green font-medium">
-                                            10% OFF
-                                        </p>
-                                        <h3 class="description font-large">
-                                            Rusty Sunglasses
-                                        </h3>
-                                    </div>
-                                </article>
-                            </div>
-
-                            <div class="wrapper">
-                                <article class="product">
-                                    <a href="/products">
-                                        <img src="\images\lentes-de-sol-rusty-bruk1.jpg" class="w-100" alt=""
-                                            margin-bot />
-                                    </a>
-                                    <div class="product-content">
-                                        <i class="
-                                            fas
-                                            fa-truck
-                                            truck-icon
-                                            text-green
-                                            b
-                                            border-green
-                                            font-medium
-                                            p
-                                        "></i>
-                                        <p class="price font-medium">$500</p>
-                                        <p class="discount text-green font-medium">
-                                            10% OFF
-                                        </p>
-                                        <h3 class="description font-large">
-                                            Rusty Sunglasses
-                                        </h3>
-                                    </div>
-                                </article>
-                            </div>
-                        </section>
+                                    <h3 class="description font-large">
+                                        <%= product.name %>
+                                    </h3>
+                                    <p class="price font-medium">
+                                        <%= product.price %>
+                                    </p>
+                                    <p class="discount text-green font-medium">
+                                        <%= product.desc %>
+                                    </p>
+                                </div>
+                            </article>
+                        </div>
+                        <% } %>
+                </section>
+            </section>
         </main>
         <%- include("./partials/footer") %>
 </body>

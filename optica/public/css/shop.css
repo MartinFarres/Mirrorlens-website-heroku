@@ -1,10 +1,10 @@
 .container-shop {
     width: 90%;
-    margin: 122px auto 0px;
+    margin: 70px auto 0px;
 }
 
 .wrapper {
-    width: 100%;
+    width: 50%;
     padding: 10px;
 }
 
@@ -15,23 +15,28 @@
 .product {
     margin: 15px 0;
     background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .product .product-content {
-    padding: 15px;
-    border-top: 1px solid #ebebeb;
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
+    text-align: center;
+}
+.product .product-content h3 {
+    font-size: 11px;
+    font-weight: bold;
 }
 
 .product .product-content .price {
-    width: 30%;
-    padding-bottom: 8px;
+    font-size: 11px;
+    font-weight: bold;
 }
 
 .product .product-content .discount {
     width: 70%;
+    font-size: 14px;
+    display: none;
 }
 
 .product .truck-icon {
@@ -61,4 +66,5 @@
 .shop-heading {
     border-bottom: solid black 2px;
     font-size: 28px;
+    padding-bottom: 20px;
 }
