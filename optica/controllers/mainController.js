@@ -58,7 +58,27 @@ const products = [
         img: "/images/VULKGEESSDEMI-B10POL_800x.jpg",
         img2: "/images/VULKGEESSDEMI-B10POL_2_1800x1132.jpg",
         img3: "/images/VULKGEESSDEMI-B10POL_3_1800x1132.jpg",
-        descr: "Color: Tortoise, Color de lente: aMarron, Material: TR90, Medidas: 58-16-125, Tipo: Unisex / Aro Completo, Peso: 28 gramos",
+        descr: "Color: Tortoise, Color de lente: Marron, Material: TR90, Medidas: 58-16-125, Tipo: Unisex / Aro Completo, Peso: 28 gramos",
+    },
+    {
+        id: 1007,
+        name: "RALPH 5160 510 13",
+        desc: "20% OFF",
+        price: "$12.650",
+        img: "/images/0RA5160__510_13_000A_1413x889.jpg",
+        img2: "/images/0RA5160__510_13_030A_1560x981.jpg",
+        img3: "/images/0RA5160__510_13_090A_1433x902.jpg",
+        descr: "Color: Tortoise, Color de lente: Marron, Material: Plastico, Medidas: 57-17-135, Tipo: Mujer / Aro Completo, Peso: 30 gramos",
+    },
+    {
+        id: 1008,
+        name: "RUSTY MANIC SBLK R.BLUE",
+        desc: "20% OFF",
+        price: "$6.630",
+        img: "/images/RUSTY_MANIC_SBLK_REVO_BLUE_1800x1132.jpg",
+        img2: "/images/RUSTY_MANIC_SBLK_REVO_BLUE_2_1800x1132.jpg",
+        img3: "/images/Medidas-Final_44b4698e-f740-45d5-b0ec-725ce4d9c426_800x.jpg",
+        descr: "Color: Negro, Color de lente: Espejado Azul, Material: Plastico, Medidas: 50-14-140, Tipo: Unisex / Aro Completo, Peso: 28 gramos",
     },
 ];
 const mainController = {
