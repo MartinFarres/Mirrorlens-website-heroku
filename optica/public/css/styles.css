@@ -364,3 +364,8 @@ body {
     margin: auto !important;
     padding: 10px !important;
 }
+
+.carousel-indicators .active {
+    width: 30px !important;
+    height: 3px !important;
+}

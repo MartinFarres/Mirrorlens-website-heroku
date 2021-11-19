@@ -16,6 +16,8 @@ const products = [
         desc: "15% OFF",
         price: "$18.860",
         img: "/images/RAY_BAN_2447_52_901_800x.jpg",
+        img2: "/images/RAY_BAN_2447_52_901_2_160x.jpg",
+        img3: "/images/RAY_BAN_2447_52_901_3_1800x1132.jpg",
         descr: "Color: Negro, Color de lente: G15, Material: Plastico, Medidas: 49-21-145, Tipo: Unisex / Aro Completo, Peso: 30 gramos",
     },
     {
@@ -24,6 +26,8 @@ const products = [
         desc: "10% OFF",
         price: "$7.310",
         img: "/images/VULKYESTERMBLKREVOROSE_800x.jpg",
+        img2: "/images/VULKYESTERMBLKREVOROSE_2_1800x1132.jpg",
+        img3: "/images/VULKYESTERMBLKREVOROSE_3_1800x1132.jpg",
         descr: "Color: Negro Mate, Color de lente: Espejado Rosa, Material: TR90, Medidas: 53-19-140, Tipo: Unisex / Aro Completo, Peso: 28 gramos",
     },
     {
@@ -32,6 +36,8 @@ const products = [
         desc: "15% OFF",
         price: "$5.500",
         img: "/images/NYOL190403S_800x.jpg",
+        img2: "/images/NYOL190403S_2_1800x1132.jpg",
+        img3: "/images/NYOL190403S_3_1800x1132.jpg",
         descr: "Color: Negro Mate, Color de lente: Gris Polarizadas, Material: Metal, Medidas: 50-17-145, Tipo: Unisex / Aro Completo, Peso: 28 gramos",
     },
     {
@@ -40,6 +46,8 @@ const products = [
         desc: "10% OFF",
         price: "$9.110",
         img: "/images/REEF22402_800x.jpg",
+        img2: "/images/REEF22402_2_1800x1132.jpg",
+        img3: "/images/REEF22402_3_1800x1132.jpg",
         descr: "Color: Gris Mate, Color de lente: Gris Polarizadas, Material: TR90 y Metal, Medidas: 54-17-134, Tipo: Unisex / Aro Completo, Peso: 28 gramos",
     },
     {
@@ -48,6 +56,8 @@ const products = [
         desc: "20% OFF",
         price: "$6.990",
         img: "/images/VULKGEESSDEMI-B10POL_800x.jpg",
+        img2: "/images/VULKGEESSDEMI-B10POL_2_1800x1132.jpg",
+        img3: "/images/VULKGEESSDEMI-B10POL_3_1800x1132.jpg",
         descr: "Color: Tortoise, Color de lente: aMarron, Material: TR90, Medidas: 58-16-125, Tipo: Unisex / Aro Completo, Peso: 28 gramos",
     },
 ];
