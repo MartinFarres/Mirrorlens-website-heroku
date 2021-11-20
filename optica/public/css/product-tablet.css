@@ -7,4 +7,7 @@
     .carousel {
         width: 60% !important;
     }
+    .carousel-1 {
+        width: auto !important;
+    }
 }
