@@ -45,12 +45,6 @@
                 <%= product.descr %>
               </P>
 
-
-
-
-
-
-
             </div>
             <button class="button-product" type="submit" name="comprar" id="">Agregar al carrito - <%= product.price %>
             </button>
@@ -60,45 +54,7 @@
 
       </section>
 
-
-
-      <section class="related-products">
-        <h2>Productos Relacionados</h2>
-
-
-        <div class="productos2">
-
-          <div class="prod2">
-            <img src="/images/descarga (3).jpg" alt="">
-            <div>
-              <i></i>
-              <h3>Ray Ban Hexagonal</h3>
-              <p>Modernos Ray Ban Hexagonal unisex</p>
-            </div>
-
-          </div>
-
-          <div class="prod2">
-            <img src="/images/images (5).jpg" alt="">
-            <div>
-              <i></i>
-              <h3>Ray Ban Clasic</h3>
-              <p>Clasic Ray Ban Hexagonal unisex</p>
-            </div>
-
-          </div>
-          <div class="prod2">
-            <img src="/images/descarga (3).jpg" alt="">
-            <div>
-              <i></i>
-              <h3>Ray Ban Hexagonal</h3>
-              <p>Modernos Ray Ban Hexagonal unisex</p>
-            </div>
-
-          </div>
-
-        </div>
-      </section>
+      <%- include("./partials/carrousel-footer") %>
     </main>
     <%- include("./partials/footer") %>
 </body>

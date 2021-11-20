@@ -99,7 +99,7 @@ const mainController = {
         res.render("shop", { products, pageTitle: "Productos - Mirrorlens" });
     },
     products: function (req, res) {
-        res.render("products");
+        res.render("products", { products });
     },
     cart: function (req, res) {
         res.render("cart", {
@@ -115,6 +115,7 @@ const mainController = {
             res.render("products", {
                 product,
                 pageTitle: product.name + " - Mirrorlens",
+                products,
             });
         } else {
             res.send("te equivocaste");
