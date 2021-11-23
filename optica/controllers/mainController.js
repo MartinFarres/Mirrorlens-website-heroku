@@ -131,6 +131,16 @@ const mainController = {
         }
         res.render("productsResult", { precioMax: precioMax });
     },
+    create: function (req, res) {
+        res.render("formularioCarga", {
+            pageTitle: "Crea tu producto",
+        });
+    },
+    modify: function (req, res) {
+        res.render("formularioEditor", {
+            pageTitle: "Modifica tu producto",
+        });
+    },
 };
 
 module.exports = mainController;
