@@ -118,7 +118,7 @@ const mainController = {
                 products,
             });
         } else {
-            res.send("te equivocaste");
+            res.render("not-found");
         }
     },
     search: function (req, res) {
