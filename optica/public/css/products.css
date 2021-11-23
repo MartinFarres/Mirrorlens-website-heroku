@@ -3,7 +3,7 @@
 }
 
 .main-product {
-    margin-top: 73px;
+    margin: 0px auto;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -154,6 +154,7 @@
 
 .carousel {
     width: 90% !important;
+    max-width: 1170px !important;
 }
 .carousel-inner {
     border-radius: 15px !important;

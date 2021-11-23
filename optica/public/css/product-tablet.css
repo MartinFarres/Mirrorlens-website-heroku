@@ -1,7 +1,9 @@
 @media (min-width: 1000px) {
     .main-product {
         flex-direction: row;
-        justify-content: space-evenly;
+        justify-content: space-between;
+        max-width: 1170px;
+        align-items: center;
     }
 
     .carousel {
@@ -9,5 +11,8 @@
     }
     .carousel-1 {
         width: auto !important;
+    }
+    .product-button {
+        width: 30%;
     }
 }

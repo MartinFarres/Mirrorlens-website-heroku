@@ -48,7 +48,7 @@
                         <form class=" d-flex" action="/search" method="get">
                                     <input class="form-control me-2" type="text" placeholder="Buscar"
                                         aria-label="Search" name="search">
-                                    <button class="btn btn-outline-success" type="submit">Buscar</button>
+                                    <button class="btn btn-outline-success button-head" type="submit">Buscar</button>
                                     </form>
                     </div>
                 </div>
@@ -61,7 +61,25 @@
         </div>
 
         <div class="right-icon-menu-desktop">
-            <i class="fas fa-search icon-search"></i>
+
+            <div class="collapse" id="navbarToggleExternalContent">
+                <div class="bg-dark p-4">
+                    <form class="searchDesktop" action="/search" method="get">
+                        <input class="form-control me-2" type="text" placeholder="Buscar" aria-label="Search"
+                            name="search">
+                        <button class="btn btn-outline-success button-head" type="submit">Buscar</button>
+                    </form>
+                </div>
+            </div>
+            <nav>
+                <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-search icon-search"></i>
+                    </button>
+                </div>
+            </nav>
             <i class="far fa-heart icon-search"></i>
 
             <a href="/login"><i class="far fa-user icon-search"></i></a>

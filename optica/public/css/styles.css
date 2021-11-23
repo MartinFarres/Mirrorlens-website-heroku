@@ -369,3 +369,24 @@ body {
     width: 30px !important;
     height: 3px !important;
 }
+.searchDesktop {
+    display: flex !important;
+    position: absolute !important;
+    left: 0px !important;
+    width: 100% !important;
+    top: 15px !important;
+    padding: 0px 6% !important;
+}
+.bg-dark {
+    position: absolute !important;
+    left: 0px !important;
+    width: 100% !important;
+    top: 60px !important;
+    padding: 30px !important;
+    background-color: rgb(31, 31, 31) !important;
+}
+.button-head {
+    background-color: white !important;
+    color: black !important;
+    font-weight: bold !important;
+}
