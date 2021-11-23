@@ -7,22 +7,24 @@
 
 <body>
     <%- include("./partials/header") %>
-        <p>Editar Tipo De Producto: <input type="text" name="tipoproducto"></p>
-        <p>Editar Nombre Del Producto: <input type="text" name="nombredelproducto"></p>
-        <p>Editar Modelo Del Producto: <input type="text" name="modelodelproducto"></p>
-        <p>Editar Color: <input type="text" name="colordelproducto"></p>
-        <p>Editar Precio: <input type="number" name="numero" step="any">
-            Moneda:
-            <select name="Moneda">
-                <option>Reales</option>
-                <option>Dolares</option>
-                <option>Euros</option>
-                <option>Pesos</option>
-            </select>
-        </p>
-        <p><input type="text" name="texto" placeholder="Descripcion Del Producto"></p>
-        <input type="reset" value="Reiniciar el formulario">
-        <input type="submit" value="Guardar Edicion">
+        <div class="container-content">
+            <p>Editar Tipo De Producto: <input type="text" name="tipoproducto"></p>
+            <p>Editar Nombre Del Producto: <input type="text" name="nombredelproducto"></p>
+            <p>Editar Modelo Del Producto: <input type="text" name="modelodelproducto"></p>
+            <p>Editar Color: <input type="text" name="colordelproducto"></p>
+            <p>Editar Precio: <input type="number" name="numero" step="any">
+                Moneda:
+                <select name="Moneda">
+                    <option>Reales</option>
+                    <option>Dolares</option>
+                    <option>Euros</option>
+                    <option>Pesos</option>
+                </select>
+            </p>
+            <p><input type="text" name="texto" placeholder="Descripcion Del Producto"></p>
+            <input type="reset" value="Reiniciar el formulario">
+            <input type="submit" value="Guardar Edicion">
+        </div>
         <%- include("./partials/footer") %>
 </body>
 
