@@ -7,33 +7,35 @@
 
 <body>
     <%- include("./partials/header") %>
-        <form action="crear-producto" method="post" class="create-form">
-            <div class="control-form">
-                <input type="text" name="nombre" placeholder="Nombre Del Producto" class="control">
-            </div>
-            <div class="control-form">
-                <input type="text" name="user" placeholder="Modelo Del Producto" class="control">
-            </div>
-            <div class="control-form">
-                <input type="text" name="user" placeholder="Color" class="control">
-            </div>
-            <div class="control-form">
-                <input type="text" name="user" placeholder="Precio" class="control">
-            </div>
-            <div class="control-form">
-                <input type="text" name="user" placeholder="Descripción del producto" class="control">
-            </div>
-            <div class="control-form">
-                <label>Moneda</label>
-                <select name="Moneda">
-                    <option>Reales</option>
-                    <option>Dolares</option>
-                    <option>Euros</option>
-                    <option>Pesos</option>
-                </select>
-            </div>
-            <button type="submit" class="button-form">Publicar</button>
-        </form>
+        <main class="container-content">
+            <form action="crear-producto" method="post" class="create-form">
+                <div class="control-form">
+                    <input type="text" name="nombre" placeholder="Nombre Del Producto" class="control">
+                </div>
+                <div class="control-form">
+                    <input type="text" name="user" placeholder="Modelo Del Producto" class="control">
+                </div>
+                <div class="control-form">
+                    <input type="text" name="user" placeholder="Color" class="control">
+                </div>
+                <div class="control-form">
+                    <input type="text" name="user" placeholder="Precio" class="control">
+                </div>
+                <div class="control-form">
+                    <input type="text" name="user" placeholder="Descripción del producto" class="control">
+                </div>
+                <div class="control-form">
+                    <label>Moneda</label>
+                    <select name="Moneda">
+                        <option>Reales</option>
+                        <option>Dolares</option>
+                        <option>Euros</option>
+                        <option>Pesos</option>
+                    </select>
+                </div>
+                <button type="submit" class="button-form">Publicar</button>
+            </form>
+        </main>
 
         <%- include("./partials/footer") %>
 </body>
