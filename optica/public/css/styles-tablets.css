@@ -19,7 +19,8 @@
     }
 
     .right-icon-menu-desktop {
-        display: inline-block;
+        display: inline-flex;
+        align-items: center;
     }
     .header-container {
         flex-wrap: nowrap;
