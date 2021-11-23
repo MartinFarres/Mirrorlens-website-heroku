@@ -177,12 +177,12 @@ body {
 
 .container-content {
     margin: auto;
-    margin-top: 110px;
+    margin-top: 55px;
     width: 300px;
 }
 .container-content-login {
     margin: auto;
-    margin-top: 110px;
+    margin-top: 55px;
     width: 300px;
 }
 .create-form {
@@ -313,7 +313,7 @@ body {
 
 .cart-content {
     margin: auto;
-    margin-top: 70px;
+    margin-top: 0px;
     width: 90%;
 }
 
@@ -342,7 +342,7 @@ body {
     border-radius: 5px;
 }
 .pt-5 {
-    padding-top: 152px !important;
+    padding-top: 0px !important;
 }
 .navbar-toggler-icon {
     width: 20px !important;

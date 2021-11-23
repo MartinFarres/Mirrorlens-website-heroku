@@ -121,6 +121,16 @@ const mainController = {
             res.send("te equivocaste");
         }
     },
+    search: function (req, res) {
+        let busqueda = req.query.search;
+        let precioMax = [];
+        for (let i = 0; i < products.length; i++) {
+            if (products[i].name.includes(busqueda.toUpperCase())) {
+                precioMax.push(products[i]);
+            }
+        }
+        res.render("productsResult", { precioMax: precioMax });
+    },
 };
 
 module.exports = mainController;

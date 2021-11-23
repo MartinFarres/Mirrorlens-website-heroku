@@ -9,4 +9,5 @@ router.get("/register", mainController.register);
 router.get("/products", mainController.products);
 router.get("/collections", mainController.shop);
 router.get("/collections/:id", mainController.detalle);
+router.get("/search", mainController.search);
 module.exports = router;
