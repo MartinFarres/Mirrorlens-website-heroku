@@ -7,24 +7,39 @@
 
 <body>
     <%- include("./partials/header") %>
-        <div class="container-content">
-            <p>Editar Tipo De Producto: <input type="text" name="tipoproducto"></p>
-            <p>Editar Nombre Del Producto: <input type="text" name="nombredelproducto"></p>
-            <p>Editar Modelo Del Producto: <input type="text" name="modelodelproducto"></p>
-            <p>Editar Color: <input type="text" name="colordelproducto"></p>
-            <p>Editar Precio: <input type="number" name="numero" step="any">
-                Moneda:
+        <form action="crear-producto" method="post" class="create-form">
+            <div class="control-form">
+                <input type="text" name="nombre" placeholder="Editar Tipo De Producto" class="control">
+            </div>
+            <div class="control-form">
+                <input type="text" name="user" placeholder="Editar Nombre Del Producto" class="control">
+            </div>
+            <div class="control-form">
+                <input type="text" name="user" placeholder="Editar Modelo Del Producto" class="control">
+            </div>
+            <div class="control-form">
+                <input type="text" name="user" placeholder="Editar Color" class="control">
+            </div>
+            <div class="control-form">
+                <input type="text" name="user" placeholder="Editar Precio" class="control">
+            </div>
+            <div class="control-form">
+                <label>Moneda</label>
                 <select name="Moneda">
                     <option>Reales</option>
                     <option>Dolares</option>
                     <option>Euros</option>
                     <option>Pesos</option>
                 </select>
-            </p>
-            <p><input type="text" name="texto" placeholder="Descripcion Del Producto"></p>
-            <input type="reset" value="Reiniciar el formulario">
-            <input type="submit" value="Guardar Edicion">
-        </div>
+            </div>
+            <div class="control-form">
+                <input type="text" name="user" placeholder="Descripción" class="control">
+            </div>
+            <button type="submit" class="button-form">Guardar Edicion</button>
+
+
+        </form>
+
         <%- include("./partials/footer") %>
 </body>
 
