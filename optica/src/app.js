@@ -3,9 +3,10 @@ const path = require("path");
 const app = express();
 const rutasMain = require("./routers/main");
 
-const publicPath = path.join(__dirname, "public");
+const publicPath = path.join(__dirname, "../public");
 app.use(express.static(publicPath));
 app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "/views"));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
