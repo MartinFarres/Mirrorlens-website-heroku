@@ -64,6 +64,20 @@ const mainController = {
             pageTitle: "Modifica tu producto",
         });
     },
+    createUser: function(req,res){
+        let usuario = {
+            nombre: req.body.nombre,
+            user: req.body.user,
+            mail: req.body.mail,
+            birdate: req.body.birdate,
+            direction: req.body.direction,
+            pass: req.body.pass
+        }
+
+        // GUARDARLA
+
+        res.redirect("/")
+    }
 };
 
 module.exports = mainController;
