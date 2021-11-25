@@ -1,3 +1,4 @@
+const { json } = require("express");
 const fs = require("fs");
 const path = require("path");
 
@@ -75,6 +76,20 @@ const mainController = {
         }
 
         // GUARDARLA
+        
+        let usuarios;
+        let archivoUsuarios = fs.readFileSync("usuarios.json", {encoding: "utf-8"})
+        if (archivoUsuarios == ""){
+            usuarios = []
+        }else{
+            usuarios = JSON.parse(archivoUsuarios)
+        }
+        
+        usuarios.push(usuario)
+
+        usuariosJSON = JSON.stringify(usuarios)
+        
+        fs.writeFileSync("usuarios.json", usuariosJSON)
 
         res.redirect("/")
     }
