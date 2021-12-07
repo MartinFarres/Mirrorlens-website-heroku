@@ -24,36 +24,19 @@
 
                     <div class="control-form">
                         <label>Nombre y apellido:</label>
-                        <input type="text" name="name" class="control <%= locals.errors && errors.name ? 'is-invalid' :
-                            null %>" value="<%= locals.oldData ? oldData.name : null %>">
+                        <input type="text" name="name" class="control">
 
-                        <% if (locals.errors && errors.name) { %>
-                            <p style="color: red">
-                                <%= errors.name.msg %>
-                            </p>
-                            <% } %>
+
                     </div>
                     <div class="control-form">
                         <label>Nombre de usuario:</label>
-                        <input type="text" name="user"
-                            class="control <%= locals.errors && errors.user ? 'is-invalid' : null %>"
-                            value="<%= locals.oldData ? oldData.user : null %>">
-                        <% if (locals.errors && errors.user) { %>
-                            <p style="color: red">
-                                <%= errors.user.msg %>
-                            </p>
-                            <% } %>
+                        <input type="text" name="user" class="control">
+
                     </div>
                     <div class="control-form">
                         <label>Correo electrónico:</label>
-                        <input type="text" name="mail"
-                            class="control <%= locals.errors && errors.mail ? 'is-invalid' : null %>"
-                            value="<%= locals.oldData ? oldData.mail : null %>">
-                        <% if (locals.errors && errors.mail) { %>
-                            <p style="color: red">
-                                <%= errors.mail.msg %>
-                            </p>
-                            <% } %>
+                        <input type="text" name="mail" class="control">
+
                     </div>
                     <div class="control-form">
                         <label>Fecha de nacimiento:</label>
@@ -61,36 +44,20 @@
                     </div>
                     <div class="control-form">
                         <label>Domicilio:</label>
-                        <input type="text" name="direction"
-                            class="control <%= locals.errors && errors.direction ? 'is-invalid' : null %>"
-                            value="<%= locals.oldData ? oldData.direction : null %>">
-                        <% if (locals.errors && errors.direction) { %>
-                            <p style="color: red">
-                                <%= errors.direction.msg %>
-                            </p>
-                            <% } %>
+                        <input type="text" name="direction" class="control">
+
                     </div>
 
 
                     <div class="control-form">
                         <label>Contraseña:</label>
-                        <input type="password" name="pass"
-                            class="control <%= locals.errors && errors.pass ? 'is-invalid' : null %>">
-                        <% if (locals.errors && errors.pass) { %>
-                            <p style="color: red">
-                                <%= errors.pass.msg %>
-                            </p>
-                            <% } %>
+                        <input type="password" name="pass" class="control ">
+
                     </div>
                     <div class="control-form">
                         <label>Confirmar Contraseña:</label>
-                        <input type="password" name="repass"
-                            class="control <%= locals.errors && errors.repass ? 'is-invalid' : null %>">
-                        <% if (locals.errors && errors.repass) { %>
-                            <p style="color: red">
-                                <%= errors.repass.msg %>
-                            </p>
-                            <% } %>
+                        <input type="password" name="repass" class="control ">
+
                     </div>
                     <button type="submit" class="button-form">Crear cuenta</button>
                 </form>

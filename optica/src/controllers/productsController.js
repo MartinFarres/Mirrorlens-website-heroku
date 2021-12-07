@@ -26,32 +26,11 @@ const controller = {
             pageTitle: "Crea tu producto",
         });
     },
-    edit: function (req, res) {
-        const id = req.params.id;
-        const product = productService.findOne(id);
-        res.render("editProd", {
-            product: product,
-            pageTitle: "Editando: " + product.name,
-        });
-    },
+    edit: function (req, res) {},
 
-    update: (req, res, files) => {
-        const id = req.params.id;
-        productService.updateOne(id, req.body, req.files);
+    update: (req, res, files) => {},
 
-        res.redirect(`/collections/${id}`);
-    },
-
-    store: function (req, res) {
-        productService.createOne(req.body, req.files);
-        res.redirect("/collections/");
-
-        /*/ if (req.file) {
-            producto.img = req.file.filename;
-            productoId = mainController.create(producto);
-            res.redirect("/collections/" + productoId);
-        }/*/
-    },
+    store: function (req, res) {},
 };
 
 module.exports = controller;
