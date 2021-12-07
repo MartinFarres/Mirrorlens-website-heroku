@@ -161,3 +161,36 @@
     margin-top: 10px !important;
     margin-bottom: 10px !important;
 }
+
+.button-product-edit {
+    max-width: 450px;
+    background-color: gray;
+    border: none;
+    color: black;
+    padding: 7px 25px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    border: 1px solid gray;
+    text-transform: uppercase;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+.button-product-delete {
+    max-width: 450px;
+    background-color: red;
+    border: none;
+    color: black;
+    padding: 5px 25px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    border: 1px solid red;
+    text-transform: uppercase;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}

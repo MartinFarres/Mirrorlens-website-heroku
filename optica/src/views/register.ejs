@@ -10,6 +10,7 @@
     <%- include("./partials/header") %>
         <section>
             <main class="container-content">
+
                 <div class="button-gf">
                     <button type="submit" class="button-g"><i class="fab fa-google"
                             style="margin-right: 20px;"></i>Continuar con
@@ -18,30 +19,78 @@
                             style="margin-right: 20px;"></i>Continuar con
                         Facebook</button>
                 </div>
-                <form action="/register" method="POST" class="create-form">
+
+                <form action="/register" method="post" class="create-form">
+
                     <div class="control-form">
-                        <input type="text" name="nombre" placeholder="Nombre y apellido" class="control">
+                        <label>Nombre y apellido:</label>
+                        <input type="text" name="name" class="control <%= locals.errors && errors.name ? 'is-invalid' :
+                            null %>" value="<%= locals.oldData ? oldData.name : null %>">
+
+                        <% if (locals.errors && errors.name) { %>
+                            <p style="color: red">
+                                <%= errors.name.msg %>
+                            </p>
+                            <% } %>
                     </div>
                     <div class="control-form">
-                        <input type="text" name="user" placeholder="Nombre de usuario" class="control">
+                        <label>Nombre de usuario:</label>
+                        <input type="text" name="user"
+                            class="control <%= locals.errors && errors.user ? 'is-invalid' : null %>"
+                            value="<%= locals.oldData ? oldData.user : null %>">
+                        <% if (locals.errors && errors.user) { %>
+                            <p style="color: red">
+                                <%= errors.user.msg %>
+                            </p>
+                            <% } %>
                     </div>
                     <div class="control-form">
-                        <input type="email" name="mail" placeholder="E-mail" class="control">
+                        <label>Correo electrónico:</label>
+                        <input type="text" name="mail"
+                            class="control <%= locals.errors && errors.mail ? 'is-invalid' : null %>"
+                            value="<%= locals.oldData ? oldData.mail : null %>">
+                        <% if (locals.errors && errors.mail) { %>
+                            <p style="color: red">
+                                <%= errors.mail.msg %>
+                            </p>
+                            <% } %>
                     </div>
                     <div class="control-form">
-                        <label>Fecha de nacimiento</label>
+                        <label>Fecha de nacimiento:</label>
                         <input type="date" name="birdate" class="control">
                     </div>
                     <div class="control-form">
-                        <input type="text" name="direction" placeholder="Domicilio" class="control">
+                        <label>Domicilio:</label>
+                        <input type="text" name="direction"
+                            class="control <%= locals.errors && errors.direction ? 'is-invalid' : null %>"
+                            value="<%= locals.oldData ? oldData.direction : null %>">
+                        <% if (locals.errors && errors.direction) { %>
+                            <p style="color: red">
+                                <%= errors.direction.msg %>
+                            </p>
+                            <% } %>
                     </div>
 
 
                     <div class="control-form">
-                        <input type="password" name="pass" placeholder="Contraseña" class="control">
+                        <label>Contraseña:</label>
+                        <input type="password" name="pass"
+                            class="control <%= locals.errors && errors.pass ? 'is-invalid' : null %>">
+                        <% if (locals.errors && errors.pass) { %>
+                            <p style="color: red">
+                                <%= errors.pass.msg %>
+                            </p>
+                            <% } %>
                     </div>
                     <div class="control-form">
-                        <input type="password" name="pass" placeholder="Confirmar Contraseña" class="control">
+                        <label>Confirmar Contraseña:</label>
+                        <input type="password" name="repass"
+                            class="control <%= locals.errors && errors.repass ? 'is-invalid' : null %>">
+                        <% if (locals.errors && errors.repass) { %>
+                            <p style="color: red">
+                                <%= errors.repass.msg %>
+                            </p>
+                            <% } %>
                     </div>
                     <button type="submit" class="button-form">Crear cuenta</button>
                 </form>

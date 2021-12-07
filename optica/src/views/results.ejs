@@ -15,12 +15,13 @@
             <section class="pv">
                 <h2 class="shop-heading">Busqueda</h2>
                 <section class="article-container">
-                    <% for(let product of precioMax){ %>
+                    <% for(let product of search){ %>
                         <div class="wrapper">
                             <article class="product">
 
                                 <a href="<%=`/collections/${product.id}` %>">
-                                    <img src="<%= product.img %> " class="w-100" alt="" margin-bot />
+                                    <img src="/images/productsImage/<%= product.img %> " class="w-100" alt=""
+                                        margin-bot />
                                 </a>
                                 <div class="product-content">
 

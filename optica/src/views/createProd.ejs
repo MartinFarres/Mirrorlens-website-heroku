@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("./partials/head") %>
+</head>
+
+<body>
+    <%- include("./partials/header") %>
+        <main class="container-content-login">
+            <form action="/collections" method="post" class="create-form" enctype="multipart/form-data">
+                <div class="control-form">
+                    <input type="text" name="name" placeholder="Nombre Del Producto" class="control">
+                </div>
+                <div class="control-form">
+                    <label>Imágen del producto</label>
+                    <input type="file" name="img" multiple class="control">
+                </div>
+                <div class="control-form">
+                    <input type="text" name="type" placeholder="Tipo De Producto" class="control">
+                </div>
+                <div class="control-form">
+                    <input type="text" name="model" placeholder="Modelo Del Producto" class="control">
+                </div>
+                <div class="control-form">
+                    <input type="text" name="color" placeholder="Color" class="control">
+                </div>
+                <div class="control-form">
+                    <input type="text" name="price" placeholder="Precio" class="control" value="$">
+                </div>
+                <div class="control-form">
+                    <input type="text" name="descr" placeholder="Descripción del producto" class="control">
+                </div>
+
+                <button type="submit" class="button-form">Publicar</button>
+            </form>
+        </main>
+
+        <%- include("./partials/footer") %>
+</body>
+
+</html>

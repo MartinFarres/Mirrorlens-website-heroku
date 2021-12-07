@@ -198,13 +198,24 @@ body {
     border-radius: 5px;
     border: none;
 }
+
+.is-invalid {
+    border: 1px solid red;
+}
+.control-descrip {
+    height: 100px;
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+}
+
 .control-form {
     margin-bottom: 20px;
 }
 
 .control-form label {
     margin-bottom: 5px;
-    margin-top: 20px;
     font-style: italic;
     display: block;
 }
@@ -389,4 +400,9 @@ body {
     background-color: white !important;
     color: black !important;
     font-weight: bold !important;
+}
+
+.thank-header h1 {
+    text-align: center;
+    margin-top: 100px;
 }

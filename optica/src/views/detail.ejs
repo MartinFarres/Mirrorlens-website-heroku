@@ -18,13 +18,13 @@
           <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <img src="<%= product.img %> " class="d-block w-100" alt="...">
+                <img src="/images/productsImage/<%= product.img %> " class="d-block w-100" alt="...">
               </div>
               <div class="carousel-item">
-                <img src="<%= product.img2 %> " class="d-block w-100" alt="...">
+                <img src="/images/productsImage/<%= product.img2 %> " class="d-block w-100" alt="...">
               </div>
               <div class="carousel-item">
-                <img src="<%= product.img3 %> " class="d-block w-100" alt="...">
+                <img src="/images/productsImage/<%= product.img3 %> " class="d-block w-100" alt="...">
               </div>
             </div>
           </div>
@@ -48,7 +48,14 @@
             </div>
             <button class="button-product" type="submit" name="comprar" id="">Agregar al carrito - <%= product.price %>
             </button>
+            <div>
+              <a href="/collections/<%= product.id %>/edit " class="button-product-edit">Editar</a>
+              <form action="/collections/<%= product.id %>?_method=DELETE " method="POST" style="display: inline-flex">
+                <button type="submit" class="button-product-delete">ELIMINAR</button>
+              </form>
+            </div>
           </div>
+
 
       </article>
 
