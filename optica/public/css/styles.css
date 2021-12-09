@@ -406,3 +406,25 @@ body {
     text-align: center;
     margin-top: 100px;
 }
+.button-create {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 96%;
+}
+.button-new-product {
+    max-width: 100px;
+    background-color: black;
+    border: none;
+    color: black;
+    padding: 5px 0px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    border: 1px solid black;
+    text-transform: uppercase;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}

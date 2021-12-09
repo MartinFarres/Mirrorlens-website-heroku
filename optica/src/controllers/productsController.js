@@ -27,12 +27,36 @@ const controller = {
         });
     },
     edit: function (req, res) {
-        res.render("editProd");
+        const id = req.params.id;
+        const product = productService.findOne(id);
+        res.render("editProd", {
+            product: product,
+            pageTitle: "Editando: " + product.name,
+        });
     },
 
-    update: (req, res, files) => {},
+    update: (req, res, files) => {
+        const id = req.params.id;
+        productService.updateOne(id, req.body, req.files);
 
-    store: function (req, res) {},
+        res.redirect(`/collections/${id}`);
+    },
+
+    store: function (req, res) {
+        productService.createOne(req.body, req.files);
+        res.redirect("/collections/");
+
+        /*/ if (req.file) {
+            producto.img = req.file.filename;
+            productoId = mainController.create(producto);
+            res.redirect("/collections/" + productoId);
+        }/*/
+    },
+    destroy: function (req, res) {
+        const id = req.params.id;
+        productService.deleteOne(id);
+        res.redirect("/collections/");
+    },
 };
 
 module.exports = controller;

@@ -13,7 +13,12 @@
     <%- include("./partials/header") %>
         <main class="container-shop">
             <section class="pv">
-                <h2 class="shop-heading">For You</h2>
+                <div class="button-create">
+                    <h2 class="shop-heading">For You</h2>
+                    <form action="/collections/create" method="GET">
+                        <button type="submit" class="button-new-product">Nuevo Producto</button>
+                    </form>
+                </div>
                 <section class="article-container">
                     <% for(let product of products){ %>
                         <div class="wrapper">
