@@ -26,7 +26,9 @@ const controller = {
             pageTitle: "Crea tu producto",
         });
     },
-    edit: function (req, res) {},
+    edit: function (req, res) {
+        res.render("editProd");
+    },
 
     update: (req, res, files) => {},
 
