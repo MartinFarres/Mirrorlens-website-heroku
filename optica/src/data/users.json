@@ -178,5 +178,23 @@
         "password": "Ar3fiVN1x",
         "category": "user",
         "image": "user_20.jpg"
+    },
+    {
+        "id": 1639263913738,
+        "name": "Pepe Biondi",
+        "email": "pepe@pepe.com",
+        "direction": "pepe 123",
+        "password": "$2a$10$twW1GQlxmgT9E7SskOcI/OE7mgBZuR37MEojhTAJ4bsaGJ425nFXK",
+        "repassword": "$2a$10$EEgFb61GtBsz96RfG5WvTe0WcKbsPr4dsxCROmwkfK2blnAwIMMuG",
+        "img": "user-1639263913723.jpg"
+    },
+    {
+        "id": 1639351441140,
+        "name": "Pedro Picapiedra",
+        "email": "pedro@pedro.com",
+        "direction": "pedro",
+        "password": "$2a$10$lIKp1bJN.gEgu7RtMGZvUOutzkmbcSbB2xWYCVrlfhxKyPg/7kyfG",
+        "repassword": "$2a$10$NWO9AoGYS9Crx0aP3ZXz8.98uZHI1muN2Mbtw9EYZdwm5vm4w5pJe",
+        "img": "user-1639351441123.jpg"
     }
 ]

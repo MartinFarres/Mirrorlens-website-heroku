@@ -1,19 +1,62 @@
 const fs = require("fs");
 const path = require("path");
 
-const productsFilePath = path.join(__dirname, "../data/productsDataBase.json");
-const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
-const usersFilePath = path.join(__dirname, "../data/users.json");
-const users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
 const { validationResult } = require("express-validator");
-
+const userService = require("../services/users");
+const productService = require("../services/products");
+const bcryptjs = require("bcryptjs");
 const controller = {
     home: function (req, res) {
-        res.render("home", { products });
+        res.render("home", { products: productService.products });
     },
     login: function (req, res) {
         res.render("login", {
             pageTitle: "Ingresa",
+        });
+    },
+    loginProcess: function (req, res) {
+        let userToLogin = userService.findByField("email", req.body.email);
+        console.log(userToLogin);
+        if (userToLogin) {
+            let passwordOk = bcryptjs.compareSync(
+                req.body.password,
+                userToLogin.password
+            );
+            if (passwordOk) {
+                delete userToLogin.password;
+                /*delete userToLogin.repassword;*/
+                req.session.userLogged = userToLogin;
+                if (req.body.remember) {
+                    res.cookie("userEmail", req.body.email, {
+                        maxAge: 1000 * 60 * 2,
+                    });
+                }
+
+                return res.redirect("/profile/");
+            }
+            return res.render("login", {
+                pageTitle: "Ingresa",
+                errors: {
+                    email: {
+                        msg: "Las credenciales son incorrectas",
+                    },
+                },
+            });
+        }
+
+        return res.render("login", {
+            pageTitle: "Ingresa",
+            errors: {
+                email: {
+                    msg: "Este email no está registrado",
+                },
+            },
+        });
+    },
+    profile: function (req, res) {
+        res.render("profile", {
+            pageTitle: "Bienvenido",
+            user: req.session.userLogged,
         });
     },
     register: function (req, res) {
@@ -31,11 +74,13 @@ const controller = {
     search: function (req, res) {
         let busqueda = req.query.search;
         let search = [];
-        for (let i = 0; i < products.length; i++) {
+        for (let i = 0; i < productService.products.length; i++) {
             if (
-                products[i].name.toLowerCase().includes(busqueda.toLowerCase())
+                productService.products[i].name
+                    .toLowerCase()
+                    .includes(busqueda.toLowerCase())
             ) {
-                search.push(products[i]);
+                search.push(productService.products[i]);
             }
         }
         res.render("results", { search: search });
@@ -48,18 +93,27 @@ const controller = {
                 errors: resultValidation.mapped(),
                 oldData: req.body,
             });
-        } else {
-            let usuario = {
-                id: Date.now(),
-                ...req.body,
-            };
-
-            users.push(usuario);
-
-            usuarioJSON = JSON.stringify(users, null, 2);
-            fs.writeFileSync(usersFilePath, usuarioJSON);
-            res.render("thanksForR");
         }
+
+        let userInD = userService.findByField("email", req.body.email);
+
+        if (userInD) {
+            return res.render("register", {
+                errors: {
+                    email: {
+                        msg: "Este email ya está registrado",
+                    },
+                },
+                oldData: req.body,
+            });
+        }
+        userService.createUser(req.body, req.file);
+        return res.render("thanksForR");
+    },
+    logout: (req, res) => {
+        res.clearCookie("userEmail");
+        req.session.destroy();
+        return res.redirect("/");
     },
 };
 

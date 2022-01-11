@@ -1,11 +1,18 @@
 <header class="header ">
     <div class="header-container">
+
         <h1 class="logo"><a href="/"><img src="/images/logo2.png" alt="" /></a></h1>
         <nav class="nav-bar">
-            <a href="/register">Creá tu cuenta</a>
-            <a href="/login">Ingresá</a>
-            <a href="#">Mis Compras</a>
-            <a href="#">Contacto</a>
+            <% if (locals.isLogged) { %>
+
+                <a href="/profile">Mi Cuenta</a>
+                <a href="/logout" class="button-product-edit">Logout</a>
+                <% }else{ %>
+                    <a href="/register">Creá tu cuenta</a>
+                    <a href="/login">Ingresá</a>
+                    <% } %>
+                        <a href="#">Mis Compras</a>
+                        <a href="#">Contacto</a>
         </nav>
 
 
@@ -81,12 +88,12 @@
                 </div>
             </nav>
             <i class="far fa-heart icon-search"></i>
-
-            <a href="/login"><i class="far fa-user icon-search"></i></a>
-
-            <a href="/cart">
-                <i class="fas fa-shopping-cart icon-shop"></i>
-            </a>
+            <% if (locals.isLogged) { %>
+                <a href="/profile"><i class="far fa-user icon-search"></i></a>
+                <% } %>
+                    <a href="/cart">
+                        <i class="fas fa-shopping-cart icon-shop"></i>
+                    </a>
         </div>
 
     </div>

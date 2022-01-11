@@ -20,7 +20,7 @@
                         Facebook</button>
                 </div>
 
-                <form action="/register" method="post" class="create-form">
+                <form action="/register" method="post" class="create-form" enctype="multipart/form-data">
 
                     <div class="control-form">
                         <label>Nombre y apellido:</label>
@@ -34,31 +34,26 @@
                             <% } %>
                     </div>
                     <div class="control-form">
-                        <label>Nombre de usuario:</label>
-                        <input type="text" name="user"
-                            class="control <%= locals.errors && errors.user ? 'is-invalid' : null %>"
-                            value="<%= locals.oldData ? oldData.user : null %>">
-                        <% if (locals.errors && errors.user) { %>
+                        <label>Imágen de perfil</label>
+                        <input type="file" name="img" class="control">
+                        <% if (locals.errors && errors.img) { %>
                             <p style="color: red">
-                                <%= errors.user.msg %>
+                                <%= errors.img.msg %>
                             </p>
                             <% } %>
                     </div>
                     <div class="control-form">
                         <label>Correo electrónico:</label>
-                        <input type="text" name="mail"
-                            class="control <%= locals.errors && errors.mail ? 'is-invalid' : null %>"
-                            value="<%= locals.oldData ? oldData.mail : null %>">
-                        <% if (locals.errors && errors.mail) { %>
+                        <input type="text" name="email"
+                            class="control <%= locals.errors && errors.email ? 'is-invalid' : null %>"
+                            value="<%= locals.oldData ? oldData.email : null %>">
+                        <% if (locals.errors && errors.email) { %>
                             <p style="color: red">
-                                <%= errors.mail.msg %>
+                                <%= errors.email.msg %>
                             </p>
                             <% } %>
                     </div>
-                    <div class="control-form">
-                        <label>Fecha de nacimiento:</label>
-                        <input type="date" name="birdate" class="control">
-                    </div>
+
                     <div class="control-form">
                         <label>Domicilio:</label>
                         <input type="text" name="direction"
@@ -74,21 +69,21 @@
 
                     <div class="control-form">
                         <label>Contraseña:</label>
-                        <input type="password" name="pass"
-                            class="control <%= locals.errors && errors.pass ? 'is-invalid' : null %>">
-                        <% if (locals.errors && errors.pass) { %>
+                        <input type="password" name="password"
+                            class="control <%= locals.errors && errors.password ? 'is-invalid' : null %>">
+                        <% if (locals.errors && errors.password) { %>
                             <p style="color: red">
-                                <%= errors.pass.msg %>
+                                <%= errors.password.msg %>
                             </p>
                             <% } %>
                     </div>
                     <div class="control-form">
                         <label>Confirmar Contraseña:</label>
-                        <input type="password" name="repass"
-                            class="control <%= locals.errors && errors.repass ? 'is-invalid' : null %>">
-                        <% if (locals.errors && errors.repass) { %>
+                        <input type="password" name="repassword"
+                            class="control <%= locals.errors && errors.repassword ? 'is-invalid' : null %>">
+                        <% if (locals.errors && errors.repassword) { %>
                             <p style="color: red">
-                                <%= errors.repass.msg %>
+                                <%= errors.repassword.msg %>
                             </p>
                             <% } %>
                     </div>
