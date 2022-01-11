@@ -9,6 +9,7 @@ const authMiddleware = require("../middlewares/authMiddleware");
 
 router.get("/", mainController.home);
 router.get("/cart", mainController.cart);
+router.get("/cart/:id", mainController.myCart)
 router.get("/login", guestMiddleware, mainController.login);
 router.post("/login", mainController.loginProcess);
 router.get("/register", guestMiddleware, mainController.register);

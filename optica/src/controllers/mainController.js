@@ -71,6 +71,14 @@ const controller = {
         });
     },
 
+    myCart: function(req, res){
+        // const user = db.User.findByPk(req.params.id)
+        res.render("misCompras", {
+            pageTitle: "Carrito",
+            user: user,
+        })
+    },
+
     search: function (req, res) {
         let busqueda = req.query.search;
         let search = [];
