@@ -205,5 +205,14 @@
     "password": "$2a$10$EAmRrzilGMh9bHoxMn7QXuWmlWmokDMUheDSp3uyQo/ULgywtQJwa",
     "repassword": "$2a$10$ZiobnheDuUb1Jx.TMj0fOOmKZvqct.uqzl0DVQxVa64JrFmVrnOoa",
     "img": "user-1641919130374.jpg"
+  },
+  {
+    "id": 1642429320549,
+    "name": "iair baron",
+    "email": "iairbaron@gmail.com",
+    "direction": "segui 2071",
+    "password": "$2a$10$TrxhY.O4IoypChfLGmMbAebml1gU81F3JU2VFoVtnf8qkoinP2/Vu",
+    "repassword": "$2a$10$sY3dWN2goUs0yoN/MimD0.0u026tvB4cEpLFwU.MrRcyRbhIjqUWq",
+    "img": "user-1642429320543.png"
   }
 ]
