@@ -1,0 +1,80 @@
+const { DataTypes } = require("sequelize/types");
+const { sequelize } = require(".");
+const { config } = require("../../.sequelizerc");
+const models = require("../models")
+
+module.exports = (sequelize, dataTypes) => {
+    let alias = "ColorsOfProduct";
+    let cols = {
+        Id: {
+            type: dataTypes.INTEGER,
+            primarykey: true,
+            autoIncrement: true,
+            allowNull: false,
+        },
+        Red: {
+            type: dataTypes.BOOLEAN,
+            allowNull: false,
+        },
+        Blue: {
+            type: dataTypes.BOOLEAN,
+            allowNull: false,
+        },
+        Black: {
+            type: dataTypes.BOOLEAN,
+            allowNull: false,
+        },
+        White: {
+            type: dataTypes.BOOLEAN,
+            allowNull: false,
+        },
+        Purple: {
+            type: dataTypes.BOOLEAN,
+            allowNull: false,
+        },
+        Grey: {
+            type: dataTypes.BOOLEAN,
+            allowNull: false,
+        },
+        Green: {
+            type: dataTypes.BOOLEAN,
+            allowNull: false,
+        },
+        Orange: {
+            type: dataTypes.BOOLEAN,
+            allowNull: false,
+        },
+        Yellow: {
+            type: dataTypes.BOOLEAN,
+            allowNull: false,
+        },
+        Pink: {
+            type: dataTypes.BOOLEAN,
+            allowNull: false,
+        },
+        Brown: {
+            type: dataTypes.BOOLEAN,
+            allowNull: false,
+        },
+        Transparent: {
+            type: dataTypes.BOOLEAN,
+            allowNull: false,
+        },
+    };
+    let config = {
+        tableName: "productbordercolor",
+        timestamps: false,
+    };
+
+    const ProductsBorderColor = sequelize.define(alias, cols, config);
+
+    ProductsBorderColor.associate = (models)=>{
+        ProductsBorderColor.hasMany(models.Product,{
+            as: "colores",
+            foreignKey: "BorderColor_Id"
+        })
+    }
+
+
+    return ProductsBorderColor;
+};
