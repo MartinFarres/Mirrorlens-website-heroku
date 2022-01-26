@@ -3,7 +3,9 @@ const products = require("../database/models/products");
 const productService = require("../services/products");
 const controller = {
     collections: function (req, res) {
-      db.Product.findAll()
+      db.Products.findAll({
+          include: [{association: "ImageProducts"}]
+      })
       .then(products=>{
           res.render("collections", {products: products})
       })

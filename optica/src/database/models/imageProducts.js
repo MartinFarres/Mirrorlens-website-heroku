@@ -6,21 +6,21 @@ module.exports = function (sequelize, dataTypes) {
             primaryKey: true,
             autoIncrement: true,
         },
-        image1: { type: dataTypes.STRING },
-        image2: { type: dataTypes.STRING },
-        image3: { type: dataTypes.STRING },
+        image_1: { type: dataTypes.STRING },
+        image_2: { type: dataTypes.STRING },
+        image_3: { type: dataTypes.STRING },
     };
     let config = {
-        tableName: "image_products",
+        tableName: "productimages",
         timestamps: false,
     };
     let ImageProducts = sequelize.define(alias, cols, config);
 
-    // ImageProducts.associate = function (models) {
-    //     ImageProducts.belongsTo(models.Products, {
-    //         as: "products",
-    //         foreignKey: "image_id",
-    //     });
-    // };
+    ImageProducts.associate = function (models) {
+        ImageProducts.belongsTo(models.Products, {
+            as: "products",
+            foreignKey: "id",
+        });
+    };
     return ImageProducts;
 };

@@ -1,5 +1,5 @@
 module.exports = function (sequelize, dataTypes) {
-    let alias = "Product";
+    let alias = "Products";
     let cols = {
         id: {
             type: dataTypes.INTEGER,
@@ -11,11 +11,9 @@ module.exports = function (sequelize, dataTypes) {
         description: { type: dataTypes.TEXT },
         type: { type: dataTypes.STRING },
         borderColor_Id: { type: dataTypes.STRING },
-        // glassColor: { type: dataTypes.STRING },
         brand: { type: dataTypes.STRING },
         gender: { type: dataTypes.STRING },
-        // model: { type: dataTypes.STRING },
-        images_id: { type: dataTypes.STRING },
+        images_id: { type: dataTypes.INTEGER },
     };
     let config = {
         tableName: "products",
@@ -23,12 +21,12 @@ module.exports = function (sequelize, dataTypes) {
     };
     let Products = sequelize.define(alias, cols, config);
 
-    // Products.associate = function (models) {
-    //     Products.hasMany(models.ImageProducts, {
-    //         as: "products",
-    //         foreignKey: "image_id",
-    //     });
-
+    Products.associate = function (models) {
+        Products.belongsTo(models.ImageProducts, {
+            as: "ImageProducts",
+            foreignKey: "images_id",
+        });
+    }
     //     Products.belongsToMany(models.Users, {
     //         as: "users",
     //         through: "user_shop",
