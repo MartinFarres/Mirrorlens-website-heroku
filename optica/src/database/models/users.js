@@ -1,50 +1,28 @@
-module.exports = (sequelize,dataTypes) => {
-        let alias = "User";
-        let cols= {
-            Id:{ 
-                type: dataTypes.INTEGER,
-                primarykey: true,
-                autoIncrement: true,
-                allowNull: false
-            },
-            Name:{
-                type: dataTypes.STRING(100),
-                allowNull: false
-            },
-            Email:{
-                type: dataTypes.STRING(100),
-                allowNull: false
-            },
-            Password:{
-                type: dataTypes.STRING(100),
-                allowNull: false
-            },
-            Country:{
-                type: dataTypes.STRING,
-                allowNull: false
-            },
-            Street:{
-                type: dataTypes.STRING,
-                allowNull: false
-            },
-            PhotoUser:{
-                type: dataTypes.STRING,
-                allowNull: true
-            }
-        };
-        let config = {
-            tableName: "users",
-            timestamps: false, 
-        }
+module.exports = function (sequelize, dataTypes) {
+    let alias = "Users";
+    let cols = {
+        id: {
+            type: dataTypes.INTEGER,
+            primaryKey: true,
+            autoIncrement: true,
+        },
+        name: { type: dataTypes.STRING },
+        email: { type: dataTypes.STRING },
+        password: { type: dataTypes.STRING },
+        street: { type: dataTypes.STRING },
+        photoUser: { type: dataTypes.STRING },
+    };
+    let config = {
+        tableName: "users",
+        timestamps: false,
+    };
+    let Users = sequelize.define(alias, cols, config);
 
-        const Users = sequelize.define(alias, cols, config);
-
-        Users.associate = (models)=>{
-            Users.hasMany(models.UserShop,{
-                as: "userShop",
-                foreignKey: "User_Id"
-            })
-        }
-
-        return Users;
-}
+    // Users.associate = function (models) {
+    //     Users.hasMany(models.photoUser, {
+    //         as: "users",
+    //         foreignKey: "photoUser",
+    //     });
+    // };
+    return Users;
+};

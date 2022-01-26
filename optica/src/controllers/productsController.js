@@ -1,12 +1,13 @@
+const db = require("../database/models");
+const products = require("../database/models/products");
 const productService = require("../services/products");
 const controller = {
     collections: function (req, res) {
-        res.render("collections", {
-            products: productService.products,
-            pageTitle: "Productos - Mirrorlens",
-        });
+      db.Product.findAll()
+      .then(products=>{
+          res.render("collections", {products: products})
+      })
     },
-
     detail: (req, res) => {
         const id = req.params.id;
         const product = productService.findOne(id);
