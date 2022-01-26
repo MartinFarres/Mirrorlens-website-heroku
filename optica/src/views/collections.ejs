@@ -24,20 +24,20 @@
                         <div class="wrapper">
                             <article class="product">
 
-                                <a href="<%=`/collections/${product.id}` %>">
-                                    <img src="<%= product.ImageProducts.image_1 %> " class="w-100" alt=""
+                                <a href="<%=`/collections/${product.id}` %>" class="w-100">
+                                    <img src="<%= product.ImageProducts.image_1 %> " class="w-100 h-150px" alt=""
                                         margin-bot />
                                 </a>
                                 <div class="product-content">
 
                                     <h3 class="description font-large">
-                                        <%= product.name %>
+                                        <%= product.product_name %>
                                     </h3>
                                     <p class="price font-medium">
-                                        <%= product.price %>
+                                        $<%= product.price %>
                                     </p>
                                     <p class="discount text-green font-medium">
-                                        <%= product.desc %>
+                                        <!-- discount -->
                                     </p>
                                 </div>
                             </article>
@@ -56,20 +56,20 @@
                         <div class="wrapper">
                             <article class="product">
 
-                                <a href="<%=`/collections/${product.id}` %>">
+                                <a href="<%=`/collections/${product.id}` %>" class="w-100">
                                     <img src="<%= product.ImageProducts.image_1 %> " class="w-100" alt=""
                                         margin-bot />
                                 </a>
                                 <div class="product-content">
 
                                     <h3 class="description font-large">
-                                        <%= product.name %>
+                                        <%= product.product_name %>
                                     </h3>
                                     <p class="price font-medium">
-                                        <%= product.price %>
+                                        $<%= product.price %>
                                     </p>
                                     <p class="discount text-green font-medium">
-                                        <%= product.desc %>
+                                        <!-- discount -->
                                     </p>
                                 </div>
                             </article>

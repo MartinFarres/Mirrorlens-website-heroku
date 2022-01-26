@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-
+const db = require("../database/models");
 const productsFilePath = path.join(__dirname, "../data/productsDataBase.json");
 const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 
@@ -62,4 +62,18 @@ module.exports = {
         products.splice(indice, 1);
         saveProducts();
     },
+
+    getAll: ()=>{
+        return db.Products.findAll({
+            include: [{ association: "ImageProducts" }],
+        })
+    },
+
+    limitAndOffset: (limit, offset)=>{
+        return db.Products.findAll({
+            include: [{association: "ImageProducts",
+            limit: limit,
+            offset: offset}],
+        })
+    }
 };

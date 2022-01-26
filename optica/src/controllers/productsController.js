@@ -3,25 +3,24 @@ const products = require("../database/models/products");
 const productService = require("../services/products");
 const controller = {
     collections: function (req, res) {
-      db.Products.findAll({
-          include: [{association: "ImageProducts"}]
-      })
-      .then(products=>{
-          res.render("collections", {products: products})
-      })
+        db.Products.findAll({
+            include: [{ association: "ImageProducts" }],
+        }).then((products) => {
+            res.render("collections", { products: products });
+        });
+        
     },
     detail: (req, res) => {
-        const id = req.params.id;
-        const product = productService.findOne(id);
-        if (product) {
+        const promise = db.Products.findByPk(req.params.id, {
+            include: [{association: "ImageProducts"}]
+        });
+        promise.then((product) => {
             res.render("detail", {
-                product,
-                pageTitle: product.name + " - Mirrorlens",
-                products: productService.products,
+                product: product,
+                products1: productService.limitAndOffset(4,0),
+                products2: productService.limitAndOffset(4,4)
             });
-        } else {
-            res.render("not-found");
-        }
+        });
     },
 
     create: function (req, res) {
