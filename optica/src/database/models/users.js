@@ -9,8 +9,8 @@ module.exports = function (sequelize, dataTypes) {
         name: { type: dataTypes.STRING },
         email: { type: dataTypes.STRING },
         password: { type: dataTypes.STRING },
-        street: { type: dataTypes.STRING },
         photoUser: { type: dataTypes.STRING },
+        adress_id: { type: dataTypes.INTEGER }
     };
     let config = {
         tableName: "users",
@@ -18,11 +18,18 @@ module.exports = function (sequelize, dataTypes) {
     };
     let Users = sequelize.define(alias, cols, config);
 
-    // Users.associate = function (models) {
-    //     Users.hasMany(models.photoUser, {
-    //         as: "users",
-    //         foreignKey: "photoUser",
-    //     });
-    // };
+    Users.associate = function (models) {
+        Users.belongsToMany(models.Products, {
+            as: "products",
+            through: "user_shop",
+            foreignKey: "user_id",
+            otherKey: "product_id",
+            timestamps: false,
+        });
+        Users.belongsTo(models.Adress,{
+            as: "adress",
+            foreignKey: "adress_id"
+        })
+    };
     return Users;
 };

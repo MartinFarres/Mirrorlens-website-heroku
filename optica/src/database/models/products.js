@@ -26,14 +26,17 @@ module.exports = function (sequelize, dataTypes) {
             as: "ImageProducts",
             foreignKey: "images_id",
         });
+        Products.belongsToMany(models.Users, {
+            as: "users",
+            through: "user_shop",
+            foreignKey: "product_id",
+            otherKey: "user_id",
+            timestamps: false,
+        });
+        Products.belongsTo(models.ProductBorderColor,{
+            as: "productBorderColor",
+            foreignKey: "borderColor_Id"
+        })
     }
-    //     Products.belongsToMany(models.Users, {
-    //         as: "users",
-    //         through: "user_shop",
-    //         foreignKey: "product_id",
-    //         otherKey: "user_id",
-    //         timestamps: false,
-    //     });
-    // };
     return Products;
 };
