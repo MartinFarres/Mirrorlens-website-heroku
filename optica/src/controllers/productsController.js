@@ -24,10 +24,30 @@ const controller = {
     },
 
     create: function (req, res) {
-        res.render("createProd", {
-            pageTitle: "Crea tu producto",
-        });
+        db.Products.findAll({
+            include: [{association: "productBorderColor"}]
+        })
+        .then((products)=>{
+            res.render("createProd", {
+                pageTitle: "Crea tu producto",
+                products
+            });
+        })
+        
     },
+    store: function (req, res) {
+        db.Products.create({
+            product_name: req.body.product_name,
+            price: req.body.price,
+            description: req.body.description,
+            type: req.body.type,
+            borderColor_Id: req.body.borderColor_Id,
+            brand: req.body.brand,
+            gender: req.body.gender,
+            images_id: req.body.images_id,
+        })
+    },
+
     edit: function (req, res) {
         const id = req.params.id;
         const product = productService.findOne(id);
@@ -44,16 +64,7 @@ const controller = {
         res.redirect(`/collections/${id}`);
     },
 
-    store: function (req, res) {
-        productService.createOne(req.body, req.files);
-        res.redirect("/collections/");
-
-        /*/ if (req.file) {
-            producto.img = req.file.filename;
-            productoId = mainController.create(producto);
-            res.redirect("/collections/" + productoId);
-        }/*/
-    },
+    
     destroy: function (req, res) {
         const id = req.params.id;
         productService.deleteOne(id);

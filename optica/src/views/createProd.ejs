@@ -10,19 +10,28 @@
         <main class="container-content-login">
             <form action="/collections" method="post" class="create-form" enctype="multipart/form-data">
                 <div class="control-form">
-                    <input type="text" name="name" placeholder="Nombre Del Producto" class="control">
+                    <input type="text" name="product_name" placeholder="Nombre Del Producto" class="control">
                 </div>
                 <div class="control-form">
                     <label>Imágen del producto</label>
                     <input type="file" name="img" multiple class="control">
                 </div>
                 <div class="control-form">
-                    <input type="text" name="type" placeholder="Tipo De Producto" class="control">
+                    <label for="">Tipo de lentes:</label>
+                    <div class="flex-justify">
+                        <input type="radio" name="type" id="type1" value="Sunglasses">
+                        <label for="type1">Sunglasses</label>
+                    </div>
+                    <div class="flex-justify">
+                        <input type="radio" name="type" id="type2" value="Eyeglasses">
+                        <label for="type1">Eyeglasses</label>
+                    </div>
                 </div>
                 <div class="control-form">
-                    <input type="text" name="model" placeholder="Modelo Del Producto" class="control">
+                    <input type="text" name="brand" placeholder="Marca Del Producto" class="control">
                 </div>
                 <div class="control-form">
+                    
                     <input type="text" name="color" placeholder="Color" class="control">
                 </div>
                 <div class="control-form">
