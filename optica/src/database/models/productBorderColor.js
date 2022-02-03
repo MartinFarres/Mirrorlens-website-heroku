@@ -21,7 +21,7 @@ module.exports = function (sequelize, dataTypes) {
         
     };
     let config = {
-        tableName: "productBorderColor",
+        tableName: "productBorderColors",
         timestamps: false,
     };
     let ProductBorderColor = sequelize.define(alias, cols, config);

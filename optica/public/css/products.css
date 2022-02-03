@@ -194,3 +194,15 @@
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
 }
+
+
+.colorCheckboxes{
+    column-count: 2;
+}
+
+.inputColorBoxes{
+    padding-left: 7px;
+    padding-right: 7px;
+    display: flex;
+    flex-wrap: wrap;
+}

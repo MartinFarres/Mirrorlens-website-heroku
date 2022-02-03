@@ -75,5 +75,20 @@ module.exports = {
             limit: limit,
             offset: offset}],
         })
+    },
+    tableNames: (modelName)=>{
+        let keys = []
+        for( let key in modelName.rawAttributes ){
+            keys.push(key)
+        }
+        return keys
+    },
+
+    reqProductBorderColors: (name)=>{
+        if(name == null){
+            return 0
+        }else{
+            return name
+        }
     }
 };
