@@ -57,7 +57,7 @@ const controller = {
         });
 
         let imageProduct = await db.ImageProducts.create({
-            image_1: req.files[0].filename,
+            image_1: "/images/productsImage/" + req.files[0].filename,
         });
 
         await db.Products.create({
@@ -75,19 +75,22 @@ const controller = {
     },
 
     edit: function (req, res) {
-        const id = req.params.id;
-        const product = productService.findOne(id);
-        res.render("editProd", {
-            product: product,
-            pageTitle: "Editando: " + product.name,
-        });
+        db.Products.findByPk(req.params.id,{
+            include: [{ association: "ImageProducts" }],
+        })
+        .then((product)=>{
+            res.render("editProd", {product})
+        })
     },
 
-    update: (req, res, files) => {
-        const id = req.params.id;
-        productService.updateOne(id, req.body, req.files);
+    update:  (req, res, files) => {
+        // const id = req.params.id;
+        // productService.updateOne(id, req.body, req.files);
 
-        res.redirect(`/collections/${id}`);
+        // res.redirect(`/collections/${id}`);
+
+        
+      
     },
 
     destroy: function (req, res) {

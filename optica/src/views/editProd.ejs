@@ -12,11 +12,11 @@
                 enctype="multipart/form-data">
                 <div class="control-form">
                     <label for="description" class="form-label">Nombre:</label>
-                    <input type="text" name="name" id="name" class="control" value="<%= product.name %>">
+                    <input type="text" name="name" id="name" class="control" value="<%= product.product_name %>">
                 </div>
                 <div class="control-form">
                     <label for="description" class="form-label">Imágenes:</label>
-                    <input type="file" name="img" multiple id="img" class="control" value="<%= product.img %>">
+                    <input type="file" name="img" multiple id="img" class="control" value="<%= product.ImageProducts.image_1 %>">
                 </div>
                 <div class=" control-form">
                     <label for="description" class="form-label">Tipo de lente:</label>
@@ -37,7 +37,7 @@
 
                 <div class="control-form">
                     <label for="description" class="form-label">Descripción:</label>
-                    <textarea name="descr" id="descr" class="control-descrip"><%= product.descr %></textarea>
+                    <textarea name="descr" id="descr" class="control-descrip"><%= product.description %></textarea>
                 </div>
                 <button type="submit" class="button-form">Guardar Edicion</button>
 
