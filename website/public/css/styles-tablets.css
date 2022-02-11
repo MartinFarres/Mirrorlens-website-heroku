@@ -1,0 +1,75 @@
+@media (min-width: 768px) {
+    .nav-bar {
+        display: block;
+    }
+    .icon-menu {
+        display: none;
+    }
+
+    .logo {
+        order: -1;
+    }
+
+    .right-icon-menu {
+        display: none;
+    }
+
+    .left-icon-menu {
+        display: none;
+    }
+
+    .right-icon-menu-desktop {
+        display: inline-flex;
+        align-items: center;
+    }
+    .header-container {
+        flex-wrap: nowrap;
+    }
+    .nav-bar a {
+        font-size: 10px;
+        padding: 7px;
+    }
+    .right-icon-menu-desktop i {
+        padding: 5px;
+        font-size: 15px;
+    }
+
+    .div-slider {
+        margin-top: 180px;
+    }
+    .footer-wrapper {
+        display: flex;
+    }
+    .footer-items {
+        max-width: 400px;
+    }
+    .three-block-section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        margin-top: 0px;
+    }
+
+    .block-shop-for-men {
+        max-width: 500px;
+        margin: 20px;
+    }
+
+    .block-shop-for-women {
+        max-width: 500px;
+        margin: 20px;
+    }
+
+    .block-shop-do-it {
+        min-height: 330px;
+        max-width: 500px;
+        margin: 20px;
+    }
+
+    .logo img {
+        width: 65px;
+    }
+    .div-slider {
+        margin-top: 140px;
+    }
+}
