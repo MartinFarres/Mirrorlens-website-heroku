@@ -10,10 +10,13 @@ body {
 .w-50 {
     width: 50%;
 }
-.h-150px{
+.h-150px {
     height: 150px;
 }
 
+.justify-center {
+    justify-content: center;
+}
 .p {
     padding: 16px;
     margin-bottom: 0 !important;
@@ -436,8 +439,13 @@ body {
     transition-duration: 0.4s;
 }
 
-
-.flex-justify{
+.flex-justify {
     display: flex;
     justify-content: space-evenly;
+}
+
+.search-not-found {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
 }

@@ -27,13 +27,13 @@
         <div class="carousel-inner">
             <div class="item active">
                 <div class="row">
-                    <% for(let product of products1){ %>
+                    <% for(let i = 0; i < products1.length; i++){ %>
                     <div class="col-md-3 col-sm-3 col-xs-12">
                         <div class="slider-item">
                             <div class="slider-image">
-                                <a href="<%=`/collections/${product.id}` %>">
+                                <a href="<%=`/collections/${products1[i].id}` %>">
                                     <img
-                                        src="<%= product.ImageProducts.image_1 %> "
+                                        src="<%= products1[i].ImageProducts.image_1 %> "
                                         class="img-responsive"
                                         alt="a"
                                 /></a>
@@ -41,9 +41,9 @@
                             <div class="slider-main-detail">
                                 <div class="slider-detail">
                                     <div class="product-detail">
-                                        <h5><%= product.product_name %></h5>
+                                        <h5><%= products1[i].product_name %></h5>
                                         <h5 class="detail-price">
-                                            $<%= product.price %>
+                                            $<%= products1[i].price %>
                                         </h5>
                                     </div>
                                 </div>
@@ -96,13 +96,13 @@
             </div>
             <div class="item">
                 <div class="row">
-                    <% for(let product of products2){ %>
+                    <% for(let i = 0; i < products2.length; i++){ %>
                     <div class="col-md-3 col-sm-3 col-xs-12">
                         <div class="slider-item">
                             <div class="slider-image">
-                                <a href="<%=`/collections/${product.id}` %>">
+                                <a href="<%=`/collections/${products2[i].id}` %>">
                                     <img
-                                        src="<%= product.ImageProducts.image_1 %> "
+                                        src="<%= products2[i].ImageProducts.image_1 %> "
                                         class="img-responsive"
                                         alt="a"
                                 /></a>
@@ -110,9 +110,9 @@
                             <div class="slider-main-detail">
                                 <div class="slider-detail">
                                     <div class="product-detail">
-                                        <h5><%= product.product_name %></h5>
+                                        <h5><%= products2[i].product_name %></h5>
                                         <h5 class="detail-price">
-                                            <%= product.price %>
+                                            <%= products2[i].price %>
                                         </h5>
                                     </div>
                                 </div>

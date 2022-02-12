@@ -4,6 +4,7 @@ const path = require("path");
 const productsController = require("../controllers/productsController");
 const upload = require("../middlewares/multerMiddleware");
 const multerMiddleware = require("../middlewares/multerMiddleware");
+const authMiddleware = require("../middlewares/authMiddleware");
 
 /*** GET ALL PRODUCTS ***/
 router.get("/", productsController.collections);
@@ -14,6 +15,7 @@ router.post("/", upload.array("image", 3), productsController.store);
 
 /*** GET ONE PRODUCT ***/
 router.get("/:id/", productsController.detail);
+// router.post("/:id/", authMiddleware, productsController.addToCart)
 
 /*** EDIT ONE PRODUCT ***/
 router.get("/:id/edit", productsController.edit);

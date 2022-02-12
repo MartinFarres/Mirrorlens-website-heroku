@@ -1,7 +1,9 @@
+const res = require("express/lib/response");
 const db = require("../database/models");
 const products = require("../database/models/products");
 const upload = require("../middlewares/multerMiddleware");
 const productService = require("../services/products");
+const userService = require("../services/users");
 const controller = {
     collections: function (req, res) {
         db.Products.findAll({
@@ -17,10 +19,18 @@ const controller = {
         promise.then((product) => {
             res.render("detail", {
                 product: product,
-                products1: productService.limitAndOffset(4, 0),
-                products2: productService.limitAndOffset(4, 4),
             });
         });
+    },
+
+    addToCart: async (req, res) => {
+        console.log(req.session.userLogged)
+        // let productId = req.params.id;
+        // let user = req.session.userLogged;
+        // await db.UserShop.create({
+        //     user_id: user.id,
+        //     product_id: productId,
+        // });
     },
 
     create: function (req, res) {
@@ -58,6 +68,12 @@ const controller = {
 
         let imageProduct = await db.ImageProducts.create({
             image_1: "/images/productsImage/" + req.files[0].filename,
+            image2: req.files[1]
+                ? "/images/productsimage/" + req.files[1].filename
+                : null,
+            image3: req.files[2]
+                ? "/images/productsimage/" + req.files[2].filename
+                : null,
         });
 
         await db.Products.create({
@@ -75,27 +91,34 @@ const controller = {
     },
 
     edit: function (req, res) {
-        db.Products.findByPk(req.params.id,{
-            include: [{ association: "ImageProducts" }],
-        })
-        .then((product)=>{
-            res.render("editProd", {product})
-        })
+        db.Products.findByPk(req.params.id, {
+            include: [
+                {
+                    association: "ImageProducts",
+                    association: "ProductBorderColor",
+                },
+            ],
+        }).then((product) => {
+            res.render("editProd", {
+                product,
+                columnNames: productService
+                    .tableNames(db.ProductBorderColor)
+                    .filter((columnName) => {
+                        return columnName != "id";
+                    }),
+            });
+        });
     },
 
-    update:  (req, res, files) => {
-        // const id = req.params.id;
-        // productService.updateOne(id, req.body, req.files);
-
-        // res.redirect(`/collections/${id}`);
-
-        
-      
+    update: async (req, res) => {
+        await productService.update(req, res, req.files);
+        res.redirect("/collections/");
     },
 
-    destroy: function (req, res) {
+    destroy: async function (req, res) {
         const id = req.params.id;
-        productService.deleteOne(id);
+        await db.ImageProducts.destroy({ where: { id: id }, force: true });
+        await db.ProductBorderColor.destroy({ where: { id: id }, force: true });
         res.redirect("/collections/");
     },
 };

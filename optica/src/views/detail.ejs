@@ -39,7 +39,7 @@
                 <%= product.product_name %>
               </h1>
               <P class="price">
-                <%= product.price %>
+                $<%= product.price %>
               </P>
               <!-- <div class="star-description">
               <i class="far fa-star"></i> <i class="far fa-star"></i><i class="far fa-star"></i><i
@@ -50,8 +50,10 @@
               </P>
 
             </div>
-            <button class="button-product" type="submit" name="comprar" id="">Agregar al carrito - <%= product.price %>
-            </button>
+            <!-- <form action="/collections/:id" method="POST"> -->
+              <button class="button-product" type="submit" name="comprar" id="">Agregar al carrito 
+              </button>
+            <!-- </form> -->
             <div>
               <a href="/collections/<%= product.id %>/edit " class="button-product-edit">Editar</a>
               <form action="/collections/<%= product.id %>?_method=DELETE " method="POST" style="display: inline-flex">

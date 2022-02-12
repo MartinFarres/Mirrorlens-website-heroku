@@ -28,13 +28,13 @@ module.exports = function (sequelize, dataTypes) {
         });
         Products.belongsToMany(models.Users, {
             as: "users",
-            through: "user_shop",
+            through: "usershop",
             foreignKey: "product_id",
             otherKey: "user_id",
             timestamps: false,
         });
         Products.belongsTo(models.ProductBorderColor,{
-            as: "productBorderColor",
+            as: "ProductBorderColor",
             foreignKey: "borderColor_Id"
         })
     }
