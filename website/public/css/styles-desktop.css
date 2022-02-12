@@ -1,0 +1,38 @@
+@media (min-width: 1200px) {
+    .logo img {
+        width: 90px;
+    }
+
+    .header-container {
+        flex-wrap: wrap;
+        margin: -8px auto;
+    }
+    .nav-bar a {
+        font-size: 13px;
+        padding: 10px 35px;
+    }
+    .right-icon-menu-desktop i {
+        padding: 15px;
+        font-size: 17px;
+    }
+    .container-content {
+        display: flex;
+        width: 50%;
+        align-items: center;
+    }
+
+    .button-g {
+        max-width: 300px;
+    }
+    .button-gf {
+        max-width: 300px;
+        margin-right: 25px;
+    }
+    .button-gf-login {
+        max-width: 300px;
+    }
+    .create-form {
+        width: 100%;
+        max-width: 300px;
+    }
+}

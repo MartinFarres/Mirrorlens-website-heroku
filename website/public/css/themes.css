@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+body {
+    background-color: #ebebeb;
+    font-size: 15px;
+}
+
+.bg-dark-blu {
+    background-color: #3d4660;
+}
+
+.bg-teal {
+    background-color: #6f7789;
+}
+
+.bg-light-blue {
+    background-color: #ccd5df;
+}
+
+.bg-blue {
+    background-color: #1259c3;
+}
+
+.bg-light {
+    background-color: #ebebeb;
+}
+
+.bg-gray {
+    background-color: #666;
+}
+
+.bg-dark {
+    background-color: rgb(31, 31, 31);
+}
+
+.bg-light-grey {
+    background-color: #e7dfd9;
+}
+
+.bg-light-pink {
+    background-color: #e3b59b;
+}
+
+.text-dark {
+    color: rgb(31, 31, 31);
+}
+
+.text-light {
+    color: #ebebeb;
+}
+
+.border-green {
+    border-color: #39b54a;
+}
+
+.text-green {
+    color: #39b54a;
+}
+
+.font-small {
+    font-size: 12px;
+}
+.font-medium {
+    font-size: 16px;
+}
+.font-large {
+    font-size: 18px;
+}
+.font-xl {
+    font-size: 22px;
+}
+.font-heading {
+    font-size: 24px;
+}
+
+.align-center{
+    text-align: center;
+}

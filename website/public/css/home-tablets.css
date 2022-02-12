@@ -1,0 +1,39 @@
+@media (min-width: 480px) and (max-width: 768px) {
+    .three-block-section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        margin-top: 0px;
+    }
+
+    .block-shop-for-men {
+        max-width: 500px;
+        margin: 20px;
+    }
+
+    .block-shop-for-women {
+        max-width: 500px;
+        margin: 20px;
+    }
+
+    .block-shop-do-it {
+        min-height: 330px;
+        max-width: 500px;
+        margin: 20px;
+    }
+
+    .div-slider {
+        margin-top: 140px;
+    }
+    .top-part-articulo img {
+        width: -webkit-fill-available;
+        max-width: 285px;
+    }
+
+    .container-mv .subcontainer-mv {
+        min-height: 107vh;
+    }
+    .container-mv .ul {
+        justify-content: space-evenly;
+    }
+}

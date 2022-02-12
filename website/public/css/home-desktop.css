@@ -1,0 +1,25 @@
+@media (min-width: 1200px) {
+    .three-block-section {
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+    .three-block-section a:hover {
+        background-size: 102% 410px;
+    }
+    .footer-wrapper {
+        display: flex;
+    }
+}
+@media (min-width: 1024px){
+    .articulo-mv{
+        width: 25%;
+    }
+    .container-mv .subcontainer-mv{
+        min-height: 60vh;
+    }
+    .container-mv .ul {
+        justify-content: space-evenly;
+    }
+    
+}
