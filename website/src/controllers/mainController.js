@@ -1,21 +1,24 @@
 const fs = require("fs");
 const path = require("path");
+const db = require("../database/models/");
+const { Op } = require("sequelize");
 
 const { validationResult } = require("express-validator");
 const userService = require("../services/users");
 const productService = require("../services/products");
 const bcryptjs = require("bcryptjs");
+const { query } = require("express");
 const controller = {
-    home: function (req, res) {
-        res.render("home", { products: productService.products });
+    home: async function (req, res) {
+        res.render("home", { products: await productService.getAll() });
     },
     login: function (req, res) {
         res.render("login", {
             pageTitle: "Ingresa",
         });
     },
-    loginProcess: function (req, res) {
-        let userToLogin = userService.findByField("email", req.body.email);
+    loginProcess: async function (req, res) {
+        let userToLogin = await userService.findByField(req.body.email);
         console.log(userToLogin);
         if (userToLogin) {
             let passwordOk = bcryptjs.compareSync(
@@ -23,8 +26,6 @@ const controller = {
                 userToLogin.password
             );
             if (passwordOk) {
-                delete userToLogin.password;
-                /*delete userToLogin.repassword;*/
                 req.session.userLogged = userToLogin;
                 if (req.body.remember) {
                     res.cookie("userEmail", req.body.email, {
@@ -71,30 +72,22 @@ const controller = {
         });
     },
 
-    myCart: function(req, res){
-        // const user = db.User.findByPk(req.params.id)
-        res.render("misCompras", {
-            pageTitle: "Carrito",
-            user: user,
-        })
+    search: async function (req, res) {
+        const search = await db.Products.findAll({
+            where: {
+                name: { [Op.like]: "%" + req.query.search + "%" },
+            },
+            include: [
+                {
+                    association: "imageProducts",
+                },
+            ],
+        });
+
+        return res.render("results", { search: search });
     },
 
-    search: function (req, res) {
-        let busqueda = req.query.search;
-        let search = [];
-        for (let i = 0; i < productService.products.length; i++) {
-            if (
-                productService.products[i].name
-                    .toLowerCase()
-                    .includes(busqueda.toLowerCase())
-            ) {
-                search.push(productService.products[i]);
-            }
-        }
-        res.render("results", { search: search });
-    },
-
-    cRegister: function (req, res) {
+    cRegister: async function (req, res) {
         const resultValidation = validationResult(req);
         if (resultValidation.errors.length > 0) {
             return res.render("register", {
@@ -103,7 +96,7 @@ const controller = {
             });
         }
 
-        let userInD = userService.findByField("email", req.body.email);
+        let userInD = await userService.findByField(req.body.email);
 
         if (userInD) {
             return res.render("register", {
@@ -115,7 +108,7 @@ const controller = {
                 oldData: req.body,
             });
         }
-        userService.createUser(req.body, req.file);
+        await userService.createUser(req.body, req.file);
         return res.render("thanksForR");
     },
     logout: (req, res) => {

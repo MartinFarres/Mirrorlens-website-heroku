@@ -6,20 +6,21 @@ module.exports = function (sequelize, dataTypes) {
             primaryKey: true,
             autoIncrement: true,
         },
-        image_1: { type: dataTypes.STRING },
-        image_2: { type: dataTypes.STRING },
-        image_3: { type: dataTypes.STRING },
+        image1: { type: dataTypes.STRING },
+        image2: { type: dataTypes.STRING },
+        image3: { type: dataTypes.STRING },
     };
     let config = {
-        tableName: "productimages",
+        tableName: "image_products",
         timestamps: false,
     };
     let ImageProducts = sequelize.define(alias, cols, config);
 
     ImageProducts.associate = function (models) {
-        ImageProducts.belongsTo(models.Products, {
+        ImageProducts.hasMany(models.Products, {
             as: "products",
-            foreignKey: "id",
+            foreignKey: "image_id",
+            onDelete: "CASCADE",
         });
     };
     return ImageProducts;

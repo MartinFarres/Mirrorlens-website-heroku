@@ -7,8 +7,6 @@ const productsRouter = require("./routers/products");
 const methodOverride = require("method-override");
 const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware");
 const cookies = require("cookie-parser");
-const bodyParser = require('body-parser'); 
-
 
 const publicPath = path.join(__dirname, "../public");
 app.use(
@@ -26,8 +24,6 @@ app.set("views", path.join(__dirname, "/views"));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(methodOverride("_method"));
-app.use(bodyParser.json()); 
-app.use(bodyParser.urlencoded({ extended: true }));
 
 app.listen(process.env.PORT || 3000, () => console.log("Esto fue exitoso"));
 

@@ -1,166 +1,105 @@
-<div class="container mt-5">
+<div class="container mt-5 ">
     <div class="row">
         <div class="col-md-6 col-sm-6 col-xs-12">
             <h3 class="mb-5 d-none d-md-block">Productos relacionados</h3>
         </div>
         <div class="col-md-6 col-sm-6 col-xs-6 hidden-xs">
             <div class="controls pull-right p-4">
-                <a
-                    class="left fa fa-chevron-left btn btn-info"
-                    href="#product-slider-bootstrap"
-                    data-slide="prev"
-                ></a
-                ><a
-                    class="right fa fa-chevron-right btn btn-info"
-                    href="#product-slider-bootstrap"
-                    data-slide="next"
-                ></a>
+                <a class="left fa fa-chevron-left btn btn-info " href="#product-slider-bootstrap"
+                    data-slide="prev"></a><a class="right fa fa-chevron-right btn btn-info"
+                    href="#product-slider-bootstrap" data-slide="next"></a>
             </div>
         </div>
     </div>
-    <div
-        id="product-slider-bootstrap"
-        class="carousel-1 carousel slide hidden-x d-none d-md-block"
-        data-ride="carousel"
-        data-type="multi"
-    >
+    <div id="product-slider-bootstrap" class="carousel-1 carousel slide hidden-x d-none d-md-block" data-ride="carousel"
+        data-type="multi">
         <div class="carousel-inner">
             <div class="item active">
                 <div class="row">
-                    <% for(let i = 0; i < products1.length; i++){ %>
-                    <div class="col-md-3 col-sm-3 col-xs-12">
-                        <div class="slider-item">
-                            <div class="slider-image">
-                                <a href="<%=`/collections/${products1[i].id}` %>">
-                                    <img
-                                        src="<%= products1[i].ImageProducts.image_1 %> "
-                                        class="img-responsive"
-                                        alt="a"
-                                /></a>
-                            </div>
-                            <div class="slider-main-detail">
-                                <div class="slider-detail">
-                                    <div class="product-detail">
-                                        <h5><%= products1[i].product_name %></h5>
-                                        <h5 class="detail-price">
-                                            $<%= products1[i].price %>
-                                        </h5>
-                                    </div>
+                    <% for(let product of products.slice(0,4)){ %>
+
+                        <div class="col-md-3 col-sm-3 col-xs-12">
+                            <div class="slider-item">
+                                <div class="slider-image">
+                                    <a href="<%=`/collections/${product.id}` %>">
+                                        <img src="<%= product.imageProducts.image1 %> " class="img-responsive"
+                                            alt="a" /></a>
                                 </div>
-                                <div class="cart-section">
-                                    <div class="row">
-                                        <div
-                                            class="col-lg-5 col-sm-12 col-xs-6 review"
-                                        >
-                                            <i
-                                                class="fa fa-star"
-                                                aria-hidden="true"
-                                            ></i>
-                                            <i
-                                                class="fa fa-star"
-                                                aria-hidden="true"
-                                            ></i>
-                                            <i
-                                                class="fa fa-star"
-                                                aria-hidden="true"
-                                            ></i>
-                                            <i
-                                                class="fa fa-star-o"
-                                                aria-hidden="true"
-                                            ></i>
-                                            <i
-                                                class="fa fa-star-o"
-                                                aria-hidden="true"
-                                            ></i>
+                                <div class="slider-main-detail">
+                                    <div class="slider-detail">
+                                        <div class="product-detail">
+                                            <h5>
+                                                <%= product.name %>
+                                            </h5>
+                                            <h5 class="detail-price">
+                                                $ <%= product.price %>
+                                            </h5>
                                         </div>
-                                        <div
-                                            class="col-md-6 col-sm-12 col-xs-6"
-                                        >
-                                            <a
-                                                href="#"
-                                                class="AddCart btn btn-info"
-                                                ><i
-                                                    class="fa fa-shopping-cart"
-                                                    aria-hidden="true"
-                                                ></i>
-                                                Add To Cart</a
-                                            >
+                                    </div>
+                                    <div class="cart-section">
+                                        <div class="row">
+                                            <div class="col-lg-5 col-sm-12 col-xs-6 review">
+                                                <i class="fa fa-star" aria-hidden="true"></i>
+                                                <i class="fa fa-star" aria-hidden="true"></i>
+                                                <i class="fa fa-star" aria-hidden="true"></i>
+                                                <i class="fa fa-star-o" aria-hidden="true"></i>
+                                                <i class="fa fa-star-o" aria-hidden="true"></i>
+                                            </div>
+                                            <div class="col-md-6 col-sm-12 col-xs-6">
+                                                <a href="#" class="AddCart btn btn-info"><i class="fa fa-shopping-cart"
+                                                        aria-hidden="true"></i>
+                                                    Add To Cart</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <% } %>
+                        <% } %>
                 </div>
             </div>
             <div class="item">
                 <div class="row">
-                    <% for(let i = 0; i < products2.length; i++){ %>
-                    <div class="col-md-3 col-sm-3 col-xs-12">
-                        <div class="slider-item">
-                            <div class="slider-image">
-                                <a href="<%=`/collections/${products2[i].id}` %>">
-                                    <img
-                                        src="<%= products2[i].ImageProducts.image_1 %> "
-                                        class="img-responsive"
-                                        alt="a"
-                                /></a>
-                            </div>
-                            <div class="slider-main-detail">
-                                <div class="slider-detail">
-                                    <div class="product-detail">
-                                        <h5><%= products2[i].product_name %></h5>
-                                        <h5 class="detail-price">
-                                            <%= products2[i].price %>
-                                        </h5>
-                                    </div>
+                    <% for(let product of products.slice(4,8)){ %>
+                        <div class="col-md-3 col-sm-3 col-xs-12">
+                            <div class="slider-item">
+                                <div class="slider-image">
+                                    <a href="<%=`/collections/${product.id}` %>">
+                                        <img src="<%= product.imageProducts.image1 %> " class="img-responsive"
+                                            alt="a" /></a>
                                 </div>
-                                <div class="cart-section">
-                                    <div class="row">
-                                        <div
-                                            class="col-lg-5 col-sm-12 col-xs-6 review"
-                                        >
-                                            <i
-                                                class="fa fa-star"
-                                                aria-hidden="true"
-                                            ></i>
-                                            <i
-                                                class="fa fa-star"
-                                                aria-hidden="true"
-                                            ></i>
-                                            <i
-                                                class="fa fa-star"
-                                                aria-hidden="true"
-                                            ></i>
-                                            <i
-                                                class="fa fa-star-o"
-                                                aria-hidden="true"
-                                            ></i>
-                                            <i
-                                                class="fa fa-star-o"
-                                                aria-hidden="true"
-                                            ></i>
+                                <div class="slider-main-detail">
+                                    <div class="slider-detail">
+                                        <div class="product-detail">
+                                            <h5>
+                                                <%= product.name %>
+                                            </h5>
+                                            <h5 class="detail-price">
+                                                <%= product.price %>
+                                            </h5>
                                         </div>
-                                        <div
-                                            class="col-md-6 col-sm-12 col-xs-6"
-                                        >
-                                            <a
-                                                href="#"
-                                                class="AddCart btn btn-info"
-                                                ><i
-                                                    class="fa fa-shopping-cart"
-                                                    aria-hidden="true"
-                                                ></i>
-                                                Add To Cart</a
-                                            >
+                                    </div>
+                                    <div class="cart-section">
+                                        <div class="row">
+                                            <div class="col-lg-5 col-sm-12 col-xs-6 review">
+                                                <i class="fa fa-star" aria-hidden="true"></i>
+                                                <i class="fa fa-star" aria-hidden="true"></i>
+                                                <i class="fa fa-star" aria-hidden="true"></i>
+                                                <i class="fa fa-star-o" aria-hidden="true"></i>
+                                                <i class="fa fa-star-o" aria-hidden="true"></i>
+                                            </div>
+                                            <div class="col-md-6 col-sm-12 col-xs-6">
+                                                <a href="#" class="AddCart btn btn-info"><i class="fa fa-shopping-cart"
+                                                        aria-hidden="true"></i>
+                                                    Add To Cart</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <% } %>
+                        <% } %>
+
                 </div>
             </div>
         </div>

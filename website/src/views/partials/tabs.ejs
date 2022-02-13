@@ -90,7 +90,7 @@
                     <div class="articulo-mv">
                         <div class="top-part-articulo">
                             <a href="<%=`/collections/${product.id}` %>">
-                                <img src="/images/productsImage/<%= product.img %>" alt=""></a>
+                                <img src="<%= product.imageProducts.image1 %>" alt=""></a>
                         </div>
                         <div class="bot-part-articulo">
                             <h4>
@@ -99,7 +99,7 @@
                             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
                                 class="fas fa-star"></i><i class="far fa-star"></i>
                             <h5>
-                                <%= product.price %>
+                                $ <%= product.price %>
                             </h5>
                         </div>
 

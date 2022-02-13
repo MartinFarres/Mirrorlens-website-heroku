@@ -1,54 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <link rel="stylesheet" href="/css/shop.css" type="text/css" />
-        <link rel="stylesheet" href="/css/shop-tablet.css" type="text/css" />
-        <link rel="stylesheet" href="/css/shop-desktop.css" type="text/css" />
-        <%- include("./partials/head") %>
-    </head>
 
-    <body>
-        <%- include("./partials/header") %>
+<head>
+    <link rel="stylesheet" href="/css/shop.css" type="text/css" />
+    <link rel="stylesheet" href="/css/shop-tablet.css" type="text/css" />
+    <link rel="stylesheet" href="/css/shop-desktop.css" type="text/css" />
+    <%- include("./partials/head") %>
+
+</head>
+
+<body>
+    <%- include("./partials/header") %>
         <main class="container-shop">
             <section class="pv">
                 <h2 class="shop-heading">Busqueda</h2>
                 <section class="article-container">
-                    <% if(search.length == 0){ %>
-                    <div class="search-not-found">
-                        <h2 class="pv w-100">
-                            NO ENCONTRAMOS LO QUE ESTABAS BUSCANDO
-                        </h2>
-                    </div>
-                    <% }else{ %>
-                    <% for(let product of search){ %>
-                    <div class="wrapper">
-                        <article class="product">
-                            <a
-                                href="<%=`/collections/${product.id}` %>"
-                                class="w-100"
-                            >
-                                <img
-                                    src="<%= product.ImageProducts.image_1 %> "
-                                    class="w-100 h-150px"
-                                    alt=""
-                                    margin-bot
-                                />
-                            </a>
-                            <div class="product-content">
-                                <h3 class="description font-large">
-                                    <%= product.product_name %>
-                                </h3>
-                                <p class="price font-medium">
-                                    $<%= product.price %>
-                                </p>
-                            </div>
-                        </article>
-                    </div>
-                    <% } %>
-                    <% } %>
+                    <% if (!search.length) { %>
+                        <h3 style="color: red; font-style: italic;">No hay productos que coincidan con tu búsqueda</h3>
+                        <% } %>
+                            <% for( let i=0; i < search.length; i++ ) { %>
+                                <div class="wrapper">
+                                    <article class="product">
+
+                                        <a href="<%=`/collections/${search[i].id}` %>">
+                                            <img src="<%= search[i].imageProducts.image1 %> " class="w-100" alt=""
+                                                margin-bot />
+                                        </a>
+                                        <div class="product-content">
+
+                                            <h3 class="description font-large">
+                                                <%= search[i].name %>
+                                            </h3>
+                                            <p class="price font-medium">
+                                                <%= search[i].price %>
+                                            </p>
+                                            <p class="discount text-green font-medium">
+                                                <%= search[i].desc %>
+                                            </p>
+                                        </div>
+                                    </article>
+                                </div>
+                                <% } %>
                 </section>
             </section>
+
+            <!-- ----------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------- -->
+
         </main>
         <%- include("./partials/footer") %>
-    </body>
+</body>
+
 </html>

@@ -1,124 +1,78 @@
-const res = require("express/lib/response");
-const db = require("../database/models");
-const products = require("../database/models/products");
-const upload = require("../middlewares/multerMiddleware");
 const productService = require("../services/products");
-const userService = require("../services/users");
+const fs = require("fs");
+const path = require("path");
+const { validationResult } = require("express-validator");
+
 const controller = {
-    collections: function (req, res) {
-        db.Products.findAll({
-            include: [{ association: "ImageProducts" }],
-        }).then((products) => {
-            res.render("collections", { products: products });
-        });
-    },
-    detail: (req, res) => {
-        const promise = db.Products.findByPk(req.params.id, {
-            include: [{ association: "ImageProducts" }],
-        });
-        promise.then((product) => {
-            res.render("detail", {
-                product: product,
-            });
+    collections: async function (req, res) {
+        res.render("collections", {
+            products: await productService.getAll(),
+            pageTitle: "Productos - Mirrorlens",
         });
     },
 
-    addToCart: async (req, res) => {
-        console.log(req.session.userLogged)
-        // let productId = req.params.id;
-        // let user = req.session.userLogged;
-        // await db.UserShop.create({
-        //     user_id: user.id,
-        //     product_id: productId,
-        // });
+    detail: async (req, res) => {
+        const id = req.params.id;
+
+        const product = await productService.findOne(id);
+        if (product) {
+            res.render("detail", {
+                product,
+                pageTitle: product.name + " - Mirrorlens",
+                products: await productService.getAll(),
+            });
+        } else {
+            res.render("not-found");
+        }
     },
 
     create: function (req, res) {
-        db.ProductBorderColor.findAll({
-            include: [{ association: "products" }],
-        }).then((productBorderColor) => {
-            res.render("createProd", {
-                pageTitle: "Crea tu producto",
-                productBorderColor: productBorderColor,
-                columnNames: productService
-                    .tableNames(db.ProductBorderColor)
-                    .filter((columnName) => {
-                        return columnName != "id";
-                    }),
-            });
+        res.render("createProd", {
+            pageTitle: "Crea tu producto",
         });
     },
+    edit: async function (req, res) {
+        const id = req.params.id;
+        const product = await productService.findOne(id);
+        res.render("editProd", {
+            product: product,
+            pageTitle: "Editando: " + product.name,
+        });
+    },
+
+    update: async (req, res, files) => {
+        const id = req.params.id;
+        const resultValidation = validationResult(req);
+        if (resultValidation.errors.length > 0) {
+            const product = await productService.findOne(id);
+            return res.render("editProd", {
+                pageTitle: "Editando: " + product.name,
+                errors: resultValidation.mapped(),
+                product: product,
+                oldData: req.body,
+            });
+        }
+
+        await productService.updateOne(id, req.body, req.files);
+
+        res.redirect(`/collections/${id}`);
+    },
+
     store: async function (req, res) {
-        let borderColor = await db.ProductBorderColor.create({
-            red: productService.reqProductBorderColors(req.body.red),
-            blue: productService.reqProductBorderColors(req.body.blue),
-            black: productService.reqProductBorderColors(req.body.black),
-            white: productService.reqProductBorderColors(req.body.white),
-            purple: productService.reqProductBorderColors(req.body.purple),
-            grey: productService.reqProductBorderColors(req.body.grey),
-            green: productService.reqProductBorderColors(req.body.green),
-            orange: productService.reqProductBorderColors(req.body.orange),
-            yellow: productService.reqProductBorderColors(req.body.yellow),
-            pink: productService.reqProductBorderColors(req.body.pink),
-            brown: productService.reqProductBorderColors(req.body.brown),
-            transparent: productService.reqProductBorderColors(
-                req.body.transparent
-            ),
-        });
-
-        let imageProduct = await db.ImageProducts.create({
-            image_1: "/images/productsImage/" + req.files[0].filename,
-            image2: req.files[1]
-                ? "/images/productsimage/" + req.files[1].filename
-                : null,
-            image3: req.files[2]
-                ? "/images/productsimage/" + req.files[2].filename
-                : null,
-        });
-
-        await db.Products.create({
-            product_name: req.body.product_name,
-            price: req.body.price,
-            description: req.body.description,
-            type: req.body.type,
-            borderColor_Id: borderColor.id,
-            brand: req.body.brand,
-            gender: req.body.gender,
-            images_id: imageProduct.id,
-        });
-
-        res.redirect("/");
-    },
-
-    edit: function (req, res) {
-        db.Products.findByPk(req.params.id, {
-            include: [
-                {
-                    association: "ImageProducts",
-                    association: "ProductBorderColor",
-                },
-            ],
-        }).then((product) => {
-            res.render("editProd", {
-                product,
-                columnNames: productService
-                    .tableNames(db.ProductBorderColor)
-                    .filter((columnName) => {
-                        return columnName != "id";
-                    }),
+        const resultValidation = validationResult(req);
+        if (resultValidation.errors.length > 0) {
+            return res.render("createProd", {
+                pageTitle: "Crea tu producto",
+                errors: resultValidation.mapped(),
+                oldData: req.body,
             });
-        });
-    },
-
-    update: async (req, res) => {
-        await productService.update(req, res, req.files);
+        }
+        await productService.createOne(req.body, req.files);
         res.redirect("/collections/");
     },
-
-    destroy: async function (req, res) {
+    destroy: function (req, res) {
         const id = req.params.id;
-        await db.ImageProducts.destroy({ where: { id: id }, force: true });
-        await db.ProductBorderColor.destroy({ where: { id: id }, force: true });
+        productService.deleteOne(id);
         res.redirect("/collections/");
     },
 };

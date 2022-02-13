@@ -10,13 +10,7 @@ body {
 .w-50 {
     width: 50%;
 }
-.h-150px {
-    height: 150px;
-}
 
-.justify-center {
-    justify-content: center;
-}
 .p {
     padding: 16px;
     margin-bottom: 0 !important;
@@ -33,10 +27,6 @@ body {
 
 .pvs {
     padding: 4px 0px;
-}
-
-.plr {
-    padding: 0px 9px !important;
 }
 
 .b {
@@ -437,15 +427,4 @@ body {
     text-transform: uppercase;
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
-}
-
-.flex-justify {
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.search-not-found {
-    display: flex;
-    justify-content: center;
-    margin: 0 auto;
 }

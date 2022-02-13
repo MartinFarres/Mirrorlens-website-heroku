@@ -35,10 +35,10 @@
                     </div>
                     <div class="control-form">
                         <label>Imágen de perfil</label>
-                        <input type="file" name="photoUser" class="control">
-                        <% if (locals.errors && errors.photoUser) { %>
+                        <input type="file" name="img" class="control">
+                        <% if (locals.errors && errors.img) { %>
                             <p style="color: red">
-                                <%= errors.photoUser.msg %>
+                                <%= errors.img.msg %>
                             </p>
                             <% } %>
                     </div>
@@ -53,30 +53,19 @@
                             </p>
                             <% } %>
                     </div>
-                    
+
                     <div class="control-form">
-                        <label>Pais:</label>
-                        <input type="text" name="country"
-                            class="control <%= locals.errors && errors.country ? 'is-invalid' : null %>"
-                            value="<%= locals.oldData ? oldData.country : null %>">
-                        <% if (locals.errors && errors.country) { %>
+                        <label>Domicilio:</label>
+                        <input type="text" name="direction"
+                            class="control <%= locals.errors && errors.direction ? 'is-invalid' : null %>"
+                            value="<%= locals.oldData ? oldData.direction : null %>">
+                        <% if (locals.errors && errors.direction) { %>
                             <p style="color: red">
-                                <%= errors.country.msg %>
+                                <%= errors.direction.msg %>
                             </p>
                             <% } %>
                     </div>
 
-                    <div class="control-form">
-                        <label>Domicilio:</label>
-                        <input type="text" name="street"
-                            class="control <%= locals.errors && errors.street ? 'is-invalid' : null %>"
-                            value="<%= locals.oldData ? oldData.street : null %>">
-                        <% if (locals.errors && errors.street) { %>
-                            <p style="color: red">
-                                <%= errors.street.msg %>
-                            </p>
-                            <% } %>
-                    </div>
 
                     <div class="control-form">
                         <label>Contraseña:</label>

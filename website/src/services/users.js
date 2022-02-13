@@ -1,49 +1,32 @@
 const fs = require("fs");
 const path = require("path");
-
-const usersFilePath = path.join(__dirname, "../data/users.json");
-const users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
+const db = require("../database/models/");
 const bcryptjs = require("bcryptjs");
-function saveUsers() {
-    const save = JSON.stringify(users, null, 2);
-    fs.writeFileSync(usersFilePath, save, "utf-8");
-}
 
 module.exports = {
-    /*findAll: function () {
-        return users;
-    },*/
-
-    /*findByPk: function (id) {},*/
-    users,
-    saveUsers,
-
-    findById(id) {
-        const user = users.find((user) => {
-            return id == user.id;
-        });
+    async findById(id) {
+        const user = await db.Users.findByPk(id);
         return user;
     },
-    findByField(field, text) {
-        const user = users.find((user) => {
-            return user[field] == text;
-        });
-        return user;
+    async findByField(text) {
+        try {
+            const user = await db.Users.findOne({
+                where: { email: text },
+            });
+            return user;
+        } catch (err) {
+            console.log(err);
+        }
     },
 
-    createUser(body, file) {
-        let usuario = {
-            id: Date.now(),
+    async createUser(body, file) {
+        await db.Users.create({
             ...body,
             password: bcryptjs.hashSync(body.password, 10),
             repassword: bcryptjs.hashSync(body.repassword, 10),
-        };
-        if (file) {
-            usuario.img = file.filename;
-        }
-
-        users.push(usuario);
-
-        saveUsers();
+            ...(file && {
+                photo_user: "/images/productsimage/" + file.filename,
+            }),
+        });
     },
 };

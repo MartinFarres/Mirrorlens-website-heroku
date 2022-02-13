@@ -6,14 +6,16 @@ module.exports = function (sequelize, dataTypes) {
             primaryKey: true,
             autoIncrement: true,
         },
-        product_name: { type: dataTypes.STRING },
+        name: { type: dataTypes.STRING },
         price: { type: dataTypes.DECIMAL },
         description: { type: dataTypes.TEXT },
         type: { type: dataTypes.STRING },
-        borderColor_Id: { type: dataTypes.STRING },
+        border_color: { type: dataTypes.STRING },
+        glass_color: { type: dataTypes.STRING },
         brand: { type: dataTypes.STRING },
         gender: { type: dataTypes.STRING },
-        images_id: { type: dataTypes.INTEGER },
+        model: { type: dataTypes.STRING },
+        image_id: { type: dataTypes.BIGINT(10).UNSIGNED },
     };
     let config = {
         tableName: "products",
@@ -23,20 +25,18 @@ module.exports = function (sequelize, dataTypes) {
 
     Products.associate = function (models) {
         Products.belongsTo(models.ImageProducts, {
-            as: "ImageProducts",
-            foreignKey: "images_id",
+            as: "imageProducts",
+            foreignKey: "image_id",
+            onDelete: "CASCADE",
         });
-        Products.belongsToMany(models.Users, {
-            as: "users",
-            through: "usershop",
-            foreignKey: "product_id",
-            otherKey: "user_id",
-            timestamps: false,
-        });
-        Products.belongsTo(models.ProductBorderColor,{
-            as: "ProductBorderColor",
-            foreignKey: "borderColor_Id"
-        })
-    }
+
+        //        Products.belongsToMany(models.Users, {
+        //           as: "users",
+        //          through: "user_shop",
+        //          foreignKey: "product_id",
+        //           otherKey: "user_id",
+        //          timestamps: false,
+        //      });
+    };
     return Products;
 };
