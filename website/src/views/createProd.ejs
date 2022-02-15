@@ -1,122 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <%- include("./partials/head") %>
+        <link rel="stylesheet" href="/css/products.css" type="text/css" />
+    </head>
 
-<head>
-    <%- include("./partials/head") %>
-</head>
-
-<body>
-    <%- include("./partials/header") %>
+    <script src="/js/createProd.js"></script>
+    <body>
+        <%- include("./partials/header") %>
         <main class="container-content-login">
-            <form action="/collections" method="post" class="create-form" enctype="multipart/form-data">
+            <form
+                action="/collections"
+                method="post"
+                class="create-form"
+                enctype="multipart/form-data"
+            >
                 <div class="control-form">
-                    <input type="text" name="name" placeholder="Nombre Del Producto" class="control" <%=locals.errors &&
-                        errors.name ? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.name : null %>">
-
-                        <% if (locals.errors && errors.name) { %>
-                            <p style="color: red">
-                                <%= errors.name.msg %>
-                            </p>
-                            <% } %>
+                    <input
+                        type="text"
+                        name="product_name"
+                        placeholder="Nombre Del Producto"
+                        class="control"
+                    />
                 </div>
                 <div class="control-form">
                     <label>Imágen del producto</label>
-                    <input type="file" name="img" multiple class="control">
-                    <% if (locals.errors && errors.img) { %>
-                        <p style="color: red">
-                            <%= errors.img.msg %>
-                        </p>
+                    <input type="file" name="image" multiple class="control" />
+                </div>
+                <div class="control-form">
+                    <label for="">Tipo de lentes:</label>
+                    <div class="flex-justify">
+                        <input type="radio" name="type" value="Sunglasses" />
+                        <label for="type1">Sunglasses</label>
+                    </div>
+                    <div class="flex-justify">
+                        <input type="radio" name="type" value="Eyeglasses" />
+                        <label for="type1">Eyeglasses</label>
+                    </div>
+                </div>
+                <div class="control-form">
+                    <label for="">Genero:</label>
+                    <div class="flex-justify">
+                        <input type="radio" name="gender" value="M" />
+                        <label for="type1">Masculino</label>
+                    </div>
+                    <div class="flex-justify">
+                        <input type="radio" name="gender" value="F" />
+                        <label for="type1">Femenino</label>
+                    </div>
+                    <div class="flex-justify">
+                        <input type="radio" name="gender" value="U" />
+                        <label for="type1">Unisex</label>
+                    </div>
+                </div>
+                <div class="control-form">
+                    <input
+                        type="text"
+                        name="brand"
+                        placeholder="Marca Del Producto"
+                        class="control"
+                    />
+                </div>
+
+                <div class="control-form">
+                    <label for="">Colores del marco:</label>
+                    <div class="colorCheckboxes">
+                        <% for(columnName in columnNames){ %>
+                        <div class="inputColorBoxes">
+                            <input
+                                type="checkbox"
+                                name="<%=columnNames[columnName] %>"
+                                value="0"
+                            />
+                            <label for="" class="plr"
+                                ><%=columnNames[columnName] %>
+                            </label>
+                        </div>
                         <% } %>
+                    </div>
                 </div>
                 <div class="control-form">
-                    <input type="text" name="type" placeholder="Tipo De Producto" class="control" <%=locals.errors &&
-                        errors.type ? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.type : null %>">
-
-                        <% if (locals.errors && errors.type) { %>
-                            <p style="color: red">
-                                <%= errors.type.msg %>
-                            </p>
-                            <% } %>
+                    <input
+                        type="text"
+                        name="glass_color"
+                        placeholder="Color de lentes"
+                        class="control"
+                    />
                 </div>
                 <div class="control-form">
-                    <input type="text" name="model" placeholder="Modelo Del Producto" class="control" <%=locals.errors
-                        && errors.model ? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.model : null %>">
-
-                        <% if (locals.errors && errors.model) { %>
-                            <p style="color: red">
-                                <%= errors.model.msg %>
-                            </p>
-                            <% } %>
+                    <input
+                        type="text"
+                        name="model"
+                        placeholder="Modelo"
+                        class="control"
+                    />
                 </div>
                 <div class="control-form">
-                    <input type="text" name="brand" placeholder="Marca Del Producto" class="control" <%=locals.errors &&
-                        errors.brand ? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.brand : null %>">
-
-                        <% if (locals.errors && errors.brand) { %>
-                            <p style="color: red">
-                                <%= errors.brand.msg %>
-                            </p>
-                            <% } %>
+                    <input
+                        type="text"
+                        name="price"
+                        placeholder="Precio"
+                        class="control"
+                    />
                 </div>
                 <div class="control-form">
-                    <input type="text" name="border_color" placeholder="Color" class="control" <%=locals.errors &&
-                        errors.border_color ? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.border_color :
-                        null %>">
-
-                        <% if (locals.errors && errors.border_color) { %>
-                            <p style="color: red">
-                                <%= errors.border_color.msg %>
-                            </p>
-                            <% } %>
-                </div>
-                <div class="control-form">
-                    <input type="text" name="gender" placeholder="Género" class="control" <%=locals.errors &&
-                        errors.gender ? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.gender : null %>">
-
-                        <% if (locals.errors && errors.gender) { %>
-                            <p style="color: red">
-                                <%= errors.gender.msg %>
-                            </p>
-                            <% } %>
-                </div>
-                <div class="control-form">
-                    <input type="text" name="glass_color" placeholder="Color del lente" class="control" <%=locals.errors
-                        && errors.glass_color ? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.glass_color
-                        : null %>">
-
-                        <% if (locals.errors && errors.glass_color) { %>
-                            <p style="color: red">
-                                <%= errors.glass_color.msg %>
-                            </p>
-                            <% } %>
-                </div>
-                <div class="control-form">
-                    <input type="text" name="price" placeholder="Precio $" class="control" <%=locals.errors &&
-                        errors.price ? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.price : null %>">
-
-                        <% if (locals.errors && errors.price) { %>
-                            <p style="color: red">
-                                <%= errors.price.msg %>
-                            </p>
-                            <% } %>
-                </div>
-                <div class="control-form">
-                    <input type="text" name="description" placeholder="Descripción del producto" class="control"
-                        <%=locals.errors && errors.description ? 'is-invalid' : null %>" value="<%= locals.oldData ?
-                        oldData.description : null %>">
-
-                        <% if (locals.errors && errors.description) { %>
-                            <p style="color: red">
-                                <%= errors.description.msg %>
-                            </p>
-                            <% } %>
+                    <input
+                        type="text"
+                        name="description"
+                        placeholder="Descripción del producto"
+                        class="control"
+                    />
                 </div>
 
                 <button type="submit" class="button-form">Publicar</button>
             </form>
         </main>
-
         <%- include("./partials/footer") %>
-</body>
-
+    </body>
 </html>

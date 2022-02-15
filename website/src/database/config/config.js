@@ -1,8 +1,8 @@
 module.exports = {
     development: {
         username: "root",
-        password: "",
-        database: "mirrorlens",
+        password: null,
+        database: "mirrorlens2",
         host: "127.0.0.1",
         dialect: "mysql",
     },

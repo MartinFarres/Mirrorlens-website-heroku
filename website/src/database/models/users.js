@@ -10,7 +10,7 @@ module.exports = function (sequelize, dataTypes) {
         email: { type: dataTypes.STRING },
         password: { type: dataTypes.STRING },
         repassword: { type: dataTypes.STRING },
-        direction: { type: dataTypes.STRING },
+        adress_id: { type: dataTypes.INTEGER },
         photo_user: { type: dataTypes.STRING },
     };
     let config = {
@@ -19,11 +19,11 @@ module.exports = function (sequelize, dataTypes) {
     };
     let Users = sequelize.define(alias, cols, config);
 
-    //   Users.associate = function (models) {
-    //      Users.hasMany(models.photoUser, {
-    //          as: "users",
-    //          foreignKey: "photo_user",
-    //      });
-    //  };
+    Users.associate = function (models) {
+        Users.belongsTo(models.Adress, {
+            as: "adress",
+            foreignKey: "adress_id",
+        });
+    };
     return Users;
 };

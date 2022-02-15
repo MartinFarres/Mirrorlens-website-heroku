@@ -8,6 +8,7 @@ module.exports = {
             include: [
                 {
                     association: "imageProducts",
+                    association: "ProductBorderColor",
                 },
             ],
         });
@@ -19,8 +20,30 @@ module.exports = {
             image2: "/images/productsimage/" + files[1].filename,
             image3: "/images/productsimage/" + files[2].filename,
         });
+        let borderColor = await db.ProductBorderColor.create({
+            red: this.reqProductBorderColors(req.body.red),
+            blue: this.reqProductBorderColors(req.body.blue),
+            black: this.reqProductBorderColors(req.body.black),
+            white: this.reqProductBorderColors(req.body.white),
+            purple: this.reqProductBorderColors(req.body.purple),
+            grey: this.reqProductBorderColors(req.body.grey),
+            green: this.reqProductBorderColors(req.body.green),
+            orange: this.reqProductBorderColors(req.body.orange),
+            yellow: this.reqProductBorderColors(req.body.yellow),
+            pink: this.reqProductBorderColors(req.body.pink),
+            brown: this.reqProductBorderColors(req.body.brown),
+            transparent: this.reqProductBorderColors(req.body.transparent),
+        });
         await db.Products.create({
-            ...body,
+            name: req.body.product_name,
+            price: req.body.price,
+            description: req.body.description,
+            type: req.body.type,
+            borderColor_Id: borderColor.id,
+            glass_color: req.body.glass_color,
+            brand: req.body.brand,
+            gender: req.body.gender,
+            model: req.body.model,
             image_id: imageProduct.id,
         });
     },
@@ -30,6 +53,7 @@ module.exports = {
             include: [
                 {
                     association: "imageProducts",
+                    association: "ProductBorderColor",
                 },
             ],
         });
@@ -37,7 +61,7 @@ module.exports = {
 
     async updateOne(id, body, files) {
         try {
-            let imageProduct = await db.ImageProducts.update(
+            await db.ImageProducts.update(
                 {
                     ...(files[0] && {
                         image1: "/images/productsimage/" + files[0].filename,
@@ -67,15 +91,45 @@ module.exports = {
                     multi: true,
                 }
             );
+            await db.borderColor.update({
+                red: this.reqProductBorderColors(req.body.red),
+                blue: this.reqProductBorderColors(req.body.blue),
+                black: this.reqProductBorderColors(req.body.black),
+                white: this.reqProductBorderColors(req.body.white),
+                purple: this.reqProductBorderColors(req.body.purple),
+                grey: this.reqProductBorderColors(req.body.grey),
+                green: this.reqProductBorderColors(req.body.green),
+                orange: this.reqProductBorderColors(req.body.orange),
+                yellow: this.reqProductBorderColors(req.body.yellow),
+                pink: this.reqProductBorderColors(req.body.pink),
+                brown: this.reqProductBorderColors(req.body.brown),
+                transparent: this.reqProductBorderColors(req.body.transparent),
+            });
         } catch (err) {
             console.log(err);
         }
     },
 
     async deleteOne(id) {
-        return await db.ImageProducts.destroy({
+        await db.ImageProducts.destroy({
             where: { id: id },
             force: true,
         });
+        await db.ProductBorderColor.destroy({ where: { id: id }, force: true });
+        
+    },
+    tableNames: (modelName) => {
+        let keys = [];
+        for (let key in modelName.rawAttributes) {
+            keys.push(key);
+        }
+        return keys;
+    },
+    reqProductBorderColors: (name) => {
+        if (name == null) {
+            return 0;
+        } else {
+            return name;
+        }
     },
 };

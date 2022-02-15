@@ -5,8 +5,9 @@ const { validationResult } = require("express-validator");
 
 const controller = {
     collections: async function (req, res) {
+        let products = await productService.getAll();
         res.render("collections", {
-            products: await productService.getAll(),
+            products,
             pageTitle: "Productos - Mirrorlens",
         });
     },
@@ -27,16 +28,45 @@ const controller = {
     },
 
     create: function (req, res) {
-        res.render("createProd", {
-            pageTitle: "Crea tu producto",
+        db.ProductBorderColor.findAll({
+            include: [{ association: "products" }],
+        }).then((productBorderColor) => {
+            res.render("createProd", {
+                pageTitle: "Crea tu producto",
+                productBorderColor: productBorderColor,
+                columnNames: productService
+                    .tableNames(db.ProductBorderColor)
+                    .filter((columnName) => {
+                        return columnName != "id";
+                    }),
+            });
         });
     },
+
+    store: async function (req, res) {
+        const resultValidation = validationResult(req);
+        if (resultValidation.errors.length > 0) {
+            return res.render("createProd", {
+                pageTitle: "Crea tu producto",
+                errors: resultValidation.mapped(),
+                oldData: req.body,
+            });
+        }
+        await productService.createOne(req.body, req.files);
+        res.redirect("/collections/");
+    },
+
     edit: async function (req, res) {
         const id = req.params.id;
         const product = await productService.findOne(id);
         res.render("editProd", {
-            product: product,
+            product,
             pageTitle: "Editando: " + product.name,
+            columnNames: productService
+                .tableNames(db.ProductBorderColor)
+                .filter((columnName) => {
+                    return columnName != "id";
+                }),
         });
     },
 
@@ -58,18 +88,6 @@ const controller = {
         res.redirect(`/collections/${id}`);
     },
 
-    store: async function (req, res) {
-        const resultValidation = validationResult(req);
-        if (resultValidation.errors.length > 0) {
-            return res.render("createProd", {
-                pageTitle: "Crea tu producto",
-                errors: resultValidation.mapped(),
-                oldData: req.body,
-            });
-        }
-        await productService.createOne(req.body, req.files);
-        res.redirect("/collections/");
-    },
     destroy: function (req, res) {
         const id = req.params.id;
         productService.deleteOne(id);

@@ -10,12 +10,12 @@ module.exports = function (sequelize, dataTypes) {
         price: { type: dataTypes.DECIMAL },
         description: { type: dataTypes.TEXT },
         type: { type: dataTypes.STRING },
-        border_color: { type: dataTypes.STRING },
+        borderColor_Id: { type: dataTypes.STRING },
         glass_color: { type: dataTypes.STRING },
         brand: { type: dataTypes.STRING },
         gender: { type: dataTypes.STRING },
         model: { type: dataTypes.STRING },
-        image_id: { type: dataTypes.BIGINT(10).UNSIGNED },
+        image_id: { type: dataTypes.INTEGER },
     };
     let config = {
         tableName: "products",
@@ -29,6 +29,10 @@ module.exports = function (sequelize, dataTypes) {
             foreignKey: "image_id",
             onDelete: "CASCADE",
         });
+        Products.belongsTo(models.ProductBorderColor,{
+            as: "ProductBorderColor",
+            foreignKey: "borderColor_Id",
+        })
 
         //        Products.belongsToMany(models.Users, {
         //           as: "users",
