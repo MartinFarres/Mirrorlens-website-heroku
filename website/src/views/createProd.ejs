@@ -16,16 +16,19 @@
                 enctype="multipart/form-data"
             >
                 <div class="control-form">
-                    <input
-                        type="text"
-                        name="product_name"
-                        placeholder="Nombre Del Producto"
-                        class="control"
-                    />
+                    <input type="text" name="product_name" placeholder="Nombre Del Producto" class="control"
+                    <%=locals.errors && errors.name ? 'is-invalid' : null %> 
+                    value="<%=locals.oldData ? oldData.name : null %>"/> 
+                    <% if (locals.errors && errors.name) { %>
+                        <p style="color: red"><%= errors.name.msg %></p>
+                    <% } %>
                 </div>
                 <div class="control-form">
                     <label>Imágen del producto</label>
                     <input type="file" name="image" multiple class="control" />
+                    <% if (locals.errors && errors.image) { %>
+                    <p style="color: red"><%= errors.image.msg %></p>
+                    <% } %>
                 </div>
                 <div class="control-form">
                     <label for="">Tipo de lentes:</label>

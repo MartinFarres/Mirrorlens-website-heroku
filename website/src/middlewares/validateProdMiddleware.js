@@ -23,7 +23,7 @@ module.exports = [
     body("description")
         .notEmpty()
         .withMessage("Tienes que escribir una descripción"),
-    body("img").custom((value, { req }) => {
+    body("image").custom((value, { req }) => {
         let file = req.files[0];
         let acceptedExt = [".jpg", ".png"];
         if (!file) {

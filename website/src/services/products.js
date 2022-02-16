@@ -3,47 +3,61 @@ const path = require("path");
 const db = require("../database/models/");
 
 module.exports = {
-    async getAll() {
+    getAll: async () => {
         return await db.Products.findAll({
             include: [
                 {
                     association: "imageProducts",
+                },
+                {
                     association: "ProductBorderColor",
                 },
             ],
         });
     },
 
+    getProductBorderColor: async () => {
+        return await db.ProductBorderColor.findAll({
+            include: [{ association: "products" }],
+        });
+    },
+
     async createOne(body, files) {
         let imageProduct = await db.ImageProducts.create({
-            image1: "/images/productsimage/" + files[0].filename,
-            image2: "/images/productsimage/" + files[1].filename,
-            image3: "/images/productsimage/" + files[2].filename,
+            ...(files[0] && {
+                image1: "/images/productsimage/" + files[0].filename,
+            }),
+            ...(files[1] && {
+                image2: "/images/productsimage/" + files[1].filename,
+            }),
+            ...(files[2] && {
+                image3: "/images/productsimage/" + files[2].filename,
+            }),
         });
         let borderColor = await db.ProductBorderColor.create({
-            red: this.reqProductBorderColors(req.body.red),
-            blue: this.reqProductBorderColors(req.body.blue),
-            black: this.reqProductBorderColors(req.body.black),
-            white: this.reqProductBorderColors(req.body.white),
-            purple: this.reqProductBorderColors(req.body.purple),
-            grey: this.reqProductBorderColors(req.body.grey),
-            green: this.reqProductBorderColors(req.body.green),
-            orange: this.reqProductBorderColors(req.body.orange),
-            yellow: this.reqProductBorderColors(req.body.yellow),
-            pink: this.reqProductBorderColors(req.body.pink),
-            brown: this.reqProductBorderColors(req.body.brown),
-            transparent: this.reqProductBorderColors(req.body.transparent),
+            red: this.reqProductBorderColors(body.red),
+            blue: this.reqProductBorderColors(body.blue),
+            black: this.reqProductBorderColors(body.black),
+            white: this.reqProductBorderColors(body.white),
+            purple: this.reqProductBorderColors(body.purple),
+            grey: this.reqProductBorderColors(body.grey),
+            green: this.reqProductBorderColors(body.green),
+            orange: this.reqProductBorderColors(body.orange),
+            yellow: this.reqProductBorderColors(body.yellow),
+            pink: this.reqProductBorderColors(body.pink),
+            brown: this.reqProductBorderColors(body.brown),
+            transparent: this.reqProductBorderColors(body.transparent),
         });
         await db.Products.create({
-            name: req.body.product_name,
-            price: req.body.price,
-            description: req.body.description,
-            type: req.body.type,
+            name: body.product_name,
+            price: body.price,
+            description: body.description,
+            type: body.type,
             borderColor_Id: borderColor.id,
-            glass_color: req.body.glass_color,
-            brand: req.body.brand,
-            gender: req.body.gender,
-            model: req.body.model,
+            glass_color: body.glass_color,
+            brand: body.brand,
+            gender: body.gender,
+            model: body.model,
             image_id: imageProduct.id,
         });
     },
@@ -53,6 +67,8 @@ module.exports = {
             include: [
                 {
                     association: "imageProducts",
+                },
+                {
                     association: "ProductBorderColor",
                 },
             ],
@@ -91,19 +107,19 @@ module.exports = {
                     multi: true,
                 }
             );
-            await db.borderColor.update({
-                red: this.reqProductBorderColors(req.body.red),
-                blue: this.reqProductBorderColors(req.body.blue),
-                black: this.reqProductBorderColors(req.body.black),
-                white: this.reqProductBorderColors(req.body.white),
-                purple: this.reqProductBorderColors(req.body.purple),
-                grey: this.reqProductBorderColors(req.body.grey),
-                green: this.reqProductBorderColors(req.body.green),
-                orange: this.reqProductBorderColors(req.body.orange),
-                yellow: this.reqProductBorderColors(req.body.yellow),
-                pink: this.reqProductBorderColors(req.body.pink),
-                brown: this.reqProductBorderColors(req.body.brown),
-                transparent: this.reqProductBorderColors(req.body.transparent),
+            await db.ProductBorderColor.update({
+                red: this.reqProductBorderColors(body.red),
+                blue: this.reqProductBorderColors(body.blue),
+                black: this.reqProductBorderColors(body.black),
+                white: this.reqProductBorderColors(body.white),
+                purple: this.reqProductBorderColors(body.purple),
+                grey: this.reqProductBorderColors(body.grey),
+                green: this.reqProductBorderColors(body.green),
+                orange: this.reqProductBorderColors(body.orange),
+                yellow: this.reqProductBorderColors(body.yellow),
+                pink: this.reqProductBorderColors(body.pink),
+                brown: this.reqProductBorderColors(body.brown),
+                transparent: this.reqProductBorderColors(body.transparent),
             });
         } catch (err) {
             console.log(err);
@@ -111,11 +127,9 @@ module.exports = {
     },
 
     async deleteOne(id) {
-        await db.ImageProducts.destroy({
-            where: { id: id },
-            force: true,
-        });
         await db.ProductBorderColor.destroy({ where: { id: id }, force: true });
+        await db.Products.destroy({ where: { id: id }, force: true });
+        await db.ImageProducts.destroy({ where: { id: id }, force: true });
         
     },
     tableNames: (modelName) => {

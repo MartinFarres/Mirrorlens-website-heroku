@@ -2,12 +2,12 @@ const productService = require("../services/products");
 const fs = require("fs");
 const path = require("path");
 const { validationResult } = require("express-validator");
+const db = require("../database/models");
 
 const controller = {
     collections: async function (req, res) {
-        let products = await productService.getAll();
         res.render("collections", {
-            products,
+            products: await productService.getAll(),
             pageTitle: "Productos - Mirrorlens",
         });
     },
@@ -27,31 +27,33 @@ const controller = {
         }
     },
 
-    create: function (req, res) {
-        db.ProductBorderColor.findAll({
-            include: [{ association: "products" }],
-        }).then((productBorderColor) => {
-            res.render("createProd", {
-                pageTitle: "Crea tu producto",
-                productBorderColor: productBorderColor,
-                columnNames: productService
-                    .tableNames(db.ProductBorderColor)
-                    .filter((columnName) => {
-                        return columnName != "id";
-                    }),
-            });
-        });
+    create: async function (req, res) {
+        res.render("createProd", {
+            pageTitle: "Crea tu producto",
+            productBorderColor: await productService.getProductBorderColor(),
+            columnNames: productService
+                .tableNames(db.ProductBorderColor)
+                .filter((columnName) => {
+                    return columnName != "id";
+                }),
+            })
     },
 
     store: async function (req, res) {
-        const resultValidation = validationResult(req);
-        if (resultValidation.errors.length > 0) {
-            return res.render("createProd", {
-                pageTitle: "Crea tu producto",
-                errors: resultValidation.mapped(),
-                oldData: req.body,
-            });
-        }
+        // const resultValidation = validationResult(req);
+        // if (resultValidation.errors.length > 0) {
+        //     return res.render("createProd", {
+        //         pageTitle: "Crea tu producto",
+        //         errors: resultValidation.mapped(),
+        //         oldData: req.body,
+        //         productBorderColor: await productService.getProductBorderColor(),
+        //         columnNames: productService
+        //         .tableNames(db.ProductBorderColor)
+        //         .filter((columnName) => {
+        //             return columnName != "id";
+        //         }),
+        //     });
+        // }
         await productService.createOne(req.body, req.files);
         res.redirect("/collections/");
     },

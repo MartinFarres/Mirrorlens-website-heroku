@@ -13,7 +13,7 @@ router.get("/", productsController.collections);
 router.get("/create", productsController.create);
 router.post(
     "/",
-    multerMiddleware.array("img", 3),
+    multerMiddleware.array("image", [3]),
     validateProdMiddleware,
     productsController.store
 );
@@ -25,7 +25,7 @@ router.get("/:id/", productsController.detail);
 router.get("/:id/edit", productsController.edit);
 router.put(
     "/:id",
-    multerMiddleware.array("img", 3),
+    multerMiddleware.array("image", [3]),
     validateUpdMiddleware,
     productsController.update
 );

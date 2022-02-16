@@ -17,10 +17,9 @@ module.exports = function (sequelize, dataTypes) {
     let ImageProducts = sequelize.define(alias, cols, config);
 
     ImageProducts.associate = function (models) {
-        ImageProducts.belongsTo(models.Products, {
+        ImageProducts.hasOne(models.Products, {
             as: "products",
-            foreignKey: "image_id",
-            onDelete: "CASCADE",
+            foreignKey: "id",
         });
     };
     return ImageProducts;

@@ -27,7 +27,6 @@ module.exports = function (sequelize, dataTypes) {
         Products.belongsTo(models.ImageProducts, {
             as: "imageProducts",
             foreignKey: "image_id",
-            onDelete: "CASCADE",
         });
         Products.belongsTo(models.ProductBorderColor,{
             as: "ProductBorderColor",
