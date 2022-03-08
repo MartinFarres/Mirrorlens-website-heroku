@@ -1,84 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <link rel="stylesheet" href="/css/shop.css" type="text/css" />
+        <link rel="stylesheet" href="/css/shop-tablet.css" type="text/css" />
+        <link rel="stylesheet" href="/css/shop-desktop.css" type="text/css" />
+        <%- include("./partials/head") %>
+    </head>
 
-<head>
-    <link rel="stylesheet" href="/css/shop.css" type="text/css" />
-    <link rel="stylesheet" href="/css/shop-tablet.css" type="text/css" />
-    <link rel="stylesheet" href="/css/shop-desktop.css" type="text/css" />
-    <%- include("./partials/head") %>
-
-</head>
-
-<body>
-    <%- include("./partials/header") %>
-        <main class="container-shop">
-            <section class="pv">
-                <div class="button-create">
-                    <h2 class="shop-heading">For You</h2>
-                    <% if(user != undefined && user.admin == 1){ %> 
-                    <form action="/collections/create" method="GET">
-                        <button type="submit" class="button-new-product">Nuevo Producto</button>
-                    </form>
-                    <% } %> 
+    <body>
+        <%- include("./partials/header") %>
+        <section>
+            <div class="bg-dark py-5">
+                <div class="container px-4 px-lg-5 my-5">
+                    <div class="text-center text-white">
+                        <h1 class="display-4 fw-bolder">Live in style</h1>
+                        <p class="lead fw-normal text-white-50 mb-0">
+                            With our latest and best glasses
+                        </p>
+                    </div>
                 </div>
-                <section class="article-container">
+            </div>
+        </section>
+        
+        <section class="pb-5 pt-rem">
+            <div class="button-create">
+                
+                <% if(user != undefined && user.admin == 1){ %>
+                <form action="/collections/create" method="GET">
+                    <button type="submit" class="button-new-product">
+                        Nuevo Producto
+                    </button>
+                </form>
+                <% } %>
+            </div>
+            <div class="container px-4 px-lg-5 mt-5">
+                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
                     <% for(let product of products){ %>
-                        <div class="wrapper">
-                            <article class="product">
-
-                                <a href="<%=`/collections/${product.id}` %>">
-                                    <img src="<%= product.imageProducts.image1 %> " class="w-100" alt="" margin-bot />
-                                </a>
-                                <div class="product-content">
-
-                                    <h3 class="description font-large">
-                                        <%= product.name %>
-                                    </h3>
-                                    <p class="price font-medium">$
-                                        <%= product.price %>
-                                    </p>
-                                    <p class="discount text-green font-medium">
-                                        <%= product.description%>
-                                    </p>
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <img src="<%= product.imageProducts.image1 %>" class="card-img-top h-inherit"/>
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <h5 class="fw-bolder"><%= product.name %></h5>
+                                    <div class="d-flex justify-content-center small text-warning mb-2">
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                    </div>
+                                    $ <%= product.price %>
                                 </div>
-                            </article>
-                        </div>
-                        <% } %>
-                </section>
-            </section>
-
-            <!-- ----------------------------------------------------------------------------------
----------------------------------------------------------------------------------------
---------------------------------------------------------------------------------------- -->
-            <section class="pv">
-                <h2 class="shop-heading">Shop</h2>
-                <section class="article-container">
-                    <% for(let product of products){ %>
-                        <div class="wrapper">
-                            <article class="product">
-                               
-                                <a href="<%=`/collections/${product.id}` %>">
-                                    <img src="<%= product.imageProducts.image1 %> " class="w-100" alt="" margin-bot />
-                                </a>
-                                <div class="product-content">
-
-                                    <h3 class="description font-large">
-                                        <%= product.name %>
-                                    </h3>
-                                    <p class="price font-medium">$
-                                        <%= product.price %>
-                                    </p>
-                                    <p class="discount text-green font-medium">
-                                        <%= product.description %>
-                                    </p>
+                                <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                    <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="<%=`/collections/${product.id}` %>">View Details</a></div>
                                 </div>
-                            </article>
+                            </div>
                         </div>
-                        <% } %>
-                </section>
-            </section>
+                    </div>
+                    <% } %>
+                </div>    
+            </div>
+        </section>
+        
         </main>
         <%- include("./partials/footer") %>
-</body>
-
+    </body>
 </html>
