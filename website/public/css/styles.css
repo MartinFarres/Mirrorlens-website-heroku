@@ -28,7 +28,9 @@ body {
 .pvs {
     padding: 4px 0px;
 }
-
+.plr {
+    padding: 0px 9px !important;
+}
 .b {
     border-width: 1px;
     border-style: solid;
@@ -427,4 +429,9 @@ body {
     text-transform: uppercase;
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
+}
+
+.front-error {
+    color: red;
+    list-style-type: none;
 }

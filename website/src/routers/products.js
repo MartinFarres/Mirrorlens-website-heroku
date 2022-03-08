@@ -3,11 +3,13 @@ const router = express.Router();
 const path = require("path");
 const productsController = require("../controllers/productsController");
 const multerMiddleware = require("../middlewares/multerMiddleware");
+const userLoggedMiddleware = require("../middlewares/userLoggedMiddleware");
 const validateProdMiddleware = require("../middlewares/validateProdMiddleware");
 const validateUpdMiddleware = require("../middlewares/validateUpdMiddleware");
+const carritoController = require("../controllers/carritoController")
 
 /*** GET ALL PRODUCTS ***/
-router.get("/", productsController.collections);
+router.get("/", userLoggedMiddleware, productsController.collections);
 
 /*** CREATE ONE PRODUCT ***/
 router.get("/create", productsController.create);
@@ -19,17 +21,26 @@ router.post(
 );
 
 /*** GET ONE PRODUCT ***/
-router.get("/:id/", productsController.detail);
+router.get("/:id/", userLoggedMiddleware, productsController.detail);
 
 /*** EDIT ONE PRODUCT ***/
 router.get("/:id/edit", productsController.edit);
 router.put(
     "/:id",
-    multerMiddleware.array("image", [3]),
-    validateUpdMiddleware,
+    [multerMiddleware.array("image", [3]), validateUpdMiddleware],
     productsController.update
 );
 
 /*** DELETE ONE PRODUCT***/
 router.delete("/:id", productsController.destroy);
+
+//CARRITO AGREGAR ITEM
+router.get("/agregarCarrito/:id", carritoController.agregarItem);
+
+//Quitar Item
+router.get("/quitarCarrito/:id", carritoController.quitarItem);
+
+//Mostrar carrito
+router.get("/listarCarrito", carritoController.mostrarCarrito);
+
 module.exports = router;

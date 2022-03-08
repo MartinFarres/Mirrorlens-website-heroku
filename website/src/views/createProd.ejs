@@ -5,114 +5,140 @@
         <link rel="stylesheet" href="/css/products.css" type="text/css" />
     </head>
 
-    <script src="/js/createProd.js"></script>
     <body>
+        <div class="errorsCreateForm" style="color: orangered">
+            <ul></ul>
+        </div>
         <%- include("./partials/header") %>
         <main class="container-content-login">
             <form
                 action="/collections"
                 method="post"
-                class="create-form"
+                class="create-form createProd"
                 enctype="multipart/form-data"
             >
-                <div class="control-form">
-                    <input type="text" name="product_name" placeholder="Nombre Del Producto" class="control"
-                    <%=locals.errors && errors.name ? 'is-invalid' : null %> 
-                    value="<%=locals.oldData ? oldData.name : null %>"/> 
-                    <% if (locals.errors && errors.name) { %>
-                        <p style="color: red"><%= errors.name.msg %></p>
+                <div class="control-form name">
+                    <input type="text" name="name" placeholder="Nombre"
+                    class="control" <%=locals.errors && errors.name ?
+                    'is-invalid' : null %> value="<%=locals.oldData ?
+                    oldData.name : null %>"/> <% if (locals.errors &&
+                    errors.name) { %>
+                    <p style="color: red"><%= errors.name.msg %></p>
                     <% } %>
                 </div>
-                <div class="control-form">
+                <div class="control-form image">
                     <label>Imágen del producto</label>
                     <input type="file" name="image" multiple class="control" />
                     <% if (locals.errors && errors.image) { %>
                     <p style="color: red"><%= errors.image.msg %></p>
                     <% } %>
                 </div>
-                <div class="control-form">
+                <div class="control-form type">
                     <label for="">Tipo de lentes:</label>
-                    <div class="flex-justify">
+                    <div class="radioButtons">
                         <input type="radio" name="type" value="Sunglasses" />
                         <label for="type1">Sunglasses</label>
                     </div>
-                    <div class="flex-justify">
+                    <div class="radioButtons">
                         <input type="radio" name="type" value="Eyeglasses" />
                         <label for="type1">Eyeglasses</label>
                     </div>
                 </div>
-                <div class="control-form">
+                <div class="control-form gender">
                     <label for="">Genero:</label>
-                    <div class="flex-justify">
+                    <div class="radioButtons">
                         <input type="radio" name="gender" value="M" />
                         <label for="type1">Masculino</label>
                     </div>
-                    <div class="flex-justify">
+                    <div class="radioButtons">
                         <input type="radio" name="gender" value="F" />
                         <label for="type1">Femenino</label>
                     </div>
-                    <div class="flex-justify">
+                    <div class="radioButtons">
                         <input type="radio" name="gender" value="U" />
                         <label for="type1">Unisex</label>
                     </div>
                 </div>
-                <div class="control-form">
+                <div class="control-form brand">
                     <input
                         type="text"
                         name="brand"
                         placeholder="Marca Del Producto"
                         class="control"
                     />
+                    <% if (locals.errors && errors.brand) { %>
+                    <p style="color: red"><%= errors.brand.msg %></p>
+                    <% } %>
                 </div>
 
-                <div class="control-form">
+                <div class="control-form colorBorderCheckboxes">
                     <label for="">Colores del marco:</label>
                     <div class="colorCheckboxes">
-                        <% for(columnName in columnNames){ %>
+                        <% for(columnName in columnNamesBorder){ %>
                         <div class="inputColorBoxes">
                             <input
                                 type="checkbox"
-                                name="<%=columnNames[columnName] %>"
+                                name="<%=columnNamesBorder[columnName] %>Border"
                                 value="0"
+                                class="colorBorderCheckboxes"
                             />
                             <label for="" class="plr"
-                                ><%=columnNames[columnName] %>
+                                ><%=columnNamesBorder[columnName] %>
                             </label>
                         </div>
                         <% } %>
                     </div>
                 </div>
-                <div class="control-form">
-                    <input
-                        type="text"
-                        name="glass_color"
-                        placeholder="Color de lentes"
-                        class="control"
-                    />
+                <div class="control-form colorGlassesCheckboxes">
+                    <label for="">Colores del Lentes:</label>
+                    <div class="colorCheckboxes">
+                        <% for(columnName in columnNamesGlass){ %>
+                        <div class="inputColorBoxes">
+                            <input
+                                type="checkbox"
+                                name="<%=columnNamesGlass[columnName] %>Glass"
+                                value="0"
+                                class="colorGlassesCheckboxes"
+                            />
+                            <label for="" class="plr"
+                                ><%=columnNamesGlass[columnName] %>
+                            </label>
+                        </div>
+                        <% } %>
+                    </div>
                 </div>
-                <div class="control-form">
+                <div class="control-form model">
                     <input
                         type="text"
                         name="model"
                         placeholder="Modelo"
                         class="control"
                     />
+                    <% if (locals.errors && errors.model) { %>
+                    <p style="color: red"><%= errors.model.msg %></p>
+                    <% } %>
                 </div>
-                <div class="control-form">
+                <div class="control-form priceVal">
                     <input
                         type="text"
                         name="price"
                         placeholder="Precio"
                         class="control"
                     />
+                    <% if (locals.errors && errors.price) { %>
+                    <p style="color: red"><%= errors.price.msg %></p>
+                    <% } %>
                 </div>
-                <div class="control-form">
+                <div class="control-form description">
                     <input
                         type="text"
                         name="description"
                         placeholder="Descripción del producto"
                         class="control"
                     />
+                    <% if (locals.errors && errors.description) { %>
+                    <p style="color: red"><%= errors.description.msg %></p>
+                    <% } %>
                 </div>
 
                 <button type="submit" class="button-form">Publicar</button>
@@ -120,4 +146,6 @@
         </main>
         <%- include("./partials/footer") %>
     </body>
+    <script src="/js/productCreateValidations.js"></script>
+    
 </html>

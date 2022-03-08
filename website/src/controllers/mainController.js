@@ -89,13 +89,14 @@ const controller = {
 
     cRegister: async function (req, res) {
         const resultValidation = validationResult(req);
+        console.log(resultValidation)
         if (resultValidation.errors.length > 0) {
             return res.render("register", {
                 errors: resultValidation.mapped(),
                 oldData: req.body,
             });
         }
-
+        
         let userInD = await userService.findByField(req.body.email);
 
         if (userInD) {
@@ -108,6 +109,7 @@ const controller = {
                 oldData: req.body,
             });
         }
+        console.log(req.file)
         await userService.createUser(req.body, req.file);
         return res.render("thanksForR");
     },

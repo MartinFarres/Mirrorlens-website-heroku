@@ -1,7 +1,7 @@
 import React from "react";
 import ContentRowTop from "./ContentRowTop";
 import Footer from "./Footer";
-import Table from "./Table";
+import ProductsTable from "./ProductsTable";
 import TopBar from "./TopBar";
 
 const ContentWrapper = () => {
@@ -12,7 +12,7 @@ const ContentWrapper = () => {
 
         <ContentRowTop></ContentRowTop>
       </div>
-      <Table></Table>
+      <ProductsTable></ProductsTable>
 
       <Footer></Footer>
     </div>

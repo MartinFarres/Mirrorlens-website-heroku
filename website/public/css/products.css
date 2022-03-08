@@ -195,14 +195,27 @@
     transition-duration: 0.4s;
 }
 
-
-.colorCheckboxes{
+.colorCheckboxes {
     column-count: 2;
 }
 
-.inputColorBoxes{
+.inputColorBoxes {
     padding-left: 7px;
     padding-right: 7px;
     display: flex;
     flex-wrap: wrap;
+}
+
+.radioButtons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.radioButtons label{
+    width: 60%;
+}
+
+.product_id{
+    color: white;
 }

@@ -11,18 +11,17 @@ module.exports = [
         .bail()
         .isEmail()
         .withMessage("Debes escribir un formato de correo válido"),
-    body("direction")
-        .notEmpty()
-        .withMessage("Tienes que escribir tu dirección"),
+    body("country").notEmpty().withMessage("Tienes que escribir tu Pais"),
+    body("street").notEmpty().withMessage("Tienes que escribir tu Direccion"),
     body("password")
         .notEmpty()
         .withMessage("Tienes que escribir una contrañesa"),
     body("repassword")
         .notEmpty()
         .withMessage("Tienes que escribir una contraseña"),
-    body("img").custom((value, { req }) => {
+    body("image").custom((value, { req }) => {
         let file = req.file;
-        let acceptedExt = [".jpg", ".png"];
+        let acceptedExt = [".jpg", ".png", "jpeg"];
         if (!file) {
             throw new Error("Tienes que subir una imagen");
         } else {

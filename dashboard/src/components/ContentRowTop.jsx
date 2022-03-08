@@ -1,7 +1,7 @@
 import React from "react";
-import GenresInDb from "./GenresInDb";
-import LastMovieInDb from "./LastMovieInDb";
-import MovieMetrics from "./MovieMetrics";
+import BrandsInDb from "./BrandsInDb";
+import LastProductInDB from "./LastProductInDB";
+import PageMetrics from "./PageMetrics";
 
 function ContentRowTop() {
   return (
@@ -12,13 +12,13 @@ function ContentRowTop() {
 
       <div>
         {/* <!-- Movies in Data Base --> */}
-        <MovieMetrics></MovieMetrics>
+        <PageMetrics></PageMetrics>
         {/* <!-- End movies in Data Base --> */}
 
         {/* <!-- Content Row Last Movie in Data Base --> */}
         <div className="row">
-          <LastMovieInDb></LastMovieInDb>
-          <GenresInDb></GenresInDb>
+          <LastProductInDB></LastProductInDB>
+          <BrandsInDb></BrandsInDb>
         </div>
       </div>
     </div>

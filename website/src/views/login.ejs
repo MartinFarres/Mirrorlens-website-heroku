@@ -18,13 +18,13 @@
                             style="margin-right: 20px;"></i>Continuar con
                         Facebook</button>
                 </div>
-                <form action="/login" method="post" class="create-form">
+                <form action="/login" method="post" class="create-form login">
 
-                    <div class="control-form">
+                    <div class="control-form email">
                         <input type="text" name="email" placeholder="Correo Electrónico" class="control">
                     </div>
 
-                    <div class="control-form">
+                    <div class="control-form password">
                         <input type="password" name="password" placeholder="Contraseña" class="control">
                     </div>
                     <% if (locals.errors && errors.email) { %>
@@ -41,5 +41,6 @@
             </main>
             <%- include("./partials/footer") %>
 </body>
+<script src="js/userLoginValidations.js"></script>
 
 </html>

@@ -7,6 +7,8 @@
   <%- include("./partials/head") %>
 
 </head>
+<script src="/js/addToCart.js"></script>
+
 
 <body>
   <%- include("./partials/header") %>
@@ -29,12 +31,15 @@
             </div>
           </div>
           <div class="product-button">
+            <div class="product_id">
+              <%= product.id %> 
+            </div>
             <div class="product-description">
 
               <h1>
                 <%= product.name %>
               </h1>
-              <P class="price">$
+              <P class="price">
                 <%= product.price %>
               </P>
               <!-- <div class="star-description">
@@ -46,15 +51,17 @@
               </P>
 
             </div>
-            <button class="button-product" type="submit" name="comprar" id="">Agregar al carrito - $ <%= product.price
+            <button class="button-product addToCart" type="submit" name="comprar" >Agregar al carrito - $ <%= product.price
                 %>
             </button>
+            <% if(user != undefined && user.admin == 1){ %>
             <div>
               <a href="/collections/<%= product.id %>/edit " class="button-product-edit">Editar</a>
               <form action="/collections/<%= product.id %>?_method=DELETE " method="POST" style="display: inline-flex">
                 <button type="submit" class="button-product-delete">ELIMINAR</button>
               </form>
             </div>
+            <% } %> 
           </div>
 
 

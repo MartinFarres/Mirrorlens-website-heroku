@@ -3,7 +3,7 @@ const router = express.Router();
 const path = require("path");
 const mainController = require("../controllers/mainController");
 const validateRegMiddleware = require("../middlewares/validateRegMiddleware");
-const multerMiddleware = require("../middlewares/multerMiddleware");
+const multerMiddlewareUsers = require("../middlewares/multerMiddlewareUsers");
 const guestMiddleware = require("../middlewares/guestMiddleware");
 const authMiddleware = require("../middlewares/authMiddleware");
 
@@ -14,8 +14,7 @@ router.post("/login", mainController.loginProcess);
 router.get("/register", guestMiddleware, mainController.register);
 router.post(
     "/register",
-    multerMiddleware.single("img"),
-    validateRegMiddleware,
+    [multerMiddlewareUsers.single("image"), validateRegMiddleware],
     mainController.cRegister
 );
 router.get("/search", mainController.search);

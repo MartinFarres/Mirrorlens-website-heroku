@@ -12,6 +12,7 @@ module.exports = function (sequelize, dataTypes) {
         repassword: { type: dataTypes.STRING },
         adress_id: { type: dataTypes.INTEGER },
         photo_user: { type: dataTypes.STRING },
+        admin: {type: dataTypes.INTEGER}
     };
     let config = {
         tableName: "users",

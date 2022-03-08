@@ -5,20 +5,20 @@ module.exports = [
     body("name")
         .notEmpty()
         .withMessage("Tienes que escribir el nombre del lente"),
-    body("type").notEmpty().withMessage("Tienes que escribir el tipo de lente"),
+    // body("type").notEmpty().withMessage("Tienes que escribir el tipo de lente"),
     body("model")
         .notEmpty()
         .withMessage("Tienes que escribir el modelo del lente"),
     body("brand")
         .notEmpty()
         .withMessage("Tienes que escribir la marca del lente"),
-    body("border_color")
-        .notEmpty()
-        .withMessage("Tienes que escribir el color del borde del lente"),
-    body("gender").notEmpty().withMessage("Tienes que escribir el género"),
-    body("glass_color")
-        .notEmpty()
-        .withMessage("Tienes que escribir el color del lente"),
+    // body("border_color")
+    //     .notEmpty()
+    //     .withMessage("Tienes que escribir el color del borde del lente"),
+    // body("gender").notEmpty().withMessage("Tienes que escribir el género"),
+    // body("glass_color")
+    //     .notEmpty()
+    //     .withMessage("Tienes que escribir el color del lente"),
     body("price").notEmpty().withMessage("Tienes que escribir un precio"),
     body("description")
         .notEmpty()

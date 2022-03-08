@@ -11,7 +11,7 @@ module.exports = function (sequelize, dataTypes) {
         
     };
     let config = {
-        tableName: "adress",
+        tableName: "user_adress",
         timestamps: false,
     };
     let Adress = sequelize.define(alias, cols, config);

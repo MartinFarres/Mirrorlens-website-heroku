@@ -20,13 +20,17 @@ module.exports = {
     },
 
     async createUser(body, file) {
+        let userAdress = await db.Adress.create({
+            street: body.street,
+            country: body.country,
+        });
         await db.Users.create({
-            ...body,
+            name: body.name,
+            email: body.email,
             password: bcryptjs.hashSync(body.password, 10),
             repassword: bcryptjs.hashSync(body.repassword, 10),
-            ...(file && {
-                photo_user: "/images/productsimage/" + file.filename,
-            }),
+            photo_user: "/images/userAvatars/" + file.filename,
+            adress_id: userAdress.id,
         });
     },
 };

@@ -6,19 +6,21 @@ const db = require("../database/models");
 
 const controller = {
     collections: async function (req, res) {
+        let gender = req.query.gender
         res.render("collections", {
-            products: await productService.getAll(),
+            products: await productService.getAllCollection(gender),
+            user: req.session.userLogged,
             pageTitle: "Productos - Mirrorlens",
         });
     },
 
     detail: async (req, res) => {
         const id = req.params.id;
-
         const product = await productService.findOne(id);
         if (product) {
             res.render("detail", {
                 product,
+                user: req.session.userLogged,
                 pageTitle: product.name + " - Mirrorlens",
                 products: await productService.getAll(),
             });
@@ -30,32 +32,43 @@ const controller = {
     create: async function (req, res) {
         res.render("createProd", {
             pageTitle: "Crea tu producto",
-            productBorderColor: await productService.getProductBorderColor(),
-            columnNames: productService
+            columnNamesBorder: productService
                 .tableNames(db.ProductBorderColor)
                 .filter((columnName) => {
                     return columnName != "id";
                 }),
-            })
+            columnNamesGlass: productService
+                .tableNames(db.ProductGlassColor)
+                .filter((columnName) => {
+                    return columnName != "id";
+                }),
+        });
     },
 
     store: async function (req, res) {
-        // const resultValidation = validationResult(req);
-        // if (resultValidation.errors.length > 0) {
-        //     return res.render("createProd", {
-        //         pageTitle: "Crea tu producto",
-        //         errors: resultValidation.mapped(),
-        //         oldData: req.body,
-        //         productBorderColor: await productService.getProductBorderColor(),
-        //         columnNames: productService
-        //         .tableNames(db.ProductBorderColor)
-        //         .filter((columnName) => {
-        //             return columnName != "id";
-        //         }),
-        //     });
-        // }
+        const resultValidation = validationResult(req);
+        console.log(resultValidation);
+        if (resultValidation.errors.length > 0) {
+            return res.render("createProd", {
+                pageTitle: "Crea tu producto",
+                errors: resultValidation.mapped(),
+                oldData: req.body,
+                columnNamesBorder: productService
+                    .tableNames(db.ProductBorderColor)
+                    .filter((columnName) => {
+                        return columnName != "id";
+                    }),
+                columnNamesGlass: productService
+                    .tableNames(db.ProductGlassColor)
+                    .filter((columnName) => {
+                        return columnName != "id";
+                    }),
+            });
+        }
+        let gender = req.body.gender
+        console.log(req.body)
         await productService.createOne(req.body, req.files);
-        res.redirect("/collections/");
+        res.redirect(`/collections?gender=${gender}`);
     },
 
     edit: async function (req, res) {
@@ -64,8 +77,13 @@ const controller = {
         res.render("editProd", {
             product,
             pageTitle: "Editando: " + product.name,
-            columnNames: productService
+            columnNamesBorder: productService
                 .tableNames(db.ProductBorderColor)
+                .filter((columnName) => {
+                    return columnName != "id";
+                }),
+            columnNamesGlass: productService
+                .tableNames(db.ProductGlassColor)
                 .filter((columnName) => {
                     return columnName != "id";
                 }),
@@ -75,6 +93,7 @@ const controller = {
     update: async (req, res, files) => {
         const id = req.params.id;
         const resultValidation = validationResult(req);
+        console.log(resultValidation);
         if (resultValidation.errors.length > 0) {
             const product = await productService.findOne(id);
             return res.render("editProd", {
@@ -82,6 +101,16 @@ const controller = {
                 errors: resultValidation.mapped(),
                 product: product,
                 oldData: req.body,
+                columnNamesBorder: productService
+                    .tableNames(db.ProductBorderColor)
+                    .filter((columnName) => {
+                        return columnName != "id";
+                    }),
+                columnNamesGlass: productService
+                    .tableNames(db.ProductGlassColor)
+                    .filter((columnName) => {
+                        return columnName != "id";
+                    }),
             });
         }
 
@@ -90,10 +119,16 @@ const controller = {
         res.redirect(`/collections/${id}`);
     },
 
-    destroy: function (req, res) {
+    destroy: async function (req, res) {
         const id = req.params.id;
-        productService.deleteOne(id);
-        res.redirect("/collections/");
+        const product = await productService.findOne(id);
+        productService.deleteOne(
+            id,
+            product.image_id,
+            product.borderColor_Id,
+            product.glassColor_Id
+        );
+        res.redirect("/");
     },
 };
 

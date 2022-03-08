@@ -9,25 +9,28 @@
         <%- include("./partials/header") %>
         <main class="container-content-login">
             <form
-                action="/collections"
-                method="post"
+                action="/collections/<%= product.id %>?_method=PUT"
+                method="POST"
                 class="create-form"
                 enctype="multipart/form-data"
             >
-                <div class="control-form">
+                <div class="control-form name">
                     <input
                         type="text"
-                        name="product_name"
+                        name="name"
                         placeholder="Nombre Del Producto"
                         class="control"
                         value="<%= product.name %> "
                     />
+                    <% if(locals.errors && errors.name){ %>
+                    <p style="color: red"><%= errors.name.msg %></p>
+                    <% } %>
                 </div>
-                <div class="control-form">
+                <div class="control-form image">
                     <label>Imágen del producto</label>
                     <input type="file" name="image" multiple class="control" />
                 </div>
-                <div class="control-form">
+                <div class="control-form type">
                     <label for="">Tipo de lentes:</label>
                     <div class="flex-justify">
                         <input type="radio" name="type" value="Sunglasses" <%=
@@ -40,7 +43,7 @@
                         <label for="type1">Eyeglasses</label>
                     </div>
                 </div>
-                <div class="control-form">
+                <div class="control-form gender">
                     <label for="">Genero:</label>
                     <div class="flex-justify">
                         <input type="radio" name="gender" value="M" <%=
@@ -58,7 +61,7 @@
                         <label>Unisex</label>
                     </div>
                 </div>
-                <div class="control-form">
+                <div class="control-form brand">
                     <input
                         type="text"
                         name="brand"
@@ -66,33 +69,45 @@
                         class="control"
                         value="<%= product.brand %> "
                     />
+                    <% if(locals.errors && errors.name){ %>
+                    <p style="color: red"><%= errors.name.msg %></p>
+                    <% } %>
                 </div>
-                <div class="control-form">
+                <div class="control-form colorBorderCheckboxes">
                     <label for="">Colores del marco:</label>
                     <div class="colorCheckboxes">
-                        <% for(columnName in columnNames){ %>
+                        <% for(columnName in columnNamesBorder){ %>
                         <div class="inputColorBoxes">
                             <input type="checkbox"
-                            name="<%=columnNames[columnName] %>" value="0" <%=
-                            (product.ProductBorderColor[columnNames[columnName]]
+                            name="<%=columnNamesBorder[columnName] %>" value="0"
+                            <%=
+                            (product.ProductBorderColor[columnNamesBorder[columnName]]
                             == 1) ? check="checked" : "" %> />
                             <label for="" class="plr"
-                                ><%=columnNames[columnName] %>
+                                ><%=columnNamesBorder[columnName] %>
                             </label>
                         </div>
                         <% } %>
                     </div>
                 </div>
-                <div class="control-form">
-                    <input
-                        type="text"
-                        name="glass_color"
-                        placeholder="Color del lente"
-                        class="control"
-                        value="<%= product.glass_color %> "
-                    />
+                <div class="control-form colorGlassesCheckboxes">
+                    <label for="">Colores del marco:</label>
+                    <div class="colorCheckboxes">
+                        <% for(columnName in columnNamesGlass){ %>
+                        <div class="inputColorBoxes">
+                            <input type="checkbox"
+                            name="<%=columnNamesGlass[columnName] %>" value="0"
+                            <%=
+                            (product.ProductGlassColor[columnNamesGlass[columnName]]
+                            == 1) ? check="checked" : "" %> />
+                            <label for="" class="plr"
+                                ><%=columnNamesGlass[columnName] %>
+                            </label>
+                        </div>
+                        <% } %>
+                    </div>
                 </div>
-                <div class="control-form">
+                <div class="control-form model">
                     <input
                         type="text"
                         name="model"
@@ -100,8 +115,11 @@
                         class="control"
                         value="<%= product.model %> "
                     />
+                    <% if (locals.errors && errors.model) { %>
+                    <p style="color: red"><%= errors.model.msg %></p>
+                    <% } %>
                 </div>
-                <div class="control-form">
+                <div class="control-form priceVal">
                     <input
                         type="text"
                         name="price"
@@ -109,8 +127,11 @@
                         class="control"
                         value="<%= product.price %> "
                     />
+                    <% if (locals.errors && errors.price) { %>
+                    <p style="color: red"><%= errors.price.msg %></p>
+                    <% } %>
                 </div>
-                <div class="control-form">
+                <div class="control-form description">
                     <input
                         type="text"
                         name="description"
@@ -118,6 +139,9 @@
                         value="<%= product.description %> "
                         class="control"
                     />
+                    <% if (locals.errors && errors.description) { %>
+                    <p style="color: red"><%= errors.description.msg %></p>
+                    <% } %>
                 </div>
 
                 <button type="submit" class="button-form">Publicar</button>
@@ -125,4 +149,5 @@
         </main>
         <%- include("./partials/footer") %>
     </body>
+    <script src="/js/productEditValidations.js"></script>
 </html>

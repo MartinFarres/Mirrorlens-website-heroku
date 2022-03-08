@@ -1,0 +1,1 @@
+export const local_host = "http://localhost:3001"
