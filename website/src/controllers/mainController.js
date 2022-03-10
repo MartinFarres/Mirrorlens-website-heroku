@@ -10,7 +10,10 @@ const bcryptjs = require("bcryptjs");
 const { query } = require("express");
 const controller = {
     home: async function (req, res) {
-        res.render("home", { products: await productService.getAll() });
+        res.render("index", {
+            products: await productService.getAll(),
+            users: await userService.getAll(),
+        });
     },
     login: function (req, res) {
         res.render("login", {
@@ -89,14 +92,14 @@ const controller = {
 
     cRegister: async function (req, res) {
         const resultValidation = validationResult(req);
-        console.log(resultValidation)
+        console.log(resultValidation);
         if (resultValidation.errors.length > 0) {
             return res.render("register", {
                 errors: resultValidation.mapped(),
                 oldData: req.body,
             });
         }
-        
+
         let userInD = await userService.findByField(req.body.email);
 
         if (userInD) {
@@ -109,7 +112,7 @@ const controller = {
                 oldData: req.body,
             });
         }
-        console.log(req.file)
+        console.log(req.file);
         await userService.createUser(req.body, req.file);
         return res.render("thanksForR");
     },

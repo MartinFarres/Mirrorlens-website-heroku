@@ -6,9 +6,13 @@ const db = require("../database/models");
 
 const controller = {
     collections: async function (req, res) {
-        let gender = req.query.gender
+        let gender = req.query.gender;
+
         res.render("collections", {
-            products: await productService.getAllCollection(gender),
+            products:
+                gender == undefined
+                    ? await productService.getAll()
+                    : await productService.getAllCollection(gender),
             user: req.session.userLogged,
             pageTitle: "Productos - Mirrorlens",
         });
@@ -65,8 +69,8 @@ const controller = {
                     }),
             });
         }
-        let gender = req.body.gender
-        console.log(req.body)
+        let gender = req.body.gender;
+        console.log(req.body);
         await productService.createOne(req.body, req.files);
         res.redirect(`/collections?gender=${gender}`);
     },

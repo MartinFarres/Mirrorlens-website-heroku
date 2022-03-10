@@ -4,6 +4,16 @@ const db = require("../database/models/");
 const bcryptjs = require("bcryptjs");
 
 module.exports = {
+    async getAll() {
+        return await db.Users.findAll({
+            include: [
+                {
+                    association: "adress",
+                },
+            ],
+        });
+    },
+
     async findById(id) {
         const user = await db.Users.findByPk(id);
         return user;
