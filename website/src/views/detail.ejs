@@ -4,8 +4,9 @@
 <head>
   <link rel="stylesheet" href="/css/products.css" type="text/css" />
   <link rel="stylesheet" href="/css/product-tablet.css" type="text/css" />
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <%- include("./partials/head") %>
-
+  
 </head>
 <script src="/js/addToCart.js"></script>
 
@@ -40,7 +41,7 @@
                 <%= product.name %>
               </h1>
               <P class="price">
-                <%= product.price %>
+                $<%= product.price %>
               </P>
               <!-- <div class="star-description">
               <i class="far fa-star"></i> <i class="far fa-star"></i><i class="far fa-star"></i><i

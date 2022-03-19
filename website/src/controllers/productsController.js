@@ -22,11 +22,16 @@ const controller = {
         const id = req.params.id;
         const product = await productService.findOne(id);
         if (product) {
-            res.render("detail", {
+            res.render("detail2", {
                 product,
                 user: req.session.userLogged,
                 pageTitle: product.name + " - Mirrorlens",
                 products: await productService.getAll(),
+                columnNamesBorder: productService
+                    .tableNames(db.ProductBorderColor)
+                    .filter((columnName) => {
+                        return columnName != "id";
+                    }),
             });
         } else {
             res.render("not-found");

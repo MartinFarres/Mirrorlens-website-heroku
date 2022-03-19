@@ -11,9 +11,24 @@ body {
     width: 50%;
 }
 
+.w-65 {
+    width: 65%;
+}
+
+.w-10 {
+    width: 10%;
+}
+
+.strong{
+    font-weight: 600;
+}
 .p {
     padding: 16px;
     margin-bottom: 0 !important;
+}
+
+.pl-5{
+    padding: 0px 0px 0px 5px !important;
 }
 
 .pt {
