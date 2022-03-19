@@ -6,7 +6,7 @@
 
         <%- include("./partials/head") %>
     </head>
-    <script src="/js/addToCart.js"></script>
+    <script src="/js/detailProd.js"></script>
 
     <body>
         <%- include("./partials/header") %>
@@ -28,31 +28,53 @@
 
             <div class="row py-3">
                 <div class="pl-5 col-1 my-5 grid-images">
-                    <img
-                        src="<%= product.imageProducts.image1 %> "
-                        class="d-block w-100"
-                        alt="..."
-                    />
-                    <img
-                        src="<%= product.imageProducts.image2 %> "
-                        class="d-block w-100"
-                        alt="..."
-                    />
-                    <img
-                        src="<%= product.imageProducts.image3 %> "
-                        class="d-block w-100"
-                        alt="..."
-                    />
+                    <div class="brand">
+                        <img
+                            src="<%= product.imageProducts.image1 %> "
+                            class="d-block w-100"
+                            id="img-small1"
+                            alt="..."
+                        />
+                    </div>
+                    <div class="brand">
+                        <img
+                            src="<%= product.imageProducts.image2 %> "
+                            class="d-block w-100"
+                            id="img-small2"
+                            alt="..."
+                        />
+                    </div>
+                    <div class="brand">
+                        <img
+                            src="<%= product.imageProducts.image3 %> "
+                            class="d-block w-100"
+                            id="img-small3"
+                            alt="..."
+                        />
+                    </div>
                 </div>
                 <div class="col-6 grid-images">
                     <img
                         src="<%= product.imageProducts.image1 %> "
-                        class="d-block w-100"
+                        class="img-selected w-100"
+                        id="img1"
+                        alt="..."
+                    />
+                    <img
+                        src="<%= product.imageProducts.image2 %> "
+                        class="d-none w-100"
+                        id="img2"
+                        alt="..."
+                    />
+                    <img
+                        src="<%= product.imageProducts.image3 %> "
+                        class="d-none w-100"
+                        id="img3"
                         alt="..."
                     />
                 </div>
-                <div class="col-4">
-                    <div class="border-white card h-100">
+                <div class="col-4 bg-whitesmoke border">
+                    <div class="border-0 card h-100 bg-whitesmoke py-2">
                         <div class="card-top">
                             <h6 class="text-muted text-shadow">
                                 <%=product.brand %> - <%= product.type %>
@@ -124,61 +146,212 @@
                 </div>
             </div>
             <hr />
-            <section class="bg-secondary">
+            <section class="py-4">
+                <h2>Related Products</h2>
                 <div
-                    id="carouselExampleIndicators"
-                    class="w-100 carousel slide align-center"
+                    id="carouselExampleDark"
+                    class="w-100 carousel carousel-dark slide"
                     data-bs-ride="carousel"
                 >
                     <div class="carousel-indicators">
                         <button
                             type="button"
-                            data-bs-target="#carouselExampleIndicators"
+                            data-bs-target="#carouselExampleDark"
                             data-bs-slide-to="0"
-                            class="active "
+                            class="active btn-dark"
                             aria-current="true"
                             aria-label="Slide 1"
                         ></button>
                         <button
                             type="button"
-                            data-bs-target="#carouselExampleIndicators"
+                            data-bs-target="#carouselExampleDark"
                             data-bs-slide-to="1"
                             aria-label="Slide 2"
                         ></button>
                         <button
                             type="button"
-                            data-bs-target="#carouselExampleIndicators"
+                            data-bs-target="#carouselExampleDark"
                             data-bs-slide-to="2"
                             aria-label="Slide 3"
                         ></button>
                     </div>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img
-                                src="<%= product.imageProducts.image1 %>"
-                                class="d-block w-100"
-                                alt="..."
-                            />
+                            <div class="row px-2">
+                                <% for(let product of products.slice(0,4)){ %>
+                                <div class="col-3 mb-5">
+                                    <div class="card h-100">
+                                        <img
+                                            src="<%= product.imageProducts.image1 %>"
+                                            class="card-img-top h-inherit"
+                                        />
+                                        <div class="card-body p-4">
+                                            <div class="text-center">
+                                                <h5 class="fw-bolder">
+                                                    <%= product.name %>
+                                                </h5>
+                                                <div
+                                                    class="d-flex justify-content-center small text-warning mb-2"
+                                                >
+                                                    <i
+                                                        class="fa fa-star"
+                                                        aria-hidden="true"
+                                                    ></i>
+                                                    <i
+                                                        class="fa fa-star"
+                                                        aria-hidden="true"
+                                                    ></i>
+                                                    <i
+                                                        class="fa fa-star"
+                                                        aria-hidden="true"
+                                                    ></i>
+                                                    <i
+                                                        class="fa fa-star"
+                                                        aria-hidden="true"
+                                                    ></i>
+                                                    <i
+                                                        class="fa fa-star"
+                                                        aria-hidden="true"
+                                                    ></i>
+                                                </div>
+                                                $ <%= product.price %>
+                                            </div>
+                                            <div
+                                                class="card-footer p-4 pt-0 border-top-0 bg-transparent"
+                                            >
+                                                <div class="text-center">
+                                                    <a
+                                                        class="btn btn-outline-dark mt-auto"
+                                                        href="<%=`/collections/${product.id}` %>"
+                                                        >View Details</a
+                                                    >
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <% } %>
+                            </div>
                         </div>
                         <div class="carousel-item">
-                            <img
-                                src="<%= product.imageProducts.image1 %>"
-                                class="d-block w-100"
-                                alt="..."
-                            />
+                            <div class="row px-2">
+                                <% for(let product of products.slice(4,8)){ %>
+                                <div class="col-3 mb-5">
+                                    <div class="card h-100">
+                                        <img
+                                            src="<%= product.imageProducts.image1 %>"
+                                            class="card-img-top h-inherit"
+                                        />
+                                        <div class="card-body p-4">
+                                            <div class="text-center">
+                                                <h5 class="fw-bolder">
+                                                    <%= product.name %>
+                                                </h5>
+                                                <div
+                                                    class="d-flex justify-content-center small text-warning mb-2"
+                                                >
+                                                    <i
+                                                        class="fa fa-star"
+                                                        aria-hidden="true"
+                                                    ></i>
+                                                    <i
+                                                        class="fa fa-star"
+                                                        aria-hidden="true"
+                                                    ></i>
+                                                    <i
+                                                        class="fa fa-star"
+                                                        aria-hidden="true"
+                                                    ></i>
+                                                    <i
+                                                        class="fa fa-star"
+                                                        aria-hidden="true"
+                                                    ></i>
+                                                    <i
+                                                        class="fa fa-star"
+                                                        aria-hidden="true"
+                                                    ></i>
+                                                </div>
+                                                $ <%= product.price %>
+                                            </div>
+                                            <div
+                                                class="card-footer p-4 pt-0 border-top-0 bg-transparent"
+                                            >
+                                                <div class="text-center">
+                                                    <a
+                                                        class="btn btn-outline-dark mt-auto"
+                                                        href="<%=`/collections/${product.id}` %>"
+                                                        >View Details</a
+                                                    >
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <% } %>
+                            </div>
                         </div>
                         <div class="carousel-item">
-                            <img
-                                src="<%= product.imageProducts.image1 %>"
-                                class="d-block w-100"
-                                alt="..."
-                            />
+                            <div class="row px-2">
+                                <% for(let product of products.slice(8,12)){ %>
+                                <div class="col-3 mb-5">
+                                    <div class="card h-100">
+                                        <img
+                                            src="<%= product.imageProducts.image1 %>"
+                                            class="card-img-top h-inherit"
+                                        />
+                                        <div class="card-body p-4">
+                                            <div class="text-center">
+                                                <h5 class="fw-bolder">
+                                                    <%= product.name %>
+                                                </h5>
+                                                <div
+                                                    class="d-flex justify-content-center small text-warning mb-2"
+                                                >
+                                                    <i
+                                                        class="fa fa-star"
+                                                        aria-hidden="true"
+                                                    ></i>
+                                                    <i
+                                                        class="fa fa-star"
+                                                        aria-hidden="true"
+                                                    ></i>
+                                                    <i
+                                                        class="fa fa-star"
+                                                        aria-hidden="true"
+                                                    ></i>
+                                                    <i
+                                                        class="fa fa-star"
+                                                        aria-hidden="true"
+                                                    ></i>
+                                                    <i
+                                                        class="fa fa-star"
+                                                        aria-hidden="true"
+                                                    ></i>
+                                                </div>
+                                                $ <%= product.price %>
+                                            </div>
+                                            <div
+                                                class="card-footer p-4 pt-0 border-top-0 bg-transparent"
+                                            >
+                                                <div class="text-center">
+                                                    <a
+                                                        class="btn btn-outline-dark mt-auto"
+                                                        href="<%=`/collections/${product.id}` %>"
+                                                        >View Details</a
+                                                    >
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <% } %>
+                            </div>
                         </div>
                     </div>
                     <button
-                        class="carousel-control-prev"
+                        class="carousel-control-prev justify-content-start"
                         type="button"
-                        data-bs-target="#carouselExampleIndicators"
+                        data-bs-target="#carouselExampleDark"
                         data-bs-slide="prev"
                     >
                         <span
@@ -188,9 +361,9 @@
                         <span class="visually-hidden">Previous</span>
                     </button>
                     <button
-                        class="carousel-control-next"
+                        class="carousel-control-next justify-content-end"
                         type="button"
-                        data-bs-target="#carouselExampleIndicators"
+                        data-bs-target="#carouselExampleDark"
                         data-bs-slide="next"
                     >
                         <span
