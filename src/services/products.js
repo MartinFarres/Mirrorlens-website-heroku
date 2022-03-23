@@ -51,13 +51,13 @@ module.exports = {
     async createOne(body, files) {
         let imageProduct = await db.ImageProducts.create({
             ...(files[0] && {
-                image1: "/images/productsImage/" + files[0].filename,
+                image1: "/images/productsimage/" + files[0].filename,
             }),
             ...(files[1] && {
-                image2: "/images/productsImage/" + files[1].filename,
+                image2: "/images/productsimage/" + files[1].filename,
             }),
             ...(files[2] && {
-                image3: "/images/productsImage/" + files[2].filename,
+                image3: "/images/productsimage/" + files[2].filename,
             }),
         });
         let borderColor = await db.ProductBorderColor.create({
@@ -122,13 +122,13 @@ module.exports = {
             await db.ImageProducts.update(
                 {
                     ...(files[0] && {
-                        image1: "/images/productsImage/" + files[0].filename,
+                        image1: "/images/productsimage/" + files[0].filename,
                     }),
                     ...(files[1] && {
-                        image2: "/images/productsImage/" + files[1].filename,
+                        image2: "/images/productsimage/" + files[1].filename,
                     }),
                     ...(files[2] && {
-                        image3: "/images/productsImage/" + files[2].filename,
+                        image3: "/images/productsimage/" + files[2].filename,
                     }),
                 },
                 {
