@@ -140,6 +140,27 @@
                                         >ADD TO WISHLIST
                                     </span>
                                 </button>
+                                <% if(user != undefined && user.admin == 1){ %>
+                                <div>
+                                    <a
+                                        href="/collections/<%= product.id %>/edit "
+                                        class="button-product-edit"
+                                        >Editar</a
+                                    >
+                                    <form
+                                        action="/collections/<%= product.id %>?_method=DELETE "
+                                        method="POST"
+                                        style="display: inline-flex"
+                                    >
+                                        <button
+                                            type="submit"
+                                            class="button-product-delete"
+                                        >
+                                            ELIMINAR
+                                        </button>
+                                    </form>
+                                </div>
+                                <% } %>
                             </div>
                         </div>
                     </div>
