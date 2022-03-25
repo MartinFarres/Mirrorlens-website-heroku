@@ -1,103 +1,169 @@
-
-<header class="header ">
+<header class="header">
     <div class="header-container">
-
-        <h1 class="logo"><a href="/"><img src="/images/logo2.png" alt="" /></a></h1>
+        <h1 class="logo">
+            <a href="/"><img src="/images/logo2.png" alt="" /></a>
+        </h1>
         <nav class="nav-bar">
             <a href="/collections">Shop</a>
             <% if (locals.isLogged) { %>
-            <a href="/logout" >Logout</a>
+            <a href="/logout">Logout</a>
             <% }else{ %>
             <a href="/register">Register</a>
             <a href="/login">Log In</a>
             <% } %>
-            
+
             <a href="#">Contact</a>
         </nav>
 
-
-
-        <nav class="navbar navbar-dark  d-md-none">
+        <nav class="navbar navbar-dark d-md-none">
             <div class="container-fluid">
-
-                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
-                    data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasNavbar"
+                    aria-controls="offcanvasNavbar"
+                >
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
-                    aria-labelledby="offcanvasNavbarLabel">
+                <div
+                    class="offcanvas offcanvas-end"
+                    tabindex="-1"
+                    id="offcanvasNavbar"
+                    aria-labelledby="offcanvasNavbarLabel"
+                >
                     <div class="offcanvas-header bg-dark text-light">
-
-                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
-                            aria-label="Close"></button>
+                        <button
+                            type="button"
+                            class="btn-close text-reset"
+                            data-bs-dismiss="offcanvas"
+                            aria-label="Close"
+                        ></button>
                     </div>
                     <div class="offcanvas-body bg-dark text-light">
-                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 mb-3">
+                        <ul
+                            class="navbar-nav justify-content-end flex-grow-1 pe-3 mb-3"
+                        >
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="/register">Creá
-                                    tu
-                                    cuenta</a>
+                                <a
+                                    class="nav-link active"
+                                    aria-current="page"
+                                    href="<%=`/collections` %>"
+                                    >Shop</a
+                                >
+                            </li>
+                            <% if (locals.isLogged) { %>
+                            <li class="nav-item">
+                                <a
+                                    class="nav-link active"
+                                    aria-current="page"
+                                    href="/logout"
+                                    >Log Out</a
+                                >
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="/login">Ingresá</a>
+                                <a
+                                    class="nav-link active"
+                                    aria-current="page"
+                                    href="/profile"
+                                    >Profile</a
+                                >
+                            </li>
+                            <% }else{ %>
+                            <li class="nav-item">
+                                <a
+                                    class="nav-link active"
+                                    aria-current="page"
+                                    href="/register"
+                                    >Register</a
+                                >
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Mis Compras</a>
+                                <a
+                                    class="nav-link active"
+                                    aria-current="page"
+                                    href="/login"
+                                    >Log In</a
+                                >
                             </li>
+                            <% } %>
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Contacto</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="<%=`/collections` %>"">Shop</a>
-                            </li>
+                                <a
+                                    class="nav-link active"
+                                    aria-current="page"
+                                    href="#"
+                                    >Contact</a
+                                >
                             </li>
                         </ul>
-                        <form class=" d-flex" action="/search" method="get">
-                                    <input class="form-control me-2" type="text" placeholder="Buscar"
-                                        aria-label="Search" name="search">
-                                    <button class="btn btn-outline-success button-head" type="submit">Buscar</button>
-                                    </form>
+                        <form class="d-flex" action="/search" method="get">
+                            <input
+                                class="form-control me-2"
+                                type="text"
+                                placeholder="Buscar"
+                                aria-label="Search"
+                                name="search"
+                            />
+                            <button
+                                class="btn btn-outline-success button-head"
+                                type="submit"
+                            >
+                                Buscar
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
         </nav>
         <div class="right-icon-menu">
-            <span id="cant">
-
-            </span>
+            <span id="cant"> </span>
             <a href="/cart">
                 <i class="fas fa-shopping-cart icon-shop"></i>
             </a>
         </div>
 
         <div class="right-icon-menu-desktop">
-
             <div class="collapse" id="navbarToggleExternalContent">
                 <div class="bg-dark p-4">
                     <form class="searchDesktop" action="/search" method="get">
-                        <input class="form-control me-2" type="text" placeholder="Buscar" aria-label="Search"
-                            name="search">
-                        <button class="btn btn-outline-success button-head" type="submit">Buscar</button>
+                        <input
+                            class="form-control me-2"
+                            type="text"
+                            placeholder="Buscar"
+                            aria-label="Search"
+                            name="search"
+                        />
+                        <button
+                            class="btn btn-outline-success button-head"
+                            type="submit"
+                        >
+                            Buscar
+                        </button>
                     </form>
                 </div>
             </div>
             <nav>
                 <div class="container-fluid">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarToggleExternalContent"
+                        aria-controls="navbarToggleExternalContent"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                    >
                         <i class="fas fa-search icon-search"></i>
                     </button>
                 </div>
             </nav>
             <i class="far fa-heart icon-search"></i>
             <% if (locals.isLogged) { %>
-                <a href="/profile"><i class="far fa-user icon-search"></i></a>
-                <% } %>
-                    <a href="/cart">
-                        <i class="fas fa-shopping-cart icon-shop"></i>
-                    </a>
+            <a href="/profile"><i class="far fa-user icon-search"></i></a>
+            <% } %>
+            <a href="/cart">
+                <i class="fas fa-shopping-cart icon-shop"></i>
+            </a>
         </div>
-
     </div>
 </header>
