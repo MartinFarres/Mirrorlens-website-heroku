@@ -282,3 +282,17 @@
 .img-selected {
     display: block;
 }
+
+.carrousel-mobile {
+    display: block;
+}
+.prod-detail-mobile {
+    display: block;
+}
+
+.carrousel-desktop {
+    display: none;
+}
+.prod-detail-desktop {
+    display: none !important;
+}

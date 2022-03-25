@@ -86,7 +86,7 @@ const controller = {
                 },
             ],
         });
-        res.render("cart", {
+        res.render("cart2", {
             pageTitle: "Carrito",
             transactions: transactions,
         });

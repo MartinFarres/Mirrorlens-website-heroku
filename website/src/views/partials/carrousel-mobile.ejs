@@ -1,0 +1,94 @@
+<section class="py-4 carrousel-mobile">
+    <h2>Related Products</h2>
+    <div
+        id="carouselExampleDark"
+        class="w-100 carousel carousel-dark slide"
+        data-bs-ride="carousel"
+    >
+        
+        <div class="carousel-inner">
+            <% for(let product of products){ %> <div
+            class="<%=product == products[0] ? "carousel-item active" :
+            "carousel-item"%>">
+            <div class="row px-2">
+                <div class="col-12 mb-5">
+                    <div class="card h-100">
+                        <img
+                            src="<%= product.imageProducts.image1 %>"
+                            class="card-img-top h-inherit"
+                        />
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <h5 class="fw-bolder">
+                                    <%= product.name %>
+                                </h5>
+                                <div
+                                    class="d-flex justify-content-center small text-warning mb-2"
+                                >
+                                    <i
+                                        class="fa fa-star"
+                                        aria-hidden="true"
+                                    ></i>
+                                    <i
+                                        class="fa fa-star"
+                                        aria-hidden="true"
+                                    ></i>
+                                    <i
+                                        class="fa fa-star"
+                                        aria-hidden="true"
+                                    ></i>
+                                    <i
+                                        class="fa fa-star"
+                                        aria-hidden="true"
+                                    ></i>
+                                    <i
+                                        class="fa fa-star"
+                                        aria-hidden="true"
+                                    ></i>
+                                </div>
+                                $ <%= product.price %>
+                            </div>
+                            <div
+                                class="card-footer p-4 pt-0 border-top-0 bg-transparent"
+                            >
+                                <div class="text-center">
+                                    <a
+                                        class="btn btn-outline-dark mt-auto"
+                                        href="<%=`/collections/${product.id}` %>"
+                                        >View Details</a
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <% } %>
+
+        <button
+            class="carousel-control-prev justify-content-start"
+            type="button"
+            data-bs-target="#carouselExampleDark"
+            data-bs-slide="prev"
+        >
+            <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+            ></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+            class="carousel-control-next justify-content-end"
+            type="button"
+            data-bs-target="#carouselExampleDark"
+            data-bs-slide="next"
+        >
+            <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+            ></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</section>
