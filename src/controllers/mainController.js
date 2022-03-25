@@ -69,9 +69,26 @@ const controller = {
         });
     },
 
-    cart: function (req, res) {
-        res.render("cart", {
+    cart: async function (req, res) {
+        let user = req.session.userLogged
+        
+        let transactions = await db.Transactions.findAll({
+            where: {user_id: user.id},
+            include: [
+                {
+                    association: "users",
+                },
+                {
+                    association: "products",
+                    include: [{
+                        association: "imageProducts"
+                    }]
+                },
+            ],
+        });
+        res.render("cart2", {
             pageTitle: "Carrito",
+            transactions: transactions,
         });
     },
 
