@@ -39,7 +39,7 @@ module.exports = {
             email: body.email,
             password: bcryptjs.hashSync(body.password, 10),
             repassword: bcryptjs.hashSync(body.repassword, 10),
-            photo_user: "/images/userAvatars/" + file.filename,
+            photo_user: file ? "/images/userAvatars/" + file.filename : "/images/userAvatars/user-default.png",
             adress_id: userAdress.id,
         });
     },

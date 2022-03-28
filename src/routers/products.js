@@ -22,6 +22,7 @@ router.post(
 
 /*** GET ONE PRODUCT ***/
 router.get("/:id/", userLoggedMiddleware, productsController.detail);
+//Cart
 router.post("/:id/", authMiddleware, productsController.addToCart);
 
 /*** EDIT ONE PRODUCT ***/
@@ -34,14 +35,5 @@ router.put(
 
 /*** DELETE ONE PRODUCT***/
 router.delete("/:id", productsController.destroy);
-
-//CARRITO AGREGAR ITEM
-router.get("/agregarCarrito/:id", carritoController.agregarItem);
-
-//Quitar Item
-router.get("/quitarCarrito/:id", carritoController.quitarItem);
-
-//Mostrar carrito
-router.get("/listarCarrito", carritoController.mostrarCarrito);
 
 module.exports = router;

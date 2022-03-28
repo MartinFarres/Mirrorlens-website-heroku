@@ -2,14 +2,15 @@ const express = require("express");
 const router = express.Router();
 const path = require("path");
 const mainController = require("../controllers/mainController");
+const productsController = require("../controllers/productsController");
 const validateRegMiddleware = require("../middlewares/validateRegMiddleware");
 const multerMiddlewareUsers = require("../middlewares/multerMiddlewareUsers");
 const guestMiddleware = require("../middlewares/guestMiddleware");
 const authMiddleware = require("../middlewares/authMiddleware");
 
-
 router.get("/", mainController.home);
 router.get("/cart", authMiddleware, mainController.cart);
+router.delete("/cart/:id", productsController.deleteFromCart);
 router.get("/login", guestMiddleware, mainController.login);
 router.post("/login", mainController.loginProcess);
 router.get("/register", guestMiddleware, mainController.register);

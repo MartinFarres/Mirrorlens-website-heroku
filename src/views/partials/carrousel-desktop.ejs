@@ -1,8 +1,8 @@
 <section class="py-4 carrousel-desktop">
-    <h2>Related Products</h2>
+    <h2 style="padding-left: 35px">Related Products</h2>
     <div
         id="carouselExampleDark"
-        class="w-100 carousel carousel-dark slide"
+        class="w-100 carousel carousel-dark slide mx-auto"
         data-bs-ride="carousel"
     >
         <div class="carousel-indicators">
@@ -29,9 +29,9 @@
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <div class="row px-2">
+                <div class="row px-2 mx-4">
                     <% for(let product of products.slice(0,4)){ %>
-                    <div class="col-3 mb-5">
+                    <div class="col-3 mb-5 ">
                         <div class="card h-100">
                             <img
                                 src="<%= product.imageProducts.image1 %>"
@@ -69,7 +69,7 @@
                                     $ <%= product.price %>
                                 </div>
                                 <div
-                                    class="card-footer p-4 pt-0 border-top-0 bg-transparent"
+                                    class="p-4 pt-0 border-top-0 bg-transparent"
                                 >
                                     <div class="text-center">
                                         <a
@@ -86,7 +86,7 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <div class="row px-2">
+                <div class="row px-2 mx-4">
                     <% for(let product of products.slice(4,8)){ %>
                     <div class="col-3 mb-5">
                         <div class="card h-100">
@@ -126,7 +126,7 @@
                                     $ <%= product.price %>
                                 </div>
                                 <div
-                                    class="card-footer p-4 pt-0 border-top-0 bg-transparent"
+                                    class="p-4 pt-0 border-top-0 bg-transparent"
                                 >
                                     <div class="text-center">
                                         <a
@@ -143,7 +143,7 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <div class="row px-2">
+                <div class="row px-2 mx-4">
                     <% for(let product of products.slice(8,12)){ %>
                     <div class="col-3 mb-5">
                         <div class="card h-100">
@@ -183,7 +183,7 @@
                                     $ <%= product.price %>
                                 </div>
                                 <div
-                                    class="card-footer p-4 pt-0 border-top-0 bg-transparent"
+                                    class="p-4 pt-0 border-top-0 bg-transparent"
                                 >
                                     <div class="text-center">
                                         <a

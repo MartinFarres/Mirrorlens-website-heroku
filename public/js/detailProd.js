@@ -1,10 +1,10 @@
 window.onload = () => {
-    let imgSmall1 = document.querySelector("#img-small1");
-    let imgSmall2 = document.querySelector("#img-small2");
-    let imgSmall3 = document.querySelector("#img-small3");
-    let img1 = document.querySelector("#img1");
-    let img2 = document.querySelector("#img2");
-    let img3 = document.querySelector("#img3");
+    let imgSmall1 = document.querySelector(".img-small1");
+    let imgSmall2 = document.querySelector(".img-small2");
+    let imgSmall3 = document.querySelector(".img-small3");
+    let img1 = document.querySelector(".img1");
+    let img2 = document.querySelector(".img2");
+    let img3 = document.querySelector(".img3");
 
     imgSmall1.addEventListener("click", () => {
         console.log("1");
@@ -65,13 +65,13 @@ window.onload = () => {
             e.preventDefault();
             alert("Please pick a valid amount");
         }
-        if (glassColorInput == ""){
-            e.preventDefault()
-            alert("Please pick a color for the Glasses")
+        if (glassColorInput == "") {
+            e.preventDefault();
+            alert("Please pick a color for the Glasses");
         }
-        if (borderColorInput == ""){
-            e.preventDefault()
-            alert("Please pick a color for the Border")
+        if (borderColorInput == "") {
+            e.preventDefault();
+            alert("Please pick a color for the Border");
         }
     });
 };

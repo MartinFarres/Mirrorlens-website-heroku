@@ -11,11 +11,6 @@ window.onload = () => {
             errors["name"] =
                 "El campo de nombre tiene que tener 5 al menos caracteres!";
         }
-        let inputImage = document.querySelector('input[name="image"]');
-
-        if (inputImage.value == "") {
-            errors["image"] = "Debes subir una imagen";
-        }
 
         let inputEmail = document.querySelector('input[name="email"]');
 

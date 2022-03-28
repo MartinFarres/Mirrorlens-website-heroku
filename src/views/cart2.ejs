@@ -39,7 +39,12 @@
                             </div>
                             <div class="col-3 p-3 text-left position-relative">
                                 <div class="position-absolute fixed-top text-end p-2">
-                                    <i class="bi bi-cart-x p-1 border border-1 border-danger text-danger"></i>
+                                    <form action="/cart/<%= transactions[transaction].id %>?_method=DELETE"
+                                        method="POST">
+                                        <button class="border border-1 border-danger text-danger">
+                                            <i class="bi bi-cart-x p-1 "></i>
+                                        </button>
+                                    </form>
                                 </div>
                                 <h6 class="text-muted mt-3 text-shadow">
                                     Quantity = <%=transactions[transaction].amount %> 

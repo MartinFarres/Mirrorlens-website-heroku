@@ -45,8 +45,14 @@ const controller = {
 
     addToCart: async (req, res) => {
         await productService.addToCart(req.body);
-        res.redirect(`/collections/${req.body.product_id}`);
+        // res.redirect(`/collections/${req.body.product_id}`);
+        res.redirect("/cart");
         console.log("product added succesfully");
+    },
+    deleteFromCart: async (req, res) => {
+        const idTransaction = req.params.id;
+        await productService.deleteFromCart(idTransaction);
+        res.redirect("/cart")
     },
 
     create: async function (req, res) {

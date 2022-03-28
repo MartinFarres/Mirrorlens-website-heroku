@@ -196,7 +196,14 @@ module.exports = {
 
     async addToCart(body) {
         await db.Transactions.create({
-            ...body
+            ...body,
+        });
+    },
+
+    async deleteFromCart(idTransaction) {
+        await db.Transactions.destroy({
+            where: { id: idTransaction },
+            force: true,
         });
     },
 
